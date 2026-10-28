@@ -346,6 +346,7 @@ details.desplegable[open] > summary { margin-bottom: 0.5rem; }
 .opcion--centrada { justify-content: center; text-align: center; }
 .opcion--elegida { border-color: var(--tinta); background: var(--superficie-2); }
 .opciones__botones.opciones__botones--tres { grid-template-columns: repeat(3, 1fr); }
+.opciones__botones--tres .opcion { padding-left: 0.4rem; padding-right: 0.4rem; white-space: nowrap; }
 .opcion__marca { font-size: 0.85rem; font-weight: 700; white-space: nowrap; }
 .opcion--correcta .opcion__marca { color: var(--acierto); }
 .opcion--incorrecta .opcion__marca { color: var(--fallo); }
