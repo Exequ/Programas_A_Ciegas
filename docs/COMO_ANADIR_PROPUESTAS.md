@@ -109,6 +109,8 @@ Qué va en cada campo:
 | `url_fuente` | Sí | El enlace al PDF oficial del programa. |
 | `peso` | No | Por defecto 1. Pon `"peso": 2` solo si hay un motivo justificado para que cuente el doble en el test. |
 | `nota` | No | Un apunte para ti (no se muestra en la web). Por ejemplo, de qué apartado lo sacaste. |
+| `compartida_con` | No | Si otros partidos proponen casi lo mismo, la lista de sus ids. Ver «Propuestas compartidas o ambiguas» en el paso 5. |
+| `ambigua` | No | `true` si la propuesta es tan genérica que no tiene sentido atribuirla a un partido. Ver el paso 5. |
 
 Ids de los temas:
 
@@ -203,6 +205,42 @@ Son las que hacen que la web sea neutral. Merece la pena tenerlas delante:
 - **No cambies el sentido ni el tono.** No añadas ni quites matices, no suavices ni endurezcas.
 - Es buena práctica empezar con un verbo en infinitivo («Crear…», «Reducir…»), igual para todos los partidos.
 - El texto literal se mostrará siempre al revelar el partido, así que cualquiera podrá compararlos.
+
+### Propuestas compartidas o ambiguas
+
+En el modo **«¿Conoces a tu partido?»** se pregunta «¿Es una propuesta de este partido?». Si la misma idea aparece en
+varios programas, o es tan general que podría ser de cualquiera, la respuesta «correcta» sería injusta. Para evitarlo,
+puedes marcar esas propuestas y ese modo **no las usará**. En el juego y en el test de afinidad siguen saliendo con
+normalidad.
+
+**Compartida:** otro partido (o varios) propone prácticamente lo mismo. Añade la línea `compartida_con` con los ids
+de esos otros partidos (no hace falta poner el propio):
+
+```json
+  {
+    "id": "pp-vivienda-03",
+    "partido": "pp",
+    "tema": "vivienda",
+    "texto": "Texto literal…",
+    "pagina": 51,
+    "url_fuente": "https://...",
+    "compartida_con": ["psoe", "sumar"]
+  }
+```
+
+**Ambigua:** el texto es tan genérico que no ayuda a reconocer a nadie («mejorar la sanidad rural»). Añade la línea
+`"ambigua": true` (sin comillas en `true`):
+
+```json
+    "url_fuente": "https://...",
+    "ambigua": true
+  }
+```
+
+Recuerda la coma al final de la línea anterior. El validador te avisará si en `compartida_con` pones un partido que no
+existe, o si marcas tantas propuestas de un partido que su test quedaría más corto o más fácil que el de los demás.
+
+> Consejo: si una propuesta es ambigua, plantéate si merece estar en la web. Lo ideal son propuestas concretas.
 
 ---
 
@@ -300,6 +338,11 @@ git push
 | `validador.minimo_por_tema_y_partido` | El validador avisa si un partido tiene menos propuestas que esto en un tema | 2 |
 | `validador.diferencia_maxima_entre_partidos` | Diferencia de nº de propuestas entre partidos que se tolera sin avisar | 0 |
 | `validador.expresiones_sospechosas` | Expresiones que delatan el origen («nuestro partido»…). Puedes añadir más | — |
+| `conoces.preguntas` | Números de preguntas que se ofrecen en «¿Conoces a tu partido?» | 10, 15 y 20 |
+| `conoces.proporcion_partido` | Parte de las preguntas que son del partido elegido (0,5 = la mitad) | 0,5 |
+| `conoces.minimo_preguntas` | Por debajo de este número de preguntas no se hace el test y se muestra un aviso | 6 |
+| `validador.conoces_minimo_por_partido` | El validador avisa si un partido tiene menos propuestas válidas para ese modo | 10 |
+| `validador.conoces_minimo_por_tema` | Ídem, por tema | 2 |
 
 ---
 

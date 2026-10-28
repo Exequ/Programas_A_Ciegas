@@ -3,6 +3,7 @@
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { esValidaParaConoces, preguntasPosibles, propuestasDisponibles } from '../js/conoces-logica.js';
 
 const carpetaDatos = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'data');
 const modoEjemplo = process.argv.includes('--ejemplo');
@@ -208,6 +209,22 @@ if (Array.isArray(propuestas)) {
     if (p.peso !== undefined && !(typeof p.peso === 'number' && p.peso > 0)) error(`${donde}: "peso" debe ser un número mayor que 0 (por ejemplo 1 o 2).`);
     if (p.texto_anonimo !== undefined && vacio(p.texto_anonimo)) aviso(`${donde}: "texto_anonimo" está vacío; si no lo necesitas, borra la línea entera.`);
     if (p.ejemplo === true) ejemplosPresentes++;
+
+    // Marcas para «¿Conoces a tu partido?»
+    if (p.compartida_con !== undefined) {
+      if (!Array.isArray(p.compartida_con) || p.compartida_con.some((id) => typeof id !== 'string')) {
+        error(`${donde}: "compartida_con" debe ser una lista de ids de partido entre comillas, por ejemplo ["pp", "psoe"].`);
+      } else {
+        for (const id of p.compartida_con) {
+          if (!partidoPorId.has(id)) error(`${donde}: "compartida_con" incluye el partido "${id}", que no existe en ${archivoPartidos}.`);
+          else if (id === p.partido) aviso(`${donde}: "compartida_con" incluye a su propio partido ("${id}"); basta con poner los demás.`);
+        }
+        if (p.compartida_con.length === 0) aviso(`${donde}: "compartida_con" está vacío; si no es compartida, borra la línea entera.`);
+      }
+    }
+    if (p.ambigua !== undefined && typeof p.ambigua !== 'boolean') {
+      error(`${donde}: "ambigua" debe ser true o false (sin comillas).`);
+    }
     camposDesconocidos(p, CAMPOS_PROPUESTA, donde);
 
     // Anonimato: se revisa el texto que se muestra (texto_anonimo si existe; si no, texto).
@@ -255,6 +272,7 @@ const activos = [...partidoPorId.values()].filter((p) => p.activo === true);
 const etiqueta = (p) => p.siglas || p.nombre || p.id;
 const cuenta = (filtro) => validas.filter(filtro).length;
 let tabla = '';
+let resumenConoces = '';
 
 if (activos.length && temaPorId.size && validas.length) {
   const conPropuestas = activos.filter((p) => validas.some((v) => v.partido === p.id));
@@ -306,6 +324,51 @@ if (activos.length && temaPorId.size && validas.length) {
   }
   lineas.push(fila('TOTAL', totales.map((t) => t.n), validas.length));
   tabla = lineas.join('\n');
+
+  // «¿Conoces a tu partido?»: propuestas válidas para el modo y máximo de preguntas por partido.
+  const conoces = config?.conoces ?? {};
+  const proporcion = typeof conoces.proporcion_partido === 'number' ? conoces.proporcion_partido : 0.5;
+  const minimoPreguntas = conoces.minimo_preguntas ?? 6;
+  const mayorTest = Math.max(...(Array.isArray(conoces.preguntas) && conoces.preguntas.length ? conoces.preguntas : [20]));
+  const minimoConoces = ajustes.conoces_minimo_por_partido ?? 10;
+  const minimoConocesTema = ajustes.conoces_minimo_por_tema ?? 2;
+  const aptas = validas.filter(esValidaParaConoces);
+  const excluidas = validas.length - aptas.length;
+
+  const porPartido = conPropuestas.map((p) => {
+    const { propias, ajenas } = propuestasDisponibles(validas, p.id);
+    return { p, propias: propias.length, maximo: preguntasPosibles(propias.length, ajenas.length, proporcion) };
+  });
+
+  for (const { p, propias, maximo } of porPartido) {
+    if (propias < minimoConoces) {
+      aviso(`¿Conoces a tu partido?: ${etiqueta(p)} solo tiene ${propias} propuestas válidas para este modo (sin contar compartidas ni ambiguas); se recomiendan al menos ${minimoConoces}.`);
+    }
+    if (maximo < minimoPreguntas) {
+      aviso(`¿Conoces a tu partido?: con ${etiqueta(p)} no se puede jugar todavía (harían falta propuestas para al menos ${minimoPreguntas} preguntas).`);
+    }
+    const temasCortos = temasUsados
+      .map((t) => ({ t, n: aptas.filter((v) => v.partido === p.id && v.tema === t.id).length }))
+      .filter((x) => x.n < minimoConocesTema);
+    if (temasCortos.length) {
+      aviso(`¿Conoces a tu partido?: ${etiqueta(p)} tiene menos de ${minimoConocesTema} propuestas válidas en: ${temasCortos.map((x) => `${x.t.nombre} (${x.n})`).join(', ')}.`);
+    }
+  }
+
+  const maximos = porPartido.map((x) => x.maximo);
+  const propiasPorPartido = porPartido.map((x) => x.propias);
+  if (Math.max(...maximos) !== Math.min(...maximos) || Math.max(...propiasPorPartido) - Math.min(...propiasPorPartido) > tolerancia) {
+    aviso(
+      '¿Conoces a tu partido?: el test no es igual para todos los partidos (unos tendrían más preguntas o más propuestas ' +
+        `distintas entre las que elegir, y el test sería más fácil o difícil según el partido): ` +
+        porPartido.map((x) => `${etiqueta(x.p)} ${x.propias} propuestas válidas, máximo ${x.maximo} preguntas`).join('; ') + '.',
+    );
+  }
+
+  resumenConoces =
+    `  Máximo de preguntas posible por partido (el test más largo es de ${mayorTest}): ` +
+    porPartido.map((x) => `${etiqueta(x.p)} ${x.maximo}`).join(' · ') +
+    (excluidas ? `\n  Propuestas marcadas como compartidas o ambiguas (no se usan en este modo): ${excluidas}` : '');
 }
 
 // ---------- Informe ----------
@@ -323,6 +386,11 @@ if (avisos.length) {
 if (tabla) {
   console.log(negrita('Propuestas válidas por tema y partido:'));
   console.log(tabla);
+  console.log();
+}
+if (resumenConoces) {
+  console.log(negrita('«¿Conoces a tu partido?»:'));
+  console.log(resumenConoces);
   console.log();
 }
 
