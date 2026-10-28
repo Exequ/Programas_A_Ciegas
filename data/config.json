@@ -13,6 +13,11 @@
     "peso_tema_importante": 2,
     "peso_tema_poco_importante": 0.5
   },
+  "conoces": {
+    "preguntas": [10, 15, 20],
+    "proporcion_partido": 0.5,
+    "minimo_preguntas": 6
+  },
   "validador": {
     "minimo_por_tema_y_partido": 2,
     "diferencia_maxima_entre_partidos": 0,
@@ -27,6 +32,8 @@
       "como ya hicimos",
       "nuestro candidato",
       "nuestra candidata"
-    ]
+    ],
+    "conoces_minimo_por_partido": 10,
+    "conoces_minimo_por_tema": 2
   }
 }

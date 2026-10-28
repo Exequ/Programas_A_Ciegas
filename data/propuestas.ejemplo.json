@@ -107,5 +107,137 @@
     "texto": "[EJEMPLO FICTICIO] Ampliar la red de puntos de recarga para vehículos eléctricos en las carreteras nacionales.",
     "pagina": 36,
     "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-13",
+    "ejemplo": true,
+    "partido": "ejemplo-a",
+    "tema": "economia",
+    "texto": "[EJEMPLO FICTICIO] Crear un programa de ayudas a la contratación de personas desempleadas de larga duración.",
+    "pagina": 8,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-14",
+    "ejemplo": true,
+    "partido": "ejemplo-a",
+    "tema": "educacion",
+    "texto": "[EJEMPLO FICTICIO] Ampliar el horario de apertura de las bibliotecas escolares por las tardes.",
+    "pagina": 20,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-15",
+    "ejemplo": true,
+    "partido": "ejemplo-a",
+    "tema": "medio-ambiente-energia",
+    "texto": "[EJEMPLO FICTICIO] Plantar un millón de árboles en zonas urbanas en los próximos cinco años.",
+    "pagina": 30,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-16",
+    "ejemplo": true,
+    "partido": "ejemplo-b",
+    "tema": "vivienda",
+    "texto": "[EJEMPLO FICTICIO] Agilizar las licencias municipales de obra para viviendas de nueva construcción.",
+    "pagina": 14,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-17",
+    "ejemplo": true,
+    "partido": "ejemplo-b",
+    "tema": "sanidad",
+    "texto": "[EJEMPLO FICTICIO] Ampliar el horario de los centros de salud hasta las 21:00.",
+    "pagina": 23,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-18",
+    "ejemplo": true,
+    "partido": "ejemplo-b",
+    "tema": "cultura-ciencia",
+    "texto": "[EJEMPLO FICTICIO] Crear una plataforma pública y gratuita de libros electrónicos.",
+    "pagina": 40,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-19",
+    "ejemplo": true,
+    "partido": "ejemplo-c",
+    "tema": "sanidad",
+    "texto": "[EJEMPLO FICTICIO] Incorporar psicólogos en todos los centros de atención primaria.",
+    "pagina": 26,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-20",
+    "ejemplo": true,
+    "partido": "ejemplo-c",
+    "tema": "educacion",
+    "texto": "[EJEMPLO FICTICIO] Ofrecer clases de refuerzo gratuitas en verano para el alumnado de secundaria.",
+    "pagina": 21,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-21",
+    "ejemplo": true,
+    "partido": "ejemplo-c",
+    "tema": "medio-ambiente-energia",
+    "texto": "[EJEMPLO FICTICIO] Prohibir los plásticos de un solo uso en los edificios de la Administración.",
+    "pagina": 35,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-22",
+    "ejemplo": true,
+    "partido": "ejemplo-d",
+    "tema": "vivienda",
+    "texto": "[EJEMPLO FICTICIO] Reservar un porcentaje de las nuevas promociones públicas para alquiler a jóvenes.",
+    "pagina": 16,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-23",
+    "ejemplo": true,
+    "partido": "ejemplo-d",
+    "tema": "economia",
+    "texto": "[EJEMPLO FICTICIO] Reducir a 30 días el plazo de pago de la Administración a sus proveedores.",
+    "pagina": 10,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-24",
+    "ejemplo": true,
+    "partido": "ejemplo-d",
+    "tema": "cultura-ciencia",
+    "texto": "[EJEMPLO FICTICIO] Financiar la digitalización de los archivos históricos municipales.",
+    "pagina": 45,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-25",
+    "ejemplo": true,
+    "partido": "ejemplo-a",
+    "tema": "economia",
+    "texto": "[EJEMPLO FICTICIO] Simplificar la declaración trimestral de impuestos de los autónomos.",
+    "pagina": 11,
+    "url_fuente": "",
+    "compartida_con": [
+      "ejemplo-c"
+    ],
+    "nota": "Ejemplo de propuesta que aparece casi igual en otro programa: no se usa en «¿Conoces a tu partido?»."
+  },
+  {
+    "id": "ejemplo-26",
+    "ejemplo": true,
+    "partido": "ejemplo-c",
+    "tema": "sanidad",
+    "texto": "[EJEMPLO FICTICIO] Mejorar la atención sanitaria en las zonas rurales.",
+    "pagina": 27,
+    "url_fuente": "",
+    "ambigua": true,
+    "nota": "Ejemplo de propuesta demasiado genérica para atribuirla a un partido: no se usa en «¿Conoces a tu partido?»."
   }
 ]

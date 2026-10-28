@@ -22,7 +22,9 @@ const aviso = (mensaje) => avisos.push(mensaje);
 
 const CAMPOS_PARTIDO = ['id', 'nombre', 'siglas', 'color', 'url_programa', 'activo', 'lideres', 'ejemplo'];
 const CAMPOS_TEMA = ['id', 'nombre'];
-const CAMPOS_PROPUESTA = ['id', 'partido', 'tema', 'texto', 'texto_anonimo', 'pagina', 'url_fuente', 'peso', 'ejemplo', 'nota'];
+const CAMPOS_PROPUESTA = [
+  'id', 'partido', 'tema', 'texto', 'texto_anonimo', 'pagina', 'url_fuente', 'peso', 'ejemplo', 'nota', 'compartida_con', 'ambigua',
+];
 
 // ---------- Lectura ----------
 
