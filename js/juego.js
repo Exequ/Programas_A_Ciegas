@@ -8,6 +8,7 @@ import {
   escapar,
   etiquetaEjemplo,
   guardarSesion,
+  htmlSinPropuestas,
   seleccionEquilibrada,
 } from './utilidades.js';
 
@@ -17,6 +18,10 @@ let estado = null;
 const vistas = new Set();
 
 export function pintarJuego(contenedor, datos) {
+  if (datos.partidos.length < 2) {
+    contenedor.innerHTML = htmlSinPropuestas('Adivina el partido');
+    return;
+  }
   estado ??= {
     fase: 'config',
     temas: datos.temas.map((t) => t.id),

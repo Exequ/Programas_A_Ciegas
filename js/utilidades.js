@@ -116,3 +116,11 @@ export function enfocarTitulo(contenedor, selector = 'h1') {
     titulo.focus({ preventScroll: true });
   }
 }
+
+/** Mensaje para cuando no hay propuestas que mostrar (por ejemplo, si ningún partido está activo). */
+export function htmlSinPropuestas(titulo) {
+  return `
+    <h1 tabindex="-1">${escapar(titulo)}</h1>
+    <p class="aviso">Todavía no hay propuestas disponibles. Vuelve a visitarnos cuando se publiquen los programas electorales.</p>
+    <div class="acciones"><a class="boton boton--secundario" href="#/">Volver al inicio</a></div>`;
+}

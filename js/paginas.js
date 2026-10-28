@@ -9,9 +9,13 @@ export function pintarPagina(idPlantilla, contenedor, datos) {
   const resumen = contenedor.querySelector('[data-dato="resumen"]');
   if (resumen) {
     const n = datos.propuestas.length;
-    resumen.textContent = datos.modoEjemplo
-      ? `Ahora mismo hay ${n} propuestas ficticias de ejemplo. Las reales se añadirán cuando se publiquen los programas.`
-      : `${n} propuestas de ${datos.partidos.length} partidos sobre ${datos.temas.length} temas.`;
+    if (datos.modoEjemplo) {
+      resumen.textContent = `Ahora mismo hay ${n} propuestas ficticias de ejemplo. Las reales se añadirán cuando se publiquen los programas.`;
+    } else if (n === 0) {
+      resumen.textContent = 'Las propuestas se añadirán cuando se publiquen los programas electorales.';
+    } else {
+      resumen.textContent = `${n} propuestas de ${datos.partidos.length} partidos sobre ${datos.temas.length} temas.`;
+    }
   }
 
   const listaProgramas = contenedor.querySelector('[data-lista="programas"]');

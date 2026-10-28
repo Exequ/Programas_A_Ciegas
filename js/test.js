@@ -1,6 +1,13 @@
 // Modo «Test de afinidad».
 import { RESPUESTAS, SIN_CRITERIO } from './afinidad.js';
-import { enfocarTitulo, escapar, etiquetaEjemplo, guardarSesion, seleccionEquilibrada } from './utilidades.js';
+import {
+  enfocarTitulo,
+  escapar,
+  etiquetaEjemplo,
+  guardarSesion,
+  htmlSinPropuestas,
+  seleccionEquilibrada,
+} from './utilidades.js';
 
 const IMPORTANCIAS = [
   { id: 'poco', etiqueta: 'Poco importante' },
@@ -12,6 +19,10 @@ const IMPORTANCIAS = [
 let estado = null;
 
 export function pintarTest(contenedor, datos) {
+  if (datos.propuestas.length === 0) {
+    contenedor.innerHTML = htmlSinPropuestas('Test de afinidad');
+    return;
+  }
   estado ??= { fase: 'config', duracion: null, importancia: {} };
 
   const pintar = (enfocar) => {
