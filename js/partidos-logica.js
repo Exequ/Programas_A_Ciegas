@@ -1,0 +1,142 @@
+// Lógica y vistas de la sección «Partidos y programas». No depende del navegador: se prueba con `npm test`.
+// Neutralidad: todas las tarjetas y fichas se generan con las mismas funciones; ninguna rama depende de
+// qué partido sea, y el orden nunca depende del tamaño del partido.
+import { barajar, escapar, urlSegura } from './utilidades.js';
+
+export const AMBITOS = { estatal: 'Estatal', territorial: 'Territorial', coalicion: 'Coalición' };
+
+const normalizar = (texto) =>
+  String(texto ?? '')
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase();
+
+/** Partidos que aparecen en el directorio: los que tienen `en_directorio: true`. */
+export function partidosDelDirectorio(partidos) {
+  return partidos.filter((p) => p.en_directorio === true);
+}
+
+/** Orden alfabético por nombre o aleatorio (según `config.directorio.orden`). Nada más influye. */
+export function ordenarPartidos(partidos, orden = 'alfabetico', azar = Math.random) {
+  if (orden === 'aleatorio') return barajar(partidos, azar);
+  return [...partidos].sort((a, b) => a.nombre.localeCompare(b.nombre, 'es', { sensitivity: 'base' }));
+}
+
+/** Filtra por ámbito ('' = todos) y por texto en nombre, siglas o territorio (sin tildes ni mayúsculas). */
+export function filtrarPartidos(partidos, { ambito = '', texto = '' } = {}) {
+  const buscado = normalizar(texto).trim();
+  return partidos.filter((p) => {
+    if (ambito && p.ambito !== ambito) return false;
+    if (!buscado) return true;
+    return [p.nombre, p.siglas, ...(Array.isArray(p.territorio) ? p.territorio : [])].some((campo) => normalizar(campo).includes(buscado));
+  });
+}
+
+/** Rutas de archivos de datos relativas a la web («/data/x.json» → «data/x.json»), para que funcionen en GitHub Pages. */
+export function rutaRelativa(ruta) {
+  return typeof ruta === 'string' && ruta.trim() ? ruta.trim().replace(/^\.?\/+/, '') : null;
+}
+
+export function programaPublicado(partido) {
+  return partido.programa?.estado === 'publicado';
+}
+
+/** «2026-11-10» → «10 de noviembre de 2026». */
+export function formatearFecha(iso) {
+  if (typeof iso !== 'string' || !/^\d{4}-\d{2}-\d{2}/.test(iso)) return '';
+  const fecha = new Date(`${iso.slice(0, 10)}T00:00:00Z`);
+  return Number.isNaN(fecha.getTime()) ? '' : fecha.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+}
+
+function textoAmbito(partido) {
+  const partes = [AMBITOS[partido.ambito] ?? 'Ámbito sin indicar'];
+  if (Array.isArray(partido.territorio) && partido.territorio.length) partes.push(partido.territorio.join(', '));
+  return partes.join(' · ');
+}
+
+function textoEstado(partido) {
+  const estado = programaPublicado(partido) ? 'Programa publicado' : 'Programa aún no publicado';
+  return partido.verificar === true ? `${estado} · Datos por confirmar` : estado;
+}
+
+/** Tarjeta del directorio. Siempre la misma estructura: nombre, siglas y ámbito, estado del programa. */
+export function htmlTarjetaPartido(partido) {
+  const siglas = partido.siglas && partido.siglas !== partido.nombre ? `${escapar(partido.siglas)} · ` : '';
+  return `
+    <li class="tarjeta-partido">
+      <h2 class="tarjeta-partido__nombre"><a href="#/partidos/${encodeURIComponent(partido.id)}">${escapar(partido.nombre)}</a></h2>
+      <p class="tarjeta-partido__meta">${siglas}${escapar(textoAmbito(partido))}</p>
+      <p class="tarjeta-partido__estado estado-programa estado-programa--${programaPublicado(partido) ? 'publicado' : 'pendiente'}">${escapar(textoEstado(partido))}</p>
+    </li>`;
+}
+
+function enlaceExterno(url, texto, clase = '') {
+  return `<a ${clase ? `class="${clase}" ` : ''}href="${escapar(url)}" target="_blank" rel="noopener noreferrer">${texto}<span class="sr-only"> (se abre en una pestaña nueva)</span></a>`;
+}
+
+function enlacePartido(partido) {
+  return partido.en_directorio === true
+    ? `<a href="#/partidos/${encodeURIComponent(partido.id)}">${escapar(partido.nombre)}</a>`
+    : escapar(partido.nombre);
+}
+
+/** Lista de datos básicos de la ficha, incluidas las coaliciones (en ambos sentidos). */
+export function htmlDatosPartido(partido, todos) {
+  const porId = new Map(todos.map((p) => [p.id, p]));
+  const filas = [['Ámbito', escapar(AMBITOS[partido.ambito] ?? 'Sin indicar')]];
+  if (partido.siglas && partido.siglas !== partido.nombre) filas.unshift(['Siglas', escapar(partido.siglas)]);
+  if (Array.isArray(partido.territorio) && partido.territorio.length) filas.push(['Se presenta en', escapar(partido.territorio.join(', '))]);
+  if (partido.candidato) filas.push(['Cabeza de lista', escapar(partido.candidato)]);
+  const web = urlSegura(partido.web_oficial);
+  if (web) filas.push(['Web oficial', enlaceExterno(web, escapar(web.replace(/^https?:\/\/(www\.)?/i, '').replace(/\/$/, '')))]);
+
+  const integrantes = (Array.isArray(partido.coalicion_de) ? partido.coalicion_de : []).map((id) => porId.get(id)).filter(Boolean);
+  if (integrantes.length) filas.push(['Coalición formada por', integrantes.map(enlacePartido).join(', ')]);
+  const coaliciones = todos.filter((p) => Array.isArray(p.coalicion_de) && p.coalicion_de.includes(partido.id));
+  if (coaliciones.length) filas.push(['Forma parte de', coaliciones.map(enlacePartido).join(', ')]);
+
+  return `<dl class="datos-partido">${filas.map(([dt, dd]) => `<div><dt>${dt}</dt><dd>${dd}</dd></div>`).join('')}</dl>`;
+}
+
+/** Bloque «Programa electoral» de la ficha: estado, PDF oficial y copia guardada. */
+export function htmlProgramaPartido(partido) {
+  const programa = partido.programa ?? {};
+  const web = urlSegura(partido.web_oficial);
+
+  if (!programaPublicado(partido)) {
+    return `
+      <p class="estado-programa estado-programa--pendiente">Programa aún no publicado.</p>
+      ${web ? `<p>Mientras tanto, puedes consultar la ${enlaceExterno(web, 'web oficial del partido')}.</p>` : ''}`;
+  }
+
+  const url = urlSegura(programa.url_oficial);
+  const copia = rutaRelativa(programa.archivo_local);
+  const fechaCopia = formatearFecha(programa.fecha_comprobacion);
+  const detalles = [
+    programa.fecha_publicacion && `Publicado el ${formatearFecha(programa.fecha_publicacion)}`,
+    programa.paginas && `${escapar(programa.paginas)} páginas`,
+    programa.version && `versión ${escapar(programa.version)}`,
+    programa.fecha_comprobacion && `comprobado el ${fechaCopia}`,
+  ].filter(Boolean);
+
+  const botones = [
+    url
+      ? enlaceExterno(url, 'Ver programa oficial (PDF)', 'boton boton--primario')
+      : partido.ejemplo
+        ? '<p><em>Programa ficticio de ejemplo: no tiene PDF.</em></p>'
+        : '<p>El enlace al programa oficial se añadirá en breve.</p>',
+    copia
+      ? `<a class="boton boton--secundario" href="${escapar(copia)}" download>Descargar copia guardada${fechaCopia ? ` (${fechaCopia})` : ''}</a>`
+      : '',
+  ].join('');
+
+  return `
+    <p class="estado-programa estado-programa--publicado">Programa publicado.</p>
+    ${detalles.length ? `<p class="ayuda">${detalles.join(' · ')}.</p>` : ''}
+    <div class="acciones">${botones}</div>
+    ${
+      copia
+        ? `<p class="ayuda">La copia guardada se descargó${fechaCopia ? ` el ${fechaCopia}` : ''} para que siga disponible si cambia el enlace. La versión oficial es siempre la publicada por el partido.</p>`
+        : ''
+    }`;
+}

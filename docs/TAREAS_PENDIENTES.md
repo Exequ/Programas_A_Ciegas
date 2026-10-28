@@ -47,7 +47,7 @@ termina algo.
 
 - [x] 🤖 Actualizar `CLAUDE.md` con la sección y sus reglas.
 - [x] 🤖 (a) Modelo de datos y lista inicial de partidos.
-- [ ] 🤖 (b) Directorio y ficha de partido.
+- [x] 🤖 (b) Directorio y ficha de partido.
 - [ ] 🤖 (c) Resúmenes y estados del programa.
 - [ ] 🤖 (d) Validador y `docs/COMO_ANADIR_PROGRAMAS.md`.
 - [ ] 🤖 (e) Accesibilidad y pruebas en móvil.

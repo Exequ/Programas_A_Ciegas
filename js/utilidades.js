@@ -20,11 +20,11 @@ export function colorSeguro(color, porDefecto = '#6b7280') {
   return typeof color === 'string' && /^#[0-9a-f]{3,8}$/i.test(color.trim()) ? color.trim() : porDefecto;
 }
 
-/** Copia barajada de una lista (Fisher–Yates). */
-export function barajar(lista) {
+/** Copia barajada de una lista (Fisher–Yates). `azar` permite fijar el resultado en las pruebas. */
+export function barajar(lista, azar = Math.random) {
   const copia = [...lista];
   for (let i = copia.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(azar() * (i + 1));
     [copia[i], copia[j]] = [copia[j], copia[i]];
   }
   return copia;
@@ -58,7 +58,7 @@ export function intercalar(listas) {
  */
 export function seleccionEquilibrada(propuestas, cantidad = null) {
   const porPartido = [...agruparPor(propuestas, (p) => p.partido).values()].map((delPartido) =>
-    intercalar(barajar([...agruparPor(delPartido, (p) => p.tema).values()]).map(barajar)),
+    intercalar(barajar([...agruparPor(delPartido, (p) => p.tema).values()]).map((grupo) => barajar(grupo))),
   );
   const ordenadas = intercalar(barajar(porPartido));
   const elegidas = cantidad == null ? ordenadas : ordenadas.slice(0, cantidad);
