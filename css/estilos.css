@@ -439,3 +439,5 @@ details.desplegable[open] > summary { margin-bottom: 0.5rem; }
   .cabecera, .pie, .acciones, .saltar { display: none; }
   .tarjeta, .partido-resultado { box-shadow: none; }
 }
+
+.opcion__nombre-largo { font-weight: 400; font-size: 0.85rem; color: var(--texto-suave); }
