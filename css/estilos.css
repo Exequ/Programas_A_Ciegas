@@ -355,19 +355,20 @@ details.desplegable[open] > summary { margin-bottom: 0.5rem; }
   border: 2px solid var(--borde); border-radius: var(--radio-pequeno);
   background: var(--superficie); color: var(--texto);
   font: inherit; font-weight: 600; line-height: 1.25; cursor: pointer;
-  display: flex; align-items: center; gap: 0.6rem;
+  display: flex; align-items: center; justify-content: center; text-align: center; text-wrap: balance;
 }
-@media (min-width: 44em) { .respuesta { flex-direction: column; justify-content: center; text-align: center; gap: 0.35rem; } }
+@media (min-width: 44em) { .respuesta { min-height: 64px; } }
 .respuesta:hover { border-color: var(--tinta); }
 .respuesta[aria-pressed="true"] { border-color: var(--tinta); background: var(--tinta); color: var(--sobre-tinta); }
-.respuesta__simbolo {
-  display: inline-grid; place-items: center; flex-shrink: 0;
-  min-width: 2.4rem; height: 1.9rem; padding: 0 0.3rem; border-radius: 999px;
-  background: var(--superficie-2); font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-weight: 700; letter-spacing: -0.05em;
+.respuesta--saltar { margin-top: 0.75rem; width: 100%; border-style: dashed; font-weight: 500; }
+@media (min-width: 44em) { .respuesta--saltar { min-height: 52px; } }
+
+.importancia-tema {
+  border: 0; border-top: 1px solid var(--borde); margin: 1.5rem 0 0; padding: 1.1rem 0 0; min-width: 0;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.6rem 1rem;
 }
-.respuesta[aria-pressed="true"] .respuesta__simbolo { background: color-mix(in srgb, var(--sobre-tinta) 20%, transparent); }
-.respuesta--saltar { margin-top: 0.75rem; width: 100%; justify-content: center; border-style: dashed; font-weight: 500; }
-@media (min-width: 44em) { .respuesta--saltar { flex-direction: row; } }
+.importancia-tema legend { float: left; padding: 0; font-weight: 600; font-size: 0.95rem; color: var(--texto-suave); }
+.opcional { font-family: var(--fuente-texto); font-size: 0.9rem; font-weight: 400; color: var(--texto-suave); }
 .atajos { color: var(--texto-suave); font-size: 0.85rem; margin-top: 1rem; }
 @media (hover: none) { .atajos { display: none; } }
 .navegacion-test { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }

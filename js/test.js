@@ -78,6 +78,14 @@ export function pintarTest(contenedor, datos) {
     }
   });
 
+  // Importancia del tema marcada durante el test: se aplica a todas las propuestas de ese tema.
+  contenedor.addEventListener('change', (evento) => {
+    const campo = evento.target;
+    if (estado.fase === 'pregunta' && campo.name?.startsWith('importancia-')) {
+      estado.importancia[campo.name.slice('importancia-'.length)] = campo.value;
+    }
+  });
+
   // Atajos de teclado: 1–5 para la escala y 0 para «No tengo criterio suficiente».
   const alPulsarTecla = (evento) => {
     if (!contenedor.isConnected) {
@@ -85,7 +93,7 @@ export function pintarTest(contenedor, datos) {
       return;
     }
     if (estado.fase !== 'pregunta' || evento.altKey || evento.ctrlKey || evento.metaKey) return;
-    if (evento.target.closest?.('input, textarea, select, summary')) return;
+    if (evento.target.closest?.('input:not([type="radio"]), textarea, select, summary')) return;
     const respuesta = [...RESPUESTAS, SIN_CRITERIO].find((r) => r.tecla === evento.key);
     if (respuesta) {
       evento.preventDefault();
@@ -172,24 +180,15 @@ function htmlConfig(datos) {
     .join('');
 
   const filasImportancia = datos.temas
-    .map((tema) => {
-      const actual = estado.importancia[tema.id] ?? 'normal';
-      const radios = IMPORTANCIAS.map(
-        (i) => `
-          <label>
-            <input type="radio" name="importancia-${escapar(tema.id)}" value="${i.id}" ${i.id === actual ? 'checked' : ''}>
-            <span>${i.etiqueta}</span>
-          </label>`,
-      ).join('');
-      return `
+    .map(
+      (tema) => `
         <fieldset class="importancia__fila">
           <legend>${escapar(tema.nombre)}</legend>
-          <div class="segmentado">${radios}</div>
-        </fieldset>`;
-    })
+          ${htmlSelectorImportancia(tema)}
+        </fieldset>`,
+    )
     .join('');
 
-  const config = datos.config?.test ?? {};
   return `
     <h1 tabindex="-1">Test de afinidad</h1>
     ${htmlAvisoNoRecomendacion()}
@@ -203,14 +202,14 @@ function htmlConfig(datos) {
         <p class="ayuda">Las propuestas se eligen al azar, repartidas por igual entre partidos y temas.</p>
         <div class="casillas">${radiosDuracion}</div>
       </fieldset>
-      <details class="desplegable" ${Object.values(estado.importancia).some((v) => v !== 'normal') ? 'open' : ''}>
-        <summary>Opcional: ¿qué temas te importan más?</summary>
+      <fieldset>
+        <legend>¿Qué temas te importan más? <span class="opcional">(opcional)</span></legend>
         <p class="ayuda">
-          Tus respuestas en los temas importantes cuentan ${config.peso_tema_importante ?? 2} veces más;
-          en los poco importantes, la mitad.
+          Tus respuestas en los temas importantes cuentan el doble; en los poco importantes, la mitad.
+          Si no tocas nada, todos cuentan igual. También puedes cambiarlo durante el test, en cada propuesta.
         </p>
         <div class="importancia">${filasImportancia}</div>
-      </details>
+      </fieldset>
       <button type="submit" class="boton boton--primario">Empezar el test</button>
     </form>`;
 }
@@ -223,10 +222,7 @@ function htmlPregunta(datos) {
 
   const botonRespuesta = (r, clase = '') => `
     <button type="button" class="respuesta ${clase}" data-accion="responder" data-valor="${r.valor ?? ''}"
-      aria-pressed="${actual === r.valor}" aria-keyshortcuts="${r.tecla}">
-      ${r.simbolo ? `<span class="respuesta__simbolo" aria-hidden="true">${r.simbolo}</span>` : ''}
-      <span>${r.etiqueta}</span>
-    </button>`;
+      aria-pressed="${actual === r.valor}" aria-keyshortcuts="${r.tecla}">${r.etiqueta}</button>`;
 
   return `
     <div class="progreso">
@@ -249,6 +245,11 @@ function htmlPregunta(datos) {
       ${botonRespuesta(SIN_CRITERIO, 'respuesta--saltar')}
     </fieldset>
 
+    <fieldset class="importancia-tema">
+      <legend>¿Cuánto te importa el tema «${escapar(tema.nombre)}»?</legend>
+      ${htmlSelectorImportancia(tema)}
+    </fieldset>
+
     <div class="navegacion-test">
       <span>
         ${indice > 0 ? '<button type="button" class="boton boton--secundario boton--pequeno" data-accion="anterior">← Anterior</button>' : ''}
@@ -260,4 +261,17 @@ function htmlPregunta(datos) {
       </span>
     </div>
     <p class="atajos">Atajos de teclado: teclas 1 a 5 para responder de «Muy a favor» a «Muy en contra» y 0 para «No tengo criterio suficiente».</p>`;
+}
+
+/** Botones Poco importante / Normal / Importante para un tema. */
+function htmlSelectorImportancia(tema) {
+  const actual = estado.importancia[tema.id] ?? 'normal';
+  const opciones = IMPORTANCIAS.map(
+    (i) => `
+      <label>
+        <input type="radio" name="importancia-${escapar(tema.id)}" value="${i.id}" ${i.id === actual ? 'checked' : ''}>
+        <span>${i.etiqueta}</span>
+      </label>`,
+  ).join('');
+  return `<div class="segmentado">${opciones}</div>`;
 }
