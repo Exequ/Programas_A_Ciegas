@@ -2,11 +2,11 @@
 
 /** Respuestas posibles con su valor y la tecla de atajo. */
 export const RESPUESTAS = [
-  { valor: 2, etiqueta: 'Muy a favor', simbolo: '++', tecla: '1' },
-  { valor: 1, etiqueta: 'A favor', simbolo: '+', tecla: '2' },
-  { valor: 0, etiqueta: 'Me da igual / neutral', simbolo: '=', tecla: '3' },
-  { valor: -1, etiqueta: 'En contra', simbolo: '−', tecla: '4' },
-  { valor: -2, etiqueta: 'Muy en contra', simbolo: '−−', tecla: '5' },
+  { valor: 2, etiqueta: 'Muy a favor', tecla: '1' },
+  { valor: 1, etiqueta: 'A favor', tecla: '2' },
+  { valor: 0, etiqueta: 'Me da igual / neutral', tecla: '3' },
+  { valor: -1, etiqueta: 'En contra', tecla: '4' },
+  { valor: -2, etiqueta: 'Muy en contra', tecla: '5' },
 ];
 
 /** «No tengo criterio suficiente»: la propuesta no cuenta para el cálculo. */
