@@ -7,6 +7,8 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'">
   <meta name="referrer" content="no-referrer">
   <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f5f4f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141416" media="(prefers-color-scheme: dark)">
   <title>Programas a ciegas</title>
   <meta name="description" content="Lee lo que proponen los partidos en las elecciones generales de 2026 sin saber de quién es cada propuesta. Juego y test de afinidad neutrales, sin registro y sin cookies.">
   <meta property="og:title" content="Programas a ciegas">
@@ -20,11 +22,11 @@
 <body>
   <a class="saltar" href="#contenido" data-saltar>Saltar al contenido</a>
 
-  <div class="banner-ejemplo" id="banner-ejemplo" role="note" hidden>
+  <aside class="banner-ejemplo" id="banner-ejemplo" aria-label="Aviso sobre los datos de ejemplo" hidden>
     <strong>Modo demostración.</strong>
     Las propuestas y los partidos que ves son <strong>ficticios</strong>: sirven solo para probar la web.
     Todavía no se han añadido propuestas reales de los programas electorales.
-  </div>
+  </aside>
 
   <header class="cabecera">
     <div class="contenedor cabecera__interior">

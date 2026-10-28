@@ -45,6 +45,8 @@ docs/                 Documentación para quien mantiene los datos
 
 ## Publicar
 
+Guía paso a paso: **[docs/PUBLICAR_LA_WEB.md](docs/PUBLICAR_LA_WEB.md)**.
+
 Al no tener paso de compilación, se publica la carpeta tal cual:
 
 - **GitHub Pages**: *Settings → Pages → Deploy from a branch*, rama `main`, carpeta `/ (root)`.

@@ -103,6 +103,8 @@ a:hover { text-decoration-thickness: 2px; }
   border-radius: 4px;
 }
 [tabindex="-1"]:focus { outline: none; }
+/* Que la cabecera fija no tape los títulos a los que se lleva el foco. */
+h1, h2, [tabindex="-1"] { scroll-margin-top: 7rem; }
 
 .sr-only {
   position: absolute !important;
@@ -153,9 +155,9 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .marca__icono { width: 1.6rem; height: 1.6rem; }
 
-.nav { max-width: 100%; overflow-x: auto; margin: 0 -0.5rem; }
+.nav { max-width: 100%; margin: 0 -0.4rem; }
 @media (min-width: 40em) { .nav { margin: 0; } .nav a { padding: 0 0.7rem; font-size: 0.95rem; } }
-.nav__lista { display: flex; gap: 0.15rem; list-style: none; margin: 0; padding: 0; }
+.nav__lista { display: flex; flex-wrap: wrap; gap: 0.1rem; list-style: none; margin: 0; padding: 0; }
 .nav__lista li + li { margin: 0; }
 .nav a {
   display: inline-flex; align-items: center; min-height: 44px;
@@ -164,6 +166,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .nav a:hover { color: var(--texto); background: var(--superficie-2); }
 .nav a[aria-current="page"] { color: var(--texto); background: var(--superficie-3); font-weight: 600; }
+@media (max-width: 26em) { .nav a { padding: 0 0.35rem; font-size: 0.85rem; } }
 
 .principal { flex: 1; padding-top: 2rem; padding-bottom: 3rem; }
 .principal:focus { outline: none; }
@@ -338,7 +341,7 @@ details.desplegable[open] > summary { margin-bottom: 0.5rem; }
 .opcion[disabled] { cursor: default; }
 .opcion--correcta { border-color: var(--acierto); background: var(--acierto-fondo); color: var(--texto); }
 .opcion--incorrecta { border-color: var(--fallo); background: var(--fallo-fondo); color: var(--texto); }
-.opcion--apagada { opacity: 0.6; }
+.opcion--apagada { color: var(--texto-suave); border-style: dashed; }
 .opcion__marca { font-size: 0.85rem; font-weight: 700; white-space: nowrap; }
 .opcion--correcta .opcion__marca { color: var(--acierto); }
 .opcion--incorrecta .opcion__marca { color: var(--fallo); }
