@@ -9,6 +9,7 @@ const RUTAS = {
   '': { titulo: null, pintar: (c, d) => pintarPagina('pagina-inicio', c, d) },
   juego: { titulo: 'Adivina el partido', pintar: async (c, d) => (await import('./juego.js')).pintarJuego(c, d) },
   test: { titulo: 'Test de afinidad', pintar: async (c, d) => (await import('./test.js')).pintarTest(c, d) },
+  conoces: { titulo: '¿Conoces a tu partido?', pintar: async (c, d) => (await import('./conoces.js')).pintarConoces(c, d) },
   resultados: { titulo: 'Resultados', pintar: async (c, d) => (await import('./resultados.js')).pintarResultados(c, d) },
   metodologia: { titulo: 'Metodología y fuentes', pintar: (c, d) => pintarPagina('pagina-metodologia', c, d) },
   sobre: { titulo: 'Sobre el proyecto', pintar: (c, d) => pintarPagina('pagina-sobre', c, d) },

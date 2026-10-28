@@ -2,12 +2,12 @@
 import { htmlProgramas } from './paginas.js';
 import {
   barajar,
-  colorSeguro,
   enfocarTitulo,
   enlaceFuente,
   escapar,
   etiquetaEjemplo,
   guardarSesion,
+  htmlPuntoPartido,
   htmlSinPropuestas,
   seleccionEquilibrada,
 } from './utilidades.js';
@@ -161,10 +161,6 @@ function nombrePartido(partido) {
   return partido.siglas && partido.siglas !== partido.nombre
     ? `${escapar(partido.siglas)} <span class="opcion__nombre-largo">· ${escapar(partido.nombre)}</span>`
     : escapar(partido.nombre);
-}
-
-function puntoPartido(partido) {
-  return `<span class="punto-partido" style="--color-partido: ${colorSeguro(partido.color)}" aria-hidden="true"></span>`;
 }
 
 function htmlCasillas(nombre, elementos, marcados) {
@@ -333,8 +329,8 @@ function htmlFinal(datos) {
                  <p class="item-propuesta__texto">${escapar(propuesta.mostrado)}</p>
                  <p class="item-propuesta__meta">
                    ${escapar(datos.temaPorId.get(propuesta.tema).nombre)} ·
-                   Elegiste: ${puntoPartido(elegido)}${escapar(elegido.nombre)} ·
-                   <strong>Era de: ${puntoPartido(real)}${escapar(real.nombre)}</strong>
+                   Elegiste: ${htmlPuntoPartido(elegido)}${escapar(elegido.nombre)} ·
+                   <strong>Era de: ${htmlPuntoPartido(real)}${escapar(real.nombre)}</strong>
                  </p>
                  <p class="item-propuesta__meta">${enlaceFuente(propuesta, real)}</p>
                </li>`;
