@@ -8,6 +8,7 @@ import {
   escapar,
   etiquetaEjemplo,
   formatoPorcentaje,
+  htmlNombrePartido,
   htmlPuntoPartido,
   leerSesion,
 } from './utilidades.js';
@@ -47,7 +48,7 @@ function htmlItem(item, partidoPorId, temaPorId, { mostrarPartido }) {
       <p class="item-propuesta__texto">${escapar(item.mostrado)}</p>
       <p class="item-propuesta__meta">
         ${escapar(temaPorId.get(item.tema)?.nombre ?? item.tema)}
-        ${mostrarPartido ? ` · ${htmlPuntoPartido(partido)}<strong>${escapar(partido?.nombre ?? item.partido)}</strong>` : ''}
+        ${mostrarPartido ? ` · ${htmlPuntoPartido(partido)}<strong>${partido ? htmlNombrePartido(partido) : escapar(item.partido)}</strong>` : ''}
         · Tu respuesta: <strong>${etiquetaRespuesta(item.valor)}</strong>
         ${etiquetaEjemplo(item)}
       </p>
@@ -111,6 +112,7 @@ function htmlTest(test, juego, datos) {
               r.sinCriterio ? ` (y ${r.sinCriterio} sin criterio, que no cuentan)` : ''
             }.
           </p>
+          ${partido.en_directorio === true ? `<p class="partido-resultado__detalle"><a href="#/partidos/${encodeURIComponent(partido.id)}">Ficha y programa de ${escapar(partido.nombre)}</a></p>` : ''}
           ${r.respondidas < minimo ? `<p class="poco-fiable">⚠ Pocas respuestas: resultado poco fiable</p>` : ''}
           <details>
             <summary>Ver el desglose<span class="sr-only"> de ${escapar(partido.nombre)}</span></summary>

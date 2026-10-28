@@ -134,3 +134,9 @@ export function htmlSinPropuestas(titulo) {
 export function htmlPuntoPartido(partido) {
   return `<span class="punto-partido" style="--color-partido: ${colorSeguro(partido?.color)}" aria-hidden="true"></span>`;
 }
+
+/** Nombre del partido enlazado a su ficha del directorio (solo en pantallas de resultados). */
+export function htmlNombrePartido(partido) {
+  const nombre = escapar(partido?.nombre ?? '');
+  return partido?.en_directorio === true ? `<a href="#/partidos/${encodeURIComponent(partido.id)}">${nombre}</a>` : nombre;
+}

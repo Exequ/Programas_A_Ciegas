@@ -5,9 +5,12 @@ import {
   filtrarPartidos,
   htmlDatosPartido,
   htmlProgramaPartido,
+  htmlResumen,
   htmlTarjetaPartido,
   ordenarPartidos,
   partidosDelDirectorio,
+  programaPublicado,
+  rutaRelativa,
 } from './partidos-logica.js';
 import { escapar } from './utilidades.js';
 
@@ -122,7 +125,42 @@ async function pintarFicha(contenedor, datos, id) {
     <section class="bloque" aria-labelledby="titulo-programa">
       <h2 id="titulo-programa">Programa electoral</h2>
       ${htmlProgramaPartido(partido)}
-    </section>`;
+    </section>
 
+    <section class="bloque" aria-labelledby="titulo-resumen" data-resumen></section>`;
+
+  await pintarResumen(contenedor.querySelector('[data-resumen]'), partido, datos);
   return partido.nombre;
+}
+
+async function pintarResumen(seccion, partido, datos) {
+  const ruta = rutaRelativa(partido.resumen);
+  if (!ruta) {
+    // Sin resumen: solo se menciona si el programa ya está publicado.
+    if (programaPublicado(partido)) {
+      seccion.innerHTML = '<h2 id="titulo-resumen">Resumen del programa</h2><p class="sin-datos">El resumen de este programa está en preparación.</p>';
+    } else {
+      seccion.remove();
+    }
+    return;
+  }
+  let resumen;
+  try {
+    const respuesta = await fetch(ruta, { cache: 'no-cache' });
+    if (!respuesta.ok) throw new Error(String(respuesta.status));
+    resumen = await respuesta.json();
+  } catch {
+    seccion.innerHTML = '<h2 id="titulo-resumen">Resumen del programa</h2><p class="aviso aviso--error">No se ha podido cargar el resumen.</p>';
+    return;
+  }
+  // Todos los temas, en el mismo orden para todos los partidos.
+  const temas = await cargarTemas();
+  seccion.innerHTML = `<h2 id="titulo-resumen">Resumen del programa</h2>${htmlResumen(resumen, partido, temas)}`;
+}
+
+let promesaTemas = null;
+/** Todos los temas de temas.json (datos.temas solo incluye los temas con propuestas en el juego). */
+function cargarTemas() {
+  promesaTemas ??= fetch('data/temas.json', { cache: 'no-cache' }).then((r) => r.json());
+  return promesaTemas;
 }

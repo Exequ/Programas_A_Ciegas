@@ -6,6 +6,7 @@ import {
   filtrarPartidos,
   htmlDatosPartido,
   htmlProgramaPartido,
+  htmlResumen,
   htmlTarjetaPartido,
   ordenarPartidos,
   partidosDelDirectorio,
@@ -121,5 +122,41 @@ describe('coaliciones', () => {
     const todos = [coalicion, integrante];
     assert.match(htmlDatosPartido(coalicion, todos), /Coalición formada por.*Partido A/s);
     assert.match(htmlDatosPartido(integrante, todos), /Forma parte de.*Coalición C/s);
+  });
+});
+
+describe('resumen', () => {
+  const temas = leer('data/temas.json');
+  const partido = { id: 'x', nombre: 'Partido X', programa: { estado: 'publicado', url_oficial: 'https://ejemplo.org/p.pdf' } };
+  const resumen = {
+    autor: 'Elaborado por este proyecto',
+    revisado: true,
+    temas: [
+      { tema: 'vivienda', puntos: [{ texto: 'Punto con página.', pagina: 12 }, { texto: 'Punto sin página.' }] },
+      { tema: 'sanidad', puntos: [] },
+    ],
+  };
+  const html = htmlResumen(resumen, partido, temas);
+
+  it('muestra el aviso y enlaza al programa oficial', () => {
+    assert.match(html, /Resumen elaborado por este proyecto; no sustituye al programa oficial/);
+    assert.match(html, /href="https:\/\/ejemplo\.org\/p\.pdf"/);
+  });
+
+  it('recorre todos los temas, con la página de cada punto', () => {
+    assert.equal((html.match(/class="resumen__tema"/g) ?? []).length, temas.length);
+    assert.match(html, /Punto con página\.\s*<span class="resumen__pagina">\(pág\. 12\)/);
+    assert.match(html, /\(página sin indicar\)/);
+  });
+
+  it('distingue «no aborda el tema» de «tema aún no resumido»', () => {
+    assert.match(html, /<h3>Sanidad<\/h3><p class="sin-datos">No aborda este tema en su programa\.<\/p>/);
+    assert.match(html, /<h3>Educación<\/h3><p class="sin-datos">Tema aún no resumido\.<\/p>/);
+  });
+
+  it('el resumen de ejemplo se marca como ficticio', () => {
+    const ejemplo = leer('data/resumenes/ejemplo-a.json');
+    assert.equal(ejemplo.ejemplo, true);
+    assert.match(htmlResumen(ejemplo, partido, temas), /Ejemplo ficticio/);
   });
 });

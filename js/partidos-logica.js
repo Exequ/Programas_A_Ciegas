@@ -140,3 +140,52 @@ export function htmlProgramaPartido(partido) {
         : ''
     }`;
 }
+
+/**
+ * Resumen por temas. Recorre siempre todos los temas en el mismo orden:
+ * - lista vacía → «No aborda este tema en su programa» (el tema se ha revisado y no aparece);
+ * - tema ausente del archivo → «Tema aún no resumido».
+ */
+export function htmlResumen(resumen, partido, temas) {
+  const url = urlSegura(partido.programa?.url_oficial);
+  const porTema = new Map((Array.isArray(resumen.temas) ? resumen.temas : []).map((t) => [t.tema, t]));
+  const ejemplo = resumen.ejemplo === true ? ' <span class="etiqueta etiqueta--ejemplo">Ejemplo ficticio</span>' : '';
+
+  const bloques = temas
+    .map((tema) => {
+      const entrada = porTema.get(tema.id);
+      let contenido;
+      if (!entrada) {
+        contenido = '<p class="sin-datos">Tema aún no resumido.</p>';
+      } else if (!Array.isArray(entrada.puntos) || entrada.puntos.length === 0) {
+        contenido = '<p class="sin-datos">No aborda este tema en su programa.</p>';
+      } else {
+        contenido = `<ul class="resumen__puntos">${entrada.puntos
+          .map(
+            (punto) => `
+              <li>${escapar(punto.texto)}
+                <span class="resumen__pagina">${punto.pagina ? `(pág. ${escapar(punto.pagina)})` : '(página sin indicar)'}</span>
+              </li>`,
+          )
+          .join('')}</ul>`;
+      }
+      return `<div class="resumen__tema"><h3>${escapar(tema.nombre)}</h3>${contenido}</div>`;
+    })
+    .join('');
+
+  const datos = [
+    escapar(resumen.autor || 'Elaborado por este proyecto'),
+    resumen.fecha_elaboracion && `el ${formatearFecha(resumen.fecha_elaboracion)}`,
+  ].filter(Boolean).join(' ');
+
+  return `
+    <div class="aviso aviso--importante" role="note">
+      <p><strong>Resumen elaborado por este proyecto; no sustituye al programa oficial.</strong>
+      Cada punto indica la página del programa donde puedes comprobarlo${
+        url ? `: ${enlaceExterno(url, 'consulta el programa oficial (PDF)')}` : ''
+      }.</p>
+    </div>
+    <p class="ayuda">${datos}. ${resumen.revisado === true ? 'Revisado y contrastado con el programa.' : 'Pendiente de revisión.'}${ejemplo}</p>
+    ${resumen.introduccion ? `<p class="resumen__intro">${escapar(resumen.introduccion)}</p>` : ''}
+    <div class="resumen">${bloques}</div>`;
+}

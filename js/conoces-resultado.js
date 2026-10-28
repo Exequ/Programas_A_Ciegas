@@ -1,7 +1,6 @@
 // Resultado del modo «¿Conoces a tu partido?». Mismo texto y diseño para cualquier partido.
 import { resumirResultado } from './conoces-logica.js';
-import { htmlProgramas } from './paginas.js';
-import { enlaceFuente, escapar, etiquetaEjemplo, htmlPuntoPartido } from './utilidades.js';
+import { enlaceFuente, escapar, etiquetaEjemplo, htmlNombrePartido, htmlPuntoPartido, urlPrograma } from './utilidades.js';
 
 const ETIQUETAS = { si: 'Sí', no: 'No', nose: 'No lo sé' };
 
@@ -18,7 +17,7 @@ export function htmlResultadoConoces(estado, datos) {
         <p class="item-propuesta__meta">
           ${escapar(datos.temaPorId.get(propuesta.tema).nombre)} ·
           Respondiste: <strong>${ETIQUETAS[respuesta]}</strong> ·
-          Es de: ${htmlPuntoPartido(real)}<strong>${escapar(real.nombre)}</strong>
+          Es de: ${htmlPuntoPartido(real)}<strong>${htmlNombrePartido(real)}</strong>
           ${etiquetaEjemplo(propuesta)}
         </p>
         <p class="item-propuesta__meta">${enlaceFuente(propuesta, real)}</p>
@@ -39,9 +38,14 @@ export function htmlResultadoConoces(estado, datos) {
     })
     .join('');
 
-  const programa = partido.ejemplo
-    ? '<p><em>Es un partido ficticio de ejemplo: no tiene programa.</em></p>'
-    : `<ul class="lista-programas">${htmlProgramas([partido])}</ul>`;
+  const url = urlPrograma(partido);
+  const ficha = partido.en_directorio === true ? `<a href="#/partidos/${encodeURIComponent(partido.id)}">ficha de ${nombre}</a>` : '';
+  const programa = [
+    url
+      ? `<p><a class="boton boton--primario" href="${escapar(url)}" target="_blank" rel="noopener noreferrer">Ver programa oficial (PDF)<span class="sr-only"> (se abre en una pestaña nueva)</span></a></p>`
+      : `<p>${partido.ejemplo ? '<em>Es un partido ficticio de ejemplo: no tiene programa.</em>' : 'Su programa aún no se ha publicado.'}</p>`,
+    ficha ? `<p>Datos, programa y resumen en la ${ficha}.</p>` : '',
+  ].join('');
 
   return `
     <h1 tabindex="-1">Tu resultado con ${nombre}</h1>
@@ -89,8 +93,8 @@ export function htmlResultadoConoces(estado, datos) {
       <h2>Lee el programa de ${nombre}</h2>
       <p>
         Unas pocas propuestas no resumen un programa. Si quieres conocer a fondo lo que propone ${nombre},
-        lo mejor es leer su programa oficial. También puedes consultar los de los demás partidos en
-        <a href="#/metodologia">Metodología y fuentes</a>.
+        lo mejor es leer su programa oficial. También puedes consultar los de los demás partidos en el
+        <a href="#/partidos">directorio de partidos</a>.
       </p>
       ${programa}
     </section>
