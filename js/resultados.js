@@ -2,7 +2,15 @@
 // Es la única pantalla, junto al final del juego, donde se usan los colores de los partidos.
 import { calcularResultados, etiquetaRespuesta } from './afinidad.js';
 import { htmlProgramas } from './paginas.js';
-import { colorSeguro, enlaceFuente, escapar, etiquetaEjemplo, formatoPorcentaje, leerSesion } from './utilidades.js';
+import {
+  colorSeguro,
+  enlaceFuente,
+  escapar,
+  etiquetaEjemplo,
+  formatoPorcentaje,
+  htmlPuntoPartido,
+  leerSesion,
+} from './utilidades.js';
 
 export function pintarResultados(contenedor, datos) {
   const test = leerSesion('pac-test');
@@ -28,7 +36,6 @@ function htmlVacio(juego) {
 }
 
 const estiloPartido = (partido) => `style="--color-partido: ${colorSeguro(partido?.color)}"`;
-const puntoPartido = (partido) => `<span class="punto-partido" ${estiloPartido(partido)} aria-hidden="true"></span>`;
 
 function htmlItem(item, partidoPorId, temaPorId, { mostrarPartido }) {
   const partido = partidoPorId.get(item.partido);
@@ -40,7 +47,7 @@ function htmlItem(item, partidoPorId, temaPorId, { mostrarPartido }) {
       <p class="item-propuesta__texto">${escapar(item.mostrado)}</p>
       <p class="item-propuesta__meta">
         ${escapar(temaPorId.get(item.tema)?.nombre ?? item.tema)}
-        ${mostrarPartido ? ` · ${puntoPartido(partido)}<strong>${escapar(partido?.nombre ?? item.partido)}</strong>` : ''}
+        ${mostrarPartido ? ` · ${htmlPuntoPartido(partido)}<strong>${escapar(partido?.nombre ?? item.partido)}</strong>` : ''}
         · Tu respuesta: <strong>${etiquetaRespuesta(item.valor)}</strong>
         ${etiquetaEjemplo(item)}
       </p>

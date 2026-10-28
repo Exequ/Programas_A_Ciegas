@@ -124,3 +124,8 @@ export function htmlSinPropuestas(titulo) {
     <p class="aviso">Todavía no hay propuestas disponibles. Vuelve a visitarnos cuando se publiquen los programas electorales.</p>
     <div class="acciones"><a class="boton boton--secundario" href="#/">Volver al inicio</a></div>`;
 }
+
+/** Punto con el color del partido. Solo se usa al revelar el partido o en los resultados. */
+export function htmlPuntoPartido(partido) {
+  return `<span class="punto-partido" style="--color-partido: ${colorSeguro(partido?.color)}" aria-hidden="true"></span>`;
+}

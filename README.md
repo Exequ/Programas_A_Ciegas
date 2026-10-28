@@ -6,6 +6,7 @@ de España del 29 de noviembre de 2026** sin saber de qué partido es cada una.
 - **Adivina el partido**: rondas de 10 propuestas anónimas; elige de qué partido es cada una.
 - **Test de afinidad**: di qué te parece cada propuesta y descubre con qué partidos coincides
   (no es una recomendación de voto ni un sondeo).
+- **¿Conoces a tu partido?**: elige un partido y di si cada propuesta anónima es suya o de otro.
 
 Web estática, sin dependencias, sin cookies, sin analítica y sin servidor: todo ocurre en el navegador.
 
@@ -23,7 +24,7 @@ Necesitas [Node.js](https://nodejs.org) 18 o superior. No hace falta `npm instal
 | `npm run dev` | Abre la web en tu ordenador: <http://localhost:5173> |
 | `npm run validar` | Revisa los datos de `data/` |
 | `npm run validar -- --ejemplo` | Revisa los datos de ejemplo |
-| `npm test` | Pruebas del cálculo de afinidad |
+| `npm test` | Pruebas del cálculo de afinidad y de la selección de preguntas |
 
 ## Estructura
 
@@ -35,6 +36,7 @@ js/datos.js           Carga de /data y modo demostración
 js/juego.js           Modo «Adivina el partido»
 js/test.js            Modo test de afinidad
 js/resultados.js      Resultados del test
+js/conoces*.js        Modo «¿Conoces a tu partido?» (lógica con pruebas en tests/)
 js/afinidad.js        Fórmula de afinidad (con pruebas en tests/)
 js/utilidades.js      Funciones comunes (barajar, selección equilibrada…)
 data/                 Datos: partidos, temas, propuestas, configuración y ejemplos

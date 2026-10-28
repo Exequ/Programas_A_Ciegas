@@ -38,9 +38,8 @@
         <ul class="nav__lista">
           <li><a href="#/juego" data-ruta="juego">Juego</a></li>
           <li><a href="#/test" data-ruta="test">Test</a></li>
+          <li><a href="#/conoces" data-ruta="conoces">Tu partido</a></li>
           <li><a href="#/resultados" data-ruta="resultados">Resultados</a></li>
-          <li><a href="#/metodologia" data-ruta="metodologia">Metodología</a></li>
-          <li><a href="#/sobre" data-ruta="sobre">Sobre</a></li>
         </ul>
       </nav>
     </div>
@@ -86,6 +85,10 @@
         <a class="boton boton--secundario boton--grande" href="#/test">
           <span class="boton__titulo">Test de afinidad</span>
           <span class="boton__sub">¿Con qué propuestas coincides?</span>
+        </a>
+        <a class="boton boton--secundario boton--grande" href="#/conoces">
+          <span class="boton__titulo">¿Conoces a tu partido?</span>
+          <span class="boton__sub">¿Sabrías reconocer sus propuestas?</span>
         </a>
       </div>
       <p class="portada__datos" data-dato="resumen"></p>
@@ -160,6 +163,18 @@
         <strong>Ejemplo:</strong> respondes a 3 propuestas de un partido: «muy a favor» (+2), «a favor» (+1) y «en contra» (−1),
         todas con peso 1. La suma es 2, la suma de pesos es 3: ((2 ÷ 6) + 1) ÷ 2 × 100 = 67&nbsp;%.
       </p>
+    </section>
+
+    <section class="bloque">
+      <h2>«¿Conoces a tu partido?»: cómo se eligen las preguntas</h2>
+      <ul>
+        <li>La mitad de las propuestas, aproximadamente, son del partido elegido y la otra mitad de otros partidos, mezcladas al azar.</li>
+        <li>Las de otros partidos se reparten por igual entre todos ellos y son de los mismos temas que las del partido elegido, para que el tema no delate la respuesta.</li>
+        <li>Las propuestas del partido elegido se reparten entre sus temas, sin cargar el test hacia uno solo.</li>
+        <li>No se usan las propuestas que varios partidos comparten ni las demasiado genéricas para atribuirlas a uno.</li>
+        <li>«No lo sé» no cuenta ni como acierto ni como fallo, y un fallo no resta más que cualquier otra respuesta.</li>
+        <li>Las reglas, el diseño y los textos son idénticos para todos los partidos. No se guarda qué partido eliges ni se compara a unos votantes con otros.</li>
+      </ul>
     </section>
 
     <section class="bloque">
