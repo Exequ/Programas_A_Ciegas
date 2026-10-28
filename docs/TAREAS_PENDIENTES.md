@@ -52,7 +52,7 @@ termina algo.
 - [x] 🤖 (b) Directorio y ficha de partido.
 - [x] 🤖 (c) Resúmenes y estados del programa.
 - [x] 🤖 (d) Validador y `docs/COMO_ANADIR_PROGRAMAS.md`.
-- [ ] 🤖 (e) Accesibilidad y pruebas en móvil.
+- [x] 🤖 (e) Accesibilidad y pruebas en móvil.
 
 ## ✅ Hecho
 

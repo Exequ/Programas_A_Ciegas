@@ -246,6 +246,7 @@ h1, h2, [tabindex="-1"] { scroll-margin-top: 7rem; }
 .aviso--error { border-left-color: var(--fallo); background: var(--fallo-fondo); }
 .aviso--separado { margin-bottom: 1.25rem; }
 .aviso p:last-child { margin-bottom: 0; }
+div.aviso { margin-bottom: 1rem; }
 
 .tabla { border-collapse: collapse; width: 100%; max-width: 28rem; margin-bottom: 1rem; }
 .tabla th, .tabla td { text-align: left; padding: 0.45rem 0.75rem; border-bottom: 1px solid var(--borde); }
