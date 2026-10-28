@@ -1,0 +1,111 @@
+[
+  {
+    "id": "ejemplo-01",
+    "ejemplo": true,
+    "partido": "ejemplo-a",
+    "tema": "vivienda",
+    "texto": "[EJEMPLO FICTICIO] Desde el Partido Ejemplo A proponemos crear un registro público de viviendas vacías gestionado por los ayuntamientos.",
+    "texto_anonimo": "[EJEMPLO FICTICIO] Crear un registro público de viviendas vacías gestionado por los ayuntamientos.",
+    "pagina": 12,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-02",
+    "ejemplo": true,
+    "partido": "ejemplo-a",
+    "tema": "sanidad",
+    "texto": "[EJEMPLO FICTICIO] Fijar un plazo máximo de 30 días para las consultas con especialistas en la sanidad pública.",
+    "pagina": 25,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-03",
+    "ejemplo": true,
+    "partido": "ejemplo-a",
+    "tema": "cultura-ciencia",
+    "texto": "[EJEMPLO FICTICIO] Abrir gratis los museos de titularidad estatal el primer domingo de cada mes.",
+    "pagina": 41,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-04",
+    "ejemplo": true,
+    "partido": "ejemplo-b",
+    "tema": "educacion",
+    "texto": "[EJEMPLO FICTICIO] Incluir una asignatura de educación financiera en la educación secundaria obligatoria.",
+    "pagina": 18,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-05",
+    "ejemplo": true,
+    "partido": "ejemplo-b",
+    "tema": "economia",
+    "texto": "[EJEMPLO FICTICIO] Reducir a la mitad los trámites necesarios para abrir un pequeño comercio.",
+    "pagina": 7,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-06",
+    "ejemplo": true,
+    "partido": "ejemplo-b",
+    "tema": "medio-ambiente-energia",
+    "texto": "[EJEMPLO FICTICIO] Instalar paneles solares en todos los edificios públicos antes de 2035.",
+    "pagina": 33,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-07",
+    "ejemplo": true,
+    "partido": "ejemplo-c",
+    "tema": "vivienda",
+    "texto": "[EJEMPLO FICTICIO] Ofrecer avales públicos para la entrada de la primera vivienda a menores de 35 años.",
+    "pagina": 15,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-08",
+    "ejemplo": true,
+    "partido": "ejemplo-c",
+    "tema": "economia",
+    "texto": "[EJEMPLO FICTICIO] Bonificar las cuotas de los nuevos autónomos durante sus dos primeros años de actividad.",
+    "pagina": 9,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-09",
+    "ejemplo": true,
+    "partido": "ejemplo-c",
+    "tema": "cultura-ciencia",
+    "texto": "[EJEMPLO FICTICIO] Crear un bono cultural anual para mayores de 65 años.",
+    "pagina": 44,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-10",
+    "ejemplo": true,
+    "partido": "ejemplo-d",
+    "tema": "sanidad",
+    "texto": "[EJEMPLO FICTICIO] Incorporar la atención bucodental básica a la cartera de servicios de la sanidad pública.",
+    "pagina": 22,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-11",
+    "ejemplo": true,
+    "partido": "ejemplo-d",
+    "tema": "educacion",
+    "texto": "[EJEMPLO FICTICIO] Limitar a 20 el número máximo de alumnos por aula en educación primaria.",
+    "pagina": 19,
+    "url_fuente": ""
+  },
+  {
+    "id": "ejemplo-12",
+    "ejemplo": true,
+    "partido": "ejemplo-d",
+    "tema": "medio-ambiente-energia",
+    "texto": "[EJEMPLO FICTICIO] Ampliar la red de puntos de recarga para vehículos eléctricos en las carreteras nacionales.",
+    "pagina": 36,
+    "url_fuente": ""
+  }
+]
