@@ -46,6 +46,27 @@ propuestas en `/data/propuestas.json`, sin tocar el código.
 - Final: ranking con %, desglose por tema, propuestas que más acercaron/alejaron de cada
   partido, nº de propuestas respondidas por partido y aviso si son pocas.
 
+### Modo "¿Conoces a tu partido?"
+- El usuario elige un partido activo y responde, para cada propuesta anónima (con su tema):
+  "¿Es una propuesta de [partido]?" → Sí / No / No lo sé. Tras cada respuesta se revela el partido,
+  el texto literal, la página y el PDF.
+- Selección de partido: todos con el mismo formato, orden aleatorio o alfabético (nunca por tamaño
+  o escaños), sin destacar ninguno. Opciones: 10, 15 o 20 preguntas y filtro opcional por temas.
+- Selección de propuestas: ~50 % del partido elegido y ~50 % de otros (proporción configurable),
+  en orden aleatorio, sin repetir. Las de otros partidos se reparten por igual entre los demás
+  partidos activos y son de temas en los que también hay propuestas del partido elegido (el tema
+  no debe delatar la respuesta). Temas equilibrados. Si no hay propuestas suficientes, se reduce
+  el número de preguntas o se muestra un mensaje claro.
+- Se excluyen las propuestas con `compartida_con: ["id_partido", ...]` o `ambigua: true`.
+- Resultado: aciertos sobre el total ("No lo sé" aparte, sin penalizar más los fallos), bloques
+  "Propuestas de [partido] que no esperabas", "Propuestas que creías de [partido] y no lo son"
+  (indicando su partido) y "Lo que sí sabías", desglose por temas, invitación a leer el programa
+  oficial y aviso de que no es una recomendación de voto. Tono amable, nunca humillante.
+- Neutralidad: misma lógica, diseño y tono para cualquier partido; ninguna rama del código trata a
+  un partido de forma especial. Colores de partido solo al revelar o en resultados. No se guarda ni
+  envía qué partido se elige ni las respuestas. Sin rankings ni comparativas entre partidos sobre el
+  "nivel de conocimiento" de sus votantes.
+
 ## Tecnología
 
 - Web estática (HTML, CSS, JS). Sin backend ni base de datos. Desplegable en Vercel,
@@ -60,13 +81,18 @@ propuestas en `/data/propuestas.json`, sin tocar el código.
 - `temas.json`: `id`, `nombre`.
 - `propuestas.json`: `id` (único), `partido`, `tema`, `texto` (literal), `texto_anonimo`
   (opcional, lo que se muestra), `pagina`, `url_fuente`, `peso` (opcional, por defecto 1).
-- `propuestas.ejemplo.json`: ~12 propuestas FICTICIAS con `ejemplo: true`.
+- `propuestas.json` admite además `compartida_con` (lista de ids de partido) y `ambigua` (bool):
+  esas propuestas no se usan en "¿Conoces a tu partido?".
+- `config.json`: ajustes de juego, test, "¿Conoces a tu partido?" y validador.
+- `propuestas.ejemplo.json`: propuestas FICTICIAS con `ejemplo: true`.
 
 ## Herramientas
 
 - `npm run validar`: revisa campos obligatorios, ids duplicados, referencias a partidos/temas
   inexistentes, desequilibrios, nombres/siglas/líderes en textos anónimos, temas con pocas
   propuestas por partido (umbral configurable) y propuestas de ejemplo todavía presentes.
+  También, para "¿Conoces a tu partido?": partidos con pocas propuestas válidas, `compartida_con`
+  o `ambigua` mal definidos y desequilibrios que harían el test más fácil o difícil según el partido.
 - `/docs/COMO_ANADIR_PROPUESTAS.md`: guía no técnica en español.
 
 ## Forma de trabajar
