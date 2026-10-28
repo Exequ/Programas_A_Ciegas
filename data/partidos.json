@@ -3,45 +3,621 @@
     "id": "psoe",
     "nombre": "Partido Socialista Obrero Español",
     "siglas": "PSOE",
+    "ambito": "estatal",
+    "web_oficial": "https://www.psoe.es",
+    "candidato": "",
     "color": "#E1001A",
-    "url_programa": "",
-    "activo": false,
-    "lideres": []
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Web propuesta por Claude a partir de búsquedas: comprobar."
   },
   {
     "id": "pp",
     "nombre": "Partido Popular",
     "siglas": "PP",
+    "ambito": "estatal",
+    "web_oficial": "https://www.pp.es",
+    "candidato": "",
     "color": "#1E73BE",
-    "url_programa": "",
-    "activo": false,
-    "lideres": []
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Web propuesta por Claude a partir de búsquedas: comprobar."
   },
   {
     "id": "vox",
     "nombre": "Vox",
     "siglas": "Vox",
+    "ambito": "estatal",
+    "web_oficial": "https://www.voxespana.es",
+    "candidato": "",
     "color": "#5AC035",
-    "url_programa": "",
-    "activo": false,
-    "lideres": []
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Web propuesta por Claude a partir de búsquedas: comprobar."
   },
   {
-    "id": "sumar",
-    "nombre": "Sumar",
-    "siglas": "Sumar",
+    "id": "frente-amplio",
+    "nombre": "Frente Amplio",
+    "siglas": "Frente Amplio",
+    "ambito": "coalicion",
+    "coalicion_de": [
+      "iu",
+      "movimiento-sumar",
+      "comuns",
+      "mas-madrid",
+      "cha"
+    ],
+    "web_oficial": "",
+    "candidato": "",
     "color": "#E5007E",
-    "url_programa": "",
-    "activo": false,
-    "lideres": []
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Coalición inscrita el 16-10-2026 según la prensa (IU, Movimiento Sumar, Comuns y Más Madrid). Comprobar si CHA y otros forman parte y en qué circunscripciones concurre. No se ha encontrado la web oficial: rellenar."
   },
   {
     "id": "podemos",
     "nombre": "Podemos",
     "siglas": "Podemos",
+    "ambito": "estatal",
+    "web_oficial": "https://podemos.info",
+    "candidato": "",
     "color": "#6C2C7A",
-    "url_programa": "",
-    "activo": false,
-    "lideres": []
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Según la prensa, en Baleares se integra en Ara Més-Front Ampli y en Canarias en Unidad del Pueblo Canario: comprobar en qué circunscripciones va con lista propia. Web propuesta por Claude a partir de búsquedas: comprobar."
+  },
+  {
+    "id": "salf",
+    "nombre": "Se Acabó La Fiesta",
+    "siglas": "SALF",
+    "ambito": "estatal",
+    "web_oficial": "https://www.seacabolafiesta.com",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Web citada por Wikipedia y por el aviso legal del propio sitio."
+  },
+  {
+    "id": "democracia21",
+    "nombre": "Democracia para el Siglo 21",
+    "siglas": "Democracia21",
+    "ambito": "coalicion",
+    "territorio": [
+      "Madrid",
+      "Barcelona"
+    ],
+    "coalicion_de": [
+      "democracia-21",
+      "ciudadanos",
+      "ucin"
+    ],
+    "web_oficial": "",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Según la prensa, coalición de Democracia 21, Ciudadanos y UCIN solo en Madrid y Barcelona. No se ha encontrado la web oficial: rellenar."
+  },
+  {
+    "id": "frente-obrero",
+    "nombre": "Frente Obrero",
+    "siglas": "FO",
+    "ambito": "estatal",
+    "web_oficial": "https://frenteobrero.es",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Web citada por Wikipedia: comprobar."
+  },
+  {
+    "id": "pacma",
+    "nombre": "Partido Animalista con el Medio Ambiente",
+    "siglas": "PACMA",
+    "ambito": "estatal",
+    "web_oficial": "https://pacma.es",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Web propuesta por Claude a partir de búsquedas: comprobar."
+  },
+  {
+    "id": "pcte",
+    "nombre": "Partido Comunista de los Trabajadores de España",
+    "siglas": "PCTE",
+    "ambito": "estatal",
+    "web_oficial": "https://www.pcte.es",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Web propuesta por Claude a partir de búsquedas: comprobar."
+  },
+  {
+    "id": "falange",
+    "nombre": "Falange Española de las JONS",
+    "siglas": "FE de las JONS",
+    "ambito": "estatal",
+    "web_oficial": "",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Comprobar qué formación falangista concurre exactamente y su web. No se ha encontrado la web oficial: rellenar."
+  },
+  {
+    "id": "partido-humanista",
+    "nombre": "Partido Humanista",
+    "siglas": "PH",
+    "ambito": "estatal",
+    "web_oficial": "https://www.partidohumanista.com",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Web citada por Wikipedia: comprobar."
+  },
+  {
+    "id": "iustitia-europa",
+    "nombre": "Iustitia Europa",
+    "siglas": "Iustitia Europa",
+    "ambito": "estatal",
+    "web_oficial": "",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "En la lista inicial figuraba como «Iusticia Europa»; la prensa lo escribe «Iustitia Europa». No se ha encontrado la web oficial: rellenar."
+  },
+  {
+    "id": "pumj",
+    "nombre": "Por un Mundo Más Justo",
+    "siglas": "Por un Mundo Más Justo",
+    "ambito": "estatal",
+    "web_oficial": "https://www.porunmundomasjusto.es",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Web citada por Wikipedia y por documentos del propio partido."
+  },
+  {
+    "id": "erc",
+    "nombre": "Esquerra Republicana de Catalunya",
+    "siglas": "ERC",
+    "ambito": "territorial",
+    "territorio": [
+      "Cataluña"
+    ],
+    "web_oficial": "https://www.esquerra.cat",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Web propuesta por Claude a partir de búsquedas: comprobar."
+  },
+  {
+    "id": "eh-bildu",
+    "nombre": "EH Bildu",
+    "siglas": "EH Bildu",
+    "ambito": "territorial",
+    "territorio": [
+      "País Vasco",
+      "Navarra"
+    ],
+    "web_oficial": "https://ehbildu.eus",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Web propuesta por Claude a partir de búsquedas: comprobar."
+  },
+  {
+    "id": "pnv",
+    "nombre": "Partido Nacionalista Vasco",
+    "siglas": "EAJ-PNV",
+    "ambito": "territorial",
+    "territorio": [
+      "País Vasco"
+    ],
+    "web_oficial": "https://www.eaj-pnv.eus",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Web propuesta por Claude a partir de búsquedas: comprobar."
+  },
+  {
+    "id": "junts",
+    "nombre": "Junts per Catalunya",
+    "siglas": "Junts",
+    "ambito": "territorial",
+    "territorio": [
+      "Cataluña"
+    ],
+    "web_oficial": "https://junts.cat",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Candidatura sin confirmar. Web propuesta por Claude a partir de búsquedas: comprobar."
+  },
+  {
+    "id": "bng",
+    "nombre": "Bloque Nacionalista Galego",
+    "siglas": "BNG",
+    "ambito": "territorial",
+    "territorio": [
+      "Galicia"
+    ],
+    "web_oficial": "https://www.bng.gal",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Candidatura sin confirmar. Web propuesta por Claude a partir de búsquedas: comprobar."
+  },
+  {
+    "id": "cc",
+    "nombre": "Coalición Canaria",
+    "siglas": "CC",
+    "ambito": "territorial",
+    "territorio": [
+      "Canarias"
+    ],
+    "web_oficial": "https://coalicioncanaria.org",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Candidatura sin confirmar. Web propuesta por Claude a partir de búsquedas: comprobar."
+  },
+  {
+    "id": "upc",
+    "nombre": "Unidad del Pueblo Canario",
+    "siglas": "UPC",
+    "ambito": "coalicion",
+    "territorio": [
+      "Canarias"
+    ],
+    "coalicion_de": [],
+    "web_oficial": "",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Según la prensa (RTVC, 15-10-2026), coalición de Nueva Canarias-Bloque Canarista, Podemos Canarias, IU Canaria y Movimiento Sumar Canarias: comprobar y rellenar coalicion_de. No se ha encontrado la web oficial: rellenar."
+  },
+  {
+    "id": "compromis",
+    "nombre": "Compromís-Front Valencià",
+    "siglas": "Compromís",
+    "ambito": "coalicion",
+    "territorio": [
+      "Comunitat Valenciana"
+    ],
+    "coalicion_de": [],
+    "web_oficial": "https://compromis.net",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Comprobar si es coalición y sus integrantes. Web propuesta por Claude a partir de búsquedas: comprobar."
+  },
+  {
+    "id": "ara-mes",
+    "nombre": "Ara Més-Front Ampli",
+    "siglas": "Ara Més-Front Ampli",
+    "ambito": "coalicion",
+    "territorio": [
+      "Illes Balears"
+    ],
+    "coalicion_de": [],
+    "web_oficial": "",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Según la prensa, formada por MÉS per Mallorca, Més per Menorca, Ara Eivissa, Esquerra Unida, Sumar, Recortes Cero y Progreso en Verde, con Podemos: comprobar y rellenar coalicion_de. No se ha encontrado la web oficial: rellenar."
+  },
+  {
+    "id": "adelante-andalucia",
+    "nombre": "Adelante Andalucía",
+    "siglas": "Adelante Andalucía",
+    "ambito": "territorial",
+    "territorio": [
+      "Andalucía"
+    ],
+    "web_oficial": "https://adelanteandalucia.org",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "Web propuesta por Claude a partir de búsquedas: comprobar."
+  },
+  {
+    "id": "nex",
+    "nombre": "Nuevo Extremeñismo-Adelante Extremadura",
+    "siglas": "NEX",
+    "ambito": "territorial",
+    "territorio": [
+      "Extremadura"
+    ],
+    "web_oficial": "",
+    "candidato": "",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "nota": "No se ha encontrado la web oficial: rellenar."
+  },
+  {
+    "id": "iu",
+    "nombre": "Izquierda Unida",
+    "siglas": "IU",
+    "ambito": "estatal",
+    "web_oficial": "https://izquierdaunida.org",
+    "candidato": "",
+    "en_directorio": false,
+    "en_juego": false,
+    "verificar": true,
+    "lideres": [],
+    "nota": "Integrante de Frente Amplio."
+  },
+  {
+    "id": "movimiento-sumar",
+    "nombre": "Movimiento Sumar",
+    "siglas": "Movimiento Sumar",
+    "ambito": "estatal",
+    "web_oficial": "https://movimientosumar.es",
+    "candidato": "",
+    "en_directorio": false,
+    "en_juego": false,
+    "verificar": true,
+    "lideres": [],
+    "nota": "Integrante de Frente Amplio."
+  },
+  {
+    "id": "comuns",
+    "nombre": "Catalunya en Comú",
+    "siglas": "Comuns",
+    "ambito": "territorial",
+    "territorio": [
+      "Cataluña"
+    ],
+    "web_oficial": "https://encomu.cat",
+    "candidato": "",
+    "en_directorio": false,
+    "en_juego": false,
+    "verificar": true,
+    "lideres": [],
+    "nota": "Integrante de Frente Amplio."
+  },
+  {
+    "id": "mas-madrid",
+    "nombre": "Más Madrid",
+    "siglas": "Más Madrid",
+    "ambito": "territorial",
+    "territorio": [
+      "Madrid"
+    ],
+    "web_oficial": "https://masmadrid.org",
+    "candidato": "",
+    "en_directorio": false,
+    "en_juego": false,
+    "verificar": true,
+    "lideres": [],
+    "nota": "Integrante de Frente Amplio."
+  },
+  {
+    "id": "cha",
+    "nombre": "Chunta Aragonesista",
+    "siglas": "CHA",
+    "ambito": "territorial",
+    "territorio": [
+      "Aragón"
+    ],
+    "web_oficial": "https://www.chunta.org",
+    "candidato": "",
+    "en_directorio": false,
+    "en_juego": false,
+    "verificar": true,
+    "lideres": [],
+    "nota": "Integrante de Frente Amplio según la lista inicial: comprobar."
+  },
+  {
+    "id": "democracia-21",
+    "nombre": "Democracia 21",
+    "siglas": "D21",
+    "ambito": "estatal",
+    "web_oficial": "",
+    "candidato": "",
+    "en_directorio": false,
+    "en_juego": false,
+    "verificar": true,
+    "lideres": [],
+    "nota": "Partido de la coalición Democracia para el Siglo 21. No se ha encontrado la web oficial: rellenar."
+  },
+  {
+    "id": "ciudadanos",
+    "nombre": "Ciudadanos",
+    "siglas": "Cs",
+    "ambito": "estatal",
+    "web_oficial": "https://www.ciudadanos-cs.org",
+    "candidato": "",
+    "en_directorio": false,
+    "en_juego": false,
+    "verificar": true,
+    "lideres": [],
+    "nota": "Integrante de Democracia para el Siglo 21."
+  },
+  {
+    "id": "ucin",
+    "nombre": "UCIN",
+    "siglas": "UCIN",
+    "ambito": "estatal",
+    "web_oficial": "",
+    "candidato": "",
+    "en_directorio": false,
+    "en_juego": false,
+    "verificar": true,
+    "lideres": [],
+    "nota": "Integrante de Democracia para el Siglo 21. No se ha encontrado la web oficial: rellenar."
   }
 ]

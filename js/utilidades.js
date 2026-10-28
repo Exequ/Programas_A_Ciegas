@@ -89,9 +89,14 @@ export function guardarSesion(clave, valor) {
   }
 }
 
+/** URL del programa oficial de un partido, si es válida. */
+export function urlPrograma(partido) {
+  return urlSegura(partido?.programa?.url_oficial);
+}
+
 /** Enlace a la fuente de una propuesta (o aviso si no hay URL, como en los ejemplos). */
 export function enlaceFuente(propuesta, partido) {
-  const url = urlSegura(propuesta.url_fuente) ?? urlSegura(partido?.url_programa);
+  const url = urlSegura(propuesta.url_fuente) ?? urlPrograma(partido);
   const pagina = propuesta.pagina ? `página ${escapar(propuesta.pagina)}` : 'página sin indicar';
   const nombre = escapar(partido?.nombre ?? propuesta.partido);
   if (propuesta.ejemplo) {

@@ -141,7 +141,7 @@ function finalizar(datos) {
       peso: p.peso * factorTema(datos, p.tema),
     }));
 
-  const copiaPartido = ({ id, nombre, siglas, color, url_programa }) => ({ id, nombre, siglas, color, url_programa });
+  const copiaPartido = ({ id, nombre, siglas, color, programa }) => ({ id, nombre, siglas, color, programa });
   guardarSesion('pac-test', {
     fecha: new Date().toISOString(),
     modoEjemplo: datos.modoEjemplo,

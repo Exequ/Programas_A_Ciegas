@@ -1,0 +1,96 @@
+{
+  "partido": "ejemplo-a",
+  "ejemplo": true,
+  "autor": "Elaborado por este proyecto",
+  "fecha_elaboracion": "2026-11-12",
+  "revisado": false,
+  "introduccion": "[EJEMPLO FICTICIO] Este resumen es inventado y solo sirve para probar el diseño de la ficha. El programa ficticio de Partido Ejemplo A tiene 64 páginas y propuestas en seis de los catorce temas.",
+  "temas": [
+    {
+      "tema": "economia",
+      "puntos": [
+        {
+          "texto": "[EJEMPLO FICTICIO] Crear un programa de ayudas a la contratación de personas desempleadas de larga duración.",
+          "pagina": 8
+        }
+      ]
+    },
+    {
+      "tema": "vivienda",
+      "puntos": [
+        {
+          "texto": "[EJEMPLO FICTICIO] Crear un registro público de viviendas vacías gestionado por los ayuntamientos.",
+          "pagina": 12
+        }
+      ]
+    },
+    {
+      "tema": "sanidad",
+      "puntos": [
+        {
+          "texto": "[EJEMPLO FICTICIO] Fijar un plazo máximo de 30 días para las consultas con especialistas.",
+          "pagina": 25
+        }
+      ]
+    },
+    {
+      "tema": "educacion",
+      "puntos": [
+        {
+          "texto": "[EJEMPLO FICTICIO] Ampliar el horario de apertura de las bibliotecas escolares por las tardes.",
+          "pagina": 20
+        }
+      ]
+    },
+    {
+      "tema": "inmigracion",
+      "puntos": []
+    },
+    {
+      "tema": "seguridad-justicia",
+      "puntos": []
+    },
+    {
+      "tema": "medio-ambiente-energia",
+      "puntos": [
+        {
+          "texto": "[EJEMPLO FICTICIO] Plantar un millón de árboles en zonas urbanas en cinco años.",
+          "pagina": 30
+        }
+      ]
+    },
+    {
+      "tema": "impuestos",
+      "puntos": []
+    },
+    {
+      "tema": "pensiones",
+      "puntos": []
+    },
+    {
+      "tema": "politica-territorial",
+      "puntos": []
+    },
+    {
+      "tema": "exterior-defensa",
+      "puntos": []
+    },
+    {
+      "tema": "igualdad-derechos",
+      "puntos": []
+    },
+    {
+      "tema": "agricultura-rural",
+      "puntos": []
+    },
+    {
+      "tema": "cultura-ciencia",
+      "puntos": [
+        {
+          "texto": "[EJEMPLO FICTICIO] Abrir gratis los museos estatales el primer domingo de cada mes.",
+          "pagina": 41
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 // Páginas de texto (Inicio, Metodología, Sobre): se copian de los <template> de index.html
 // y se rellenan los huecos marcados con data-dato / data-lista.
-import { escapar, urlSegura } from './utilidades.js';
+import { escapar, urlPrograma } from './utilidades.js';
 
 export function pintarPagina(idPlantilla, contenedor, datos) {
   const plantilla = document.getElementById(idPlantilla);
@@ -30,7 +30,7 @@ export function htmlProgramas(partidos) {
   return [...partidos]
     .sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'))
     .map((p) => {
-      const url = urlSegura(p.url_programa);
+      const url = urlPrograma(p);
       const nombre = `${escapar(p.nombre)}${p.siglas && p.siglas !== p.nombre ? ` (${escapar(p.siglas)})` : ''}`;
       return url
         ? `<li><a href="${escapar(url)}" target="_blank" rel="noopener noreferrer">${nombre}<span class="sr-only"> (PDF, se abre en una pestaña nueva)</span></a></li>`

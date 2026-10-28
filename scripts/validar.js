@@ -21,7 +21,11 @@ const avisos = [];
 const error = (mensaje) => errores.push(mensaje);
 const aviso = (mensaje) => avisos.push(mensaje);
 
-const CAMPOS_PARTIDO = ['id', 'nombre', 'siglas', 'color', 'url_programa', 'activo', 'lideres', 'ejemplo'];
+const CAMPOS_PARTIDO = [
+  'id', 'nombre', 'siglas', 'color', 'lideres', 'ejemplo', 'ambito', 'territorio', 'coalicion_de', 'candidato',
+  'web_oficial', 'en_directorio', 'en_juego', 'verificar', 'programa', 'resumen', 'nota',
+];
+const CAMPOS_ANTIGUOS = { activo: 'en_juego', url_programa: 'programa.url_oficial' };
 const CAMPOS_TEMA = ['id', 'nombre'];
 const CAMPOS_PROPUESTA = [
   'id', 'partido', 'tema', 'texto', 'texto_anonimo', 'pagina', 'url_fuente', 'peso', 'ejemplo', 'nota', 'compartida_con', 'ambigua',
@@ -123,14 +127,20 @@ if (Array.isArray(partidos)) {
   partidos.forEach((p, i) => {
     const donde = `${archivoPartidos}, partido nº ${i + 1}${vacio(p?.id) ? '' : ` ("${p.id}")`}`;
     for (const campo of ['id', 'nombre', 'siglas']) if (vacio(p[campo])) error(`${donde}: falta el campo "${campo}".`);
-    if (typeof p.activo !== 'boolean') error(`${donde}: "activo" debe ser true o false (sin comillas).`);
+    for (const campo of ['en_juego', 'en_directorio', 'verificar']) {
+      if (p[campo] !== undefined && typeof p[campo] !== 'boolean') error(`${donde}: "${campo}" debe ser true o false (sin comillas).`);
+    }
+    for (const [antiguo, nuevo] of Object.entries(CAMPOS_ANTIGUOS)) {
+      if (p[antiguo] !== undefined) error(`${donde}: el campo "${antiguo}" ya no se usa; ahora se llama "${nuevo}".`);
+    }
     if (!vacio(p.color) && !/^#[0-9a-f]{6}$/i.test(p.color)) aviso(`${donde}: el color "${p.color}" no tiene el formato #RRGGBB (por ejemplo "#1E73BE").`);
     if (p.lideres !== undefined && (!Array.isArray(p.lideres) || p.lideres.some((l) => typeof l !== 'string'))) {
       error(`${donde}: "lideres" debe ser una lista de nombres entre comillas, por ejemplo ["Nombre Apellido"].`);
     }
-    if (p.activo === true && vacio(p.url_programa) && !p.ejemplo) aviso(`${donde}: está activo pero no tiene "url_programa" (enlace al programa oficial).`);
-    if (!vacio(p.url_programa) && !/^https?:\/\//i.test(p.url_programa)) error(`${donde}: "url_programa" debe empezar por https://`);
-    camposDesconocidos(p, CAMPOS_PARTIDO, donde);
+    const urlOficial = p.programa?.url_oficial;
+    if (!vacio(urlOficial) && !/^https?:\/\//i.test(urlOficial)) error(`${donde}: "programa.url_oficial" debe empezar por https://`);
+    if (!vacio(p.web_oficial) && !/^https?:\/\//i.test(p.web_oficial)) error(`${donde}: "web_oficial" debe empezar por https://`);
+    camposDesconocidos(Object.fromEntries(Object.entries(p).filter(([campo]) => !(campo in CAMPOS_ANTIGUOS))), CAMPOS_PARTIDO, donde);
     if (!vacio(p.id)) partidoPorId.set(p.id, p);
   });
 } else if (partidos !== null) {
@@ -193,7 +203,7 @@ if (Array.isArray(propuestas)) {
       if (!partido) {
         error(`${donde}: el partido "${p.partido}" no existe en ${archivoPartidos}. Ids válidos: ${[...partidoPorId.keys()].join(', ')}.`);
         correcta = false;
-      } else if (partido.activo !== true) {
+      } else if (partido.en_juego !== true) {
         inactivas.set(p.partido, (inactivas.get(p.partido) ?? 0) + 1);
         correcta = false;
       }
@@ -255,7 +265,7 @@ if (Array.isArray(propuestas)) {
   });
 
   for (const [id, n] of inactivas) {
-    aviso(`Hay ${n} ${n === 1 ? 'propuesta' : 'propuestas'} del partido "${id}", que tiene "activo": false. No se mostrarán hasta que lo actives.`);
+    aviso(`Hay ${n} ${n === 1 ? 'propuesta' : 'propuestas'} del partido "${id}", que tiene "en_juego": false. No se mostrarán hasta que lo cambies a true.`);
   }
   if (ejemplosPresentes && !modoEjemplo) {
     error(
@@ -268,7 +278,7 @@ if (Array.isArray(propuestas)) {
 }
 
 // --- Equilibrio ---
-const activos = [...partidoPorId.values()].filter((p) => p.activo === true);
+const activos = [...partidoPorId.values()].filter((p) => p.en_juego === true);
 const etiqueta = (p) => p.siglas || p.nombre || p.id;
 const cuenta = (filtro) => validas.filter(filtro).length;
 let tabla = '';
@@ -276,7 +286,7 @@ let resumenConoces = '';
 
 if (activos.length && temaPorId.size && validas.length) {
   const conPropuestas = activos.filter((p) => validas.some((v) => v.partido === p.id));
-  for (const p of activos) if (!conPropuestas.includes(p)) aviso(`El partido "${p.id}" está activo pero no tiene ninguna propuesta: no aparecerá en la web.`);
+  for (const p of activos) if (!conPropuestas.includes(p)) aviso(`El partido "${p.id}" tiene "en_juego": true pero ninguna propuesta: no aparecerá en el juego ni en el test.`);
   if (conPropuestas.length < 2) aviso('Hay menos de 2 partidos con propuestas: el juego necesita al menos 2 (lo ideal son 4 o más).');
 
   // Totales por partido

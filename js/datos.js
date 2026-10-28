@@ -40,7 +40,8 @@ async function cargar() {
     [partidos, propuestas] = await Promise.all([leerJSON('partidos.ejemplo.json'), leerJSON('propuestas.ejemplo.json')]);
   }
 
-  const partidosActivos = partidos.filter((p) => p.activo === true);
+  // Solo los partidos con `en_juego: true` participan en el juego, el test y «¿Conoces a tu partido?».
+  const partidosActivos = partidos.filter((p) => p.en_juego === true);
   const partidoPorId = new Map(partidosActivos.map((p) => [p.id, p]));
   const temaPorId = new Map(temas.map((t) => [t.id, t]));
 
@@ -60,8 +61,12 @@ async function cargar() {
     config,
     modoEjemplo: propuestasValidas.some((p) => p.ejemplo === true) || partidosActivos.some((p) => p.ejemplo === true),
     partidos: partidosActivos.filter((p) => conPropuestas.has(p.id)),
-    // Partidos reales activos, para la lista de programas oficiales.
-    partidosOficiales: partidosReales.filter((p) => p.activo === true),
+    // Partidos del directorio, para las listas de programas oficiales.
+    partidosOficiales: partidosReales.filter((p) => p.en_directorio === true),
+    // Todos los partidos reales, para el directorio y las coaliciones.
+    todosPartidos: partidosReales,
+    // En modo demostración, los partidos ficticios (para la ficha de ejemplo).
+    partidosEjemplo: partidos === partidosReales ? [] : partidos,
     temas: temas.filter((t) => temasUsados.has(t.id)),
     propuestas: propuestasValidas,
     partidoPorId,
