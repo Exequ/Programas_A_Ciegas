@@ -7,12 +7,15 @@ de España del 29 de noviembre de 2026** sin saber de qué partido es cada una.
 - **Test de afinidad**: di qué te parece cada propuesta y descubre con qué partidos coincides
   (no es una recomendación de voto ni un sondeo).
 - **¿Conoces a tu partido?**: elige un partido y di si cada propuesta anónima es suya o de otro.
+- **Partidos y programas**: directorio de candidaturas con enlace a su programa y un resumen por temas.
 
 Web estática, sin dependencias, sin cookies, sin analítica y sin servidor: todo ocurre en el navegador.
 
 ## Añadir propuestas
 
-Lee **[docs/COMO_ANADIR_PROPUESTAS.md](docs/COMO_ANADIR_PROPUESTAS.md)**. En resumen: se editan los
+Lee **[docs/COMO_ANADIR_PROPUESTAS.md](docs/COMO_ANADIR_PROPUESTAS.md)** y, para el directorio de partidos,
+**[docs/COMO_ANADIR_PROGRAMAS.md](docs/COMO_ANADIR_PROGRAMAS.md)**. Las tareas pendientes están en
+**[docs/TAREAS_PENDIENTES.md](docs/TAREAS_PENDIENTES.md)**. En resumen: se editan los
 archivos de `data/` y se comprueban con `npm run validar`.
 
 ## Órdenes útiles
@@ -37,6 +40,8 @@ js/juego.js           Modo «Adivina el partido»
 js/test.js            Modo test de afinidad
 js/resultados.js      Resultados del test
 js/conoces*.js        Modo «¿Conoces a tu partido?» (lógica con pruebas en tests/)
+js/partidos*.js       Directorio y fichas de partidos (lógica con pruebas en tests/)
+programas/            Copias guardadas de los programas en PDF (opcional)
 js/afinidad.js        Fórmula de afinidad (con pruebas en tests/)
 js/utilidades.js      Funciones comunes (barajar, selección equilibrada…)
 data/                 Datos: partidos, temas, propuestas, configuración y ejemplos

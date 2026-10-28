@@ -1,12 +1,15 @@
 // Revisa los datos de /data antes de publicar: npm run validar
 // Para revisar los datos de ejemplo en lugar de los reales: npm run validar -- --ejemplo
+import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { esValidaParaConoces, preguntasPosibles, propuestasDisponibles } from '../js/conoces-logica.js';
 
 const carpetaDatos = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'data');
+const raiz = path.resolve(carpetaDatos, '..');
 const modoEjemplo = process.argv.includes('--ejemplo');
+const comprobarUrls = process.argv.includes('--comprobar-urls');
 
 const usarColor = process.stdout.isTTY && !process.env.NO_COLOR;
 const color = (codigo) => (texto) => (usarColor ? `\x1b[${codigo}m${texto}\x1b[0m` : texto);
@@ -379,6 +382,179 @@ if (activos.length && temaPorId.size && validas.length) {
     `  Máximo de preguntas posible por partido (el test más largo es de ${mayorTest}): ` +
     porPartido.map((x) => `${etiqueta(x.p)} ${x.maximo}`).join(' · ') +
     (excluidas ? `\n  Propuestas marcadas como compartidas o ambiguas (no se usan en este modo): ${excluidas}` : '');
+}
+
+// --- Directorio «Partidos y programas» ---
+const AMBITOS = ['estatal', 'territorial', 'coalicion'];
+const ESTADOS = ['pendiente', 'publicado'];
+const CAMPOS_PROGRAMA = ['estado', 'url_oficial', 'archivo_local', 'sha256', 'fecha_publicacion', 'fecha_comprobacion', 'version', 'paginas'];
+const CAMPOS_RESUMEN = ['partido', 'ejemplo', 'autor', 'fecha_elaboracion', 'revisado', 'introduccion', 'temas'];
+const esFecha = (valor) => typeof valor === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(valor);
+const rutaLocal = (ruta) => path.join(raiz, String(ruta).trim().replace(/^\.?\/+/, ''));
+const palabrasValorativas = ajustes.palabras_valorativas ?? [];
+const diferenciaResumenes = ajustes.resumen_diferencia_maxima ?? 1.5;
+const minimoEnJuego = ajustes.en_juego_minimo_propuestas ?? 10;
+const urlsAComprobar = [];
+const extensiones = [];
+
+if (Array.isArray(partidos)) {
+  const sinWeb = [];
+  const porVerificar = [];
+
+  for (const [i, p] of partidos.entries()) {
+    if (!p || typeof p !== 'object') continue;
+    const donde = `${archivoPartidos}, partido nº ${i + 1}${vacio(p.id) ? '' : ` ("${p.id}")`}`;
+
+    if (p.ambito !== undefined && !AMBITOS.includes(p.ambito)) error(`${donde}: "ambito" debe ser "estatal", "territorial" o "coalicion".`);
+    if (p.territorio !== undefined && (!Array.isArray(p.territorio) || p.territorio.some((t) => typeof t !== 'string'))) {
+      error(`${donde}: "territorio" debe ser una lista entre corchetes, por ejemplo ["Cataluña"].`);
+    }
+    if (p.coalicion_de !== undefined) {
+      if (!Array.isArray(p.coalicion_de)) {
+        error(`${donde}: "coalicion_de" debe ser una lista de ids de partido, por ejemplo ["iu", "mas-madrid"].`);
+      } else {
+        for (const id of p.coalicion_de) {
+          if (!partidoPorId.has(id)) error(`${donde}: "coalicion_de" cita el partido "${id}", que no existe en ${archivoPartidos}. Añádelo (puede llevar "en_directorio": false).`);
+          else if (id === p.id) error(`${donde}: "coalicion_de" se incluye a sí mismo.`);
+        }
+      }
+    }
+    if (p.en_directorio === true && p.ambito === 'coalicion' && !(Array.isArray(p.coalicion_de) && p.coalicion_de.length)) {
+      aviso(`${donde}: es una coalición pero "coalicion_de" está vacío; su ficha no mostrará los integrantes.`);
+    }
+
+    if (p.en_directorio === true && !p.ejemplo) {
+      if (vacio(p.web_oficial)) sinWeb.push(p.id);
+      if (p.verificar === true) porVerificar.push(p.id);
+      if (!vacio(p.web_oficial)) urlsAComprobar.push({ donde, campo: 'web_oficial', url: p.web_oficial });
+    }
+
+    // Programa
+    const programa = p.programa;
+    if (programa !== undefined) {
+      if (typeof programa !== 'object' || Array.isArray(programa) || programa === null) {
+        error(`${donde}: "programa" debe ir entre llaves { }.`);
+      } else {
+        camposDesconocidos(programa, CAMPOS_PROGRAMA, `${donde}, programa`);
+        if (!ESTADOS.includes(programa.estado)) error(`${donde}: "programa.estado" debe ser "pendiente" o "publicado".`);
+        if (programa.estado === 'publicado' && vacio(programa.url_oficial) && !p.ejemplo) {
+          aviso(`${donde}: el programa está "publicado" pero falta "url_oficial" (enlace al PDF en la web del partido).`);
+        }
+        if (!vacio(programa.url_oficial)) urlsAComprobar.push({ donde, campo: 'programa.url_oficial', url: programa.url_oficial });
+        for (const campo of ['fecha_publicacion', 'fecha_comprobacion']) {
+          if (!vacio(programa[campo]) && !esFecha(programa[campo])) aviso(`${donde}: "programa.${campo}" debe tener el formato AAAA-MM-DD, por ejemplo "2026-11-10".`);
+        }
+        if (programa.paginas !== undefined && !(Number.isInteger(programa.paginas) && programa.paginas > 0)) {
+          aviso(`${donde}: "programa.paginas" debe ser un número entero sin comillas.`);
+        }
+        if (!vacio(programa.archivo_local)) {
+          let contenido = null;
+          try {
+            contenido = await readFile(rutaLocal(programa.archivo_local));
+          } catch {
+            error(`${donde}: no se encuentra la copia guardada "${programa.archivo_local}". ¿Has subido el PDF a la carpeta programas/?`);
+          }
+          if (contenido) {
+            const huella = createHash('sha256').update(contenido).digest('hex');
+            if (vacio(programa.sha256)) {
+              aviso(`${donde}: la copia guardada no tiene "sha256". Añade: "sha256": "${huella}"`);
+            } else if (programa.sha256.trim().toLowerCase() !== huella) {
+              error(`${donde}: la huella "sha256" no coincide con el archivo ${programa.archivo_local}: el PDF ha cambiado. ` +
+                `Si es una versión nueva, actualiza "sha256" a "${huella}" y la fecha de comprobación.`);
+            }
+            if (vacio(programa.fecha_comprobacion)) aviso(`${donde}: falta "programa.fecha_comprobacion" (fecha en que descargaste la copia).`);
+          }
+        }
+      }
+    }
+
+    // Resumen
+    if (!vacio(p.resumen)) {
+      let texto = null;
+      try {
+        texto = await readFile(rutaLocal(p.resumen), 'utf8');
+      } catch {
+        error(`${donde}: no se encuentra el resumen "${p.resumen}".`);
+      }
+      let resumen = null;
+      if (texto !== null) {
+        try {
+          resumen = JSON.parse(texto);
+        } catch (e) {
+          error(`${donde}: el resumen "${p.resumen}" no es un JSON válido. Detalle: ${e.message}`);
+        }
+      }
+      if (resumen) {
+        const dondeR = `Resumen ${p.resumen}`;
+        camposDesconocidos(resumen, CAMPOS_RESUMEN, dondeR);
+        if (resumen.partido !== p.id) error(`${dondeR}: "partido" es "${resumen.partido}" pero el archivo está enlazado desde "${p.id}".`);
+        if (resumen.ejemplo === true && !modoEjemplo) error(`${dondeR}: es un resumen de EJEMPLO ("ejemplo": true). Es ficticio: no lo enlaces desde un partido real.`);
+        if (typeof resumen.revisado !== 'boolean') aviso(`${dondeR}: falta "revisado": true o false.`);
+        if (resumen.revisado === false && !resumen.ejemplo) aviso(`${dondeR}: está pendiente de revisión ("revisado": false).`);
+        const lista = Array.isArray(resumen.temas) ? resumen.temas : [];
+        if (!Array.isArray(resumen.temas)) error(`${dondeR}: "temas" debe ser una lista.`);
+        const presentes = new Set(lista.map((t) => t?.tema));
+        for (const t of lista) {
+          if (!temaPorId.has(t?.tema)) error(`${dondeR}: el tema "${t?.tema}" no existe en temas.json.`);
+        }
+        const faltan = [...temaPorId.keys()].filter((id) => !presentes.has(id));
+        if (faltan.length) aviso(`${dondeR}: faltan temas (${faltan.join(', ')}). Todos los resúmenes deben tener los mismos temas; si el programa no trata uno, pon "puntos": [].`);
+
+        let caracteres = 0;
+        let puntos = 0;
+        const textos = [resumen.introduccion ?? ''];
+        for (const t of lista) {
+          for (const [j, punto] of (Array.isArray(t?.puntos) ? t.puntos : []).entries()) {
+            puntos++;
+            caracteres += String(punto?.texto ?? '').length;
+            textos.push(String(punto?.texto ?? ''));
+            if (vacio(punto?.texto)) error(`${dondeR}, tema "${t.tema}", punto ${j + 1}: el texto está vacío.`);
+            if (!(Number.isInteger(punto?.pagina) && punto.pagina > 0)) aviso(`${dondeR}, tema "${t.tema}", punto ${j + 1}: falta la página del programa (número sin comillas).`);
+          }
+        }
+        const valorativas = palabrasValorativas.filter((palabra) => textos.some((x) => contieneExpresion(x, palabra)));
+        if (valorativas.length) aviso(`${dondeR}: contiene palabras valorativas (${valorativas.join(', ')}). Los resúmenes deben describir, no valorar.`);
+        if (!resumen.ejemplo || modoEjemplo) extensiones.push({ id: p.id, puntos, caracteres });
+      }
+    }
+
+    // En el juego sin propuestas suficientes
+    if (p.en_juego === true) {
+      const n = validas.filter((v) => v.partido === p.id).length;
+      if (n > 0 && n < minimoEnJuego) aviso(`${donde}: tiene "en_juego": true pero solo ${n} propuestas válidas (se recomiendan al menos ${minimoEnJuego}).`);
+    }
+  }
+
+  if (sinWeb.length) aviso(`Directorio: ${sinWeb.length} ${sinWeb.length === 1 ? 'partido' : 'partidos'} sin "web_oficial": ${sinWeb.join(', ')}.`);
+  if (porVerificar.length) aviso(`Directorio: ${porVerificar.length} ${porVerificar.length === 1 ? 'partido' : 'partidos'} con "verificar": true (datos por confirmar): ${porVerificar.join(', ')}.`);
+
+  if (extensiones.length > 1) {
+    const max = Math.max(...extensiones.map((e) => e.caracteres));
+    const min = Math.min(...extensiones.map((e) => e.caracteres));
+    if (min === 0 || max / min > diferenciaResumenes) {
+      aviso(
+        `Resúmenes con extensión muy desigual (más de ${diferenciaResumenes} veces de diferencia): ` +
+          extensiones.map((e) => `${e.id} ${e.puntos} puntos y ${e.caracteres} caracteres`).join('; ') + '.',
+      );
+    }
+  }
+}
+
+if (comprobarUrls && urlsAComprobar.length) {
+  console.log(gris(`Comprobando ${urlsAComprobar.length} enlaces…`));
+  await Promise.all(
+    urlsAComprobar.map(async ({ donde, campo, url }) => {
+      try {
+        let respuesta = await fetch(url, { method: 'HEAD', redirect: 'follow', signal: AbortSignal.timeout(15000) });
+        if (respuesta.status === 405 || respuesta.status === 403) {
+          respuesta = await fetch(url, { redirect: 'follow', signal: AbortSignal.timeout(15000) });
+        }
+        if (!respuesta.ok) aviso(`${donde}: "${campo}" (${url}) responde con error ${respuesta.status}.`);
+      } catch {
+        aviso(`${donde}: "${campo}" (${url}) no responde. Puede ser un problema puntual; vuelve a comprobarlo.`);
+      }
+    }),
+  );
 }
 
 // ---------- Informe ----------

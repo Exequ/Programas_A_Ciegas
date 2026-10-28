@@ -33,9 +33,11 @@ No te preocupes si se te escapa algo: el validador (paso 6) te dirá en qué lí
 
 ---
 
-## 2. Antes de empezar: activa los partidos
+## 2. Antes de empezar: pon los partidos «en juego»
 
-Abre `data/partidos.json`. Cada partido tiene este aspecto:
+Abre `data/partidos.json`. Cada partido tiene muchos datos (la mayoría son para el directorio
+«Partidos y programas», que se explica en `docs/COMO_ANADIR_PROGRAMAS.md`). Para el juego y los tests
+importan estos:
 
 ```json
 {
@@ -43,40 +45,26 @@ Abre `data/partidos.json`. Cada partido tiene este aspecto:
   "nombre": "Partido Popular",
   "siglas": "PP",
   "color": "#1E73BE",
-  "url_programa": "",
-  "activo": false,
-  "lideres": []
+  "en_juego": false,
+  "lideres": [],
+  ...
 }
 ```
 
-Cuando un partido publique su programa:
+Cuando tengas propuestas suficientes de un partido:
 
-1. Pega el enlace al PDF oficial en `url_programa`, entre las comillas.
-2. Cambia `"activo": false` por `"activo": true`. **Solo los partidos activos aparecen en la web.**
+1. Cambia `"en_juego": false` por `"en_juego": true`. **Solo los partidos con `en_juego: true` aparecen en el
+   juego, el test de afinidad y «¿Conoces a tu partido?».** (Que aparezca o no en el directorio lo decide otro
+   dato, `en_directorio`.)
+2. Comprueba que tiene un `color` en formato `#RRGGBB`. Solo se usa en las pantallas de resultados.
 3. En `lideres`, escribe los nombres de sus líderes y candidatos, entre comillas y separados por comas:
    `"lideres": ["Nombre Apellido", "Otro Nombre"]`. No se muestran en ningún sitio: sirven para que el
    validador te avise si alguno aparece en una propuesta (y delataría al partido).
 
-### Añadir otro partido (ERC, Junts, EH Bildu, PNV, BNG, CC…)
+El enlace al programa oficial se pone en `programa.url_oficial` (ver `docs/COMO_ANADIR_PROGRAMAS.md`).
+Si una propuesta no tiene su propio `url_fuente`, se usará ese enlace.
 
-Copia este bloque, pégalo dentro de la lista (después de la llave `}` del último partido, añadiendo una
-coma antes) y rellénalo:
-
-```json
-{
-  "id": "erc",
-  "nombre": "Esquerra Republicana de Catalunya",
-  "siglas": "ERC",
-  "color": "#F5B100",
-  "url_programa": "https://...",
-  "activo": true,
-  "lideres": []
-}
-```
-
-- `id`: un nombre corto, en minúsculas, sin espacios ni tildes (`erc`, `junts`, `bildu`, `pnv`…).
-  Es el que usarás en cada propuesta.
-- `color`: su color en formato `#RRGGBB`. Solo se usa en las pantallas de resultados.
+Para añadir un partido nuevo, sigue también `docs/COMO_ANADIR_PROGRAMAS.md`.
 
 ---
 
@@ -101,7 +89,7 @@ Qué va en cada campo:
 | Campo | Obligatorio | Qué poner |
 | --- | --- | --- |
 | `id` | Sí | Un identificador único. Te recomiendo `partido-tema-número`: `pp-vivienda-01`, `pp-vivienda-02`… |
-| `partido` | Sí | El `id` del partido, tal como está en `partidos.json`: `psoe`, `pp`, `vox`, `sumar`, `podemos`… |
+| `partido` | Sí | El `id` del partido, tal como está en `partidos.json`: `psoe`, `pp`, `vox`, `frente-amplio`, `podemos`, `erc`… |
 | `tema` | Sí | El `id` del tema, tal como está en `temas.json` (lista abajo). |
 | `texto` | Sí | **El texto literal del programa**, copiado tal cual. |
 | `texto_anonimo` | No | Solo si el texto literal da pistas del partido (ver paso 5). Si no hace falta, **borra la línea entera**. |
@@ -224,7 +212,7 @@ de esos otros partidos (no hace falta poner el propio):
     "texto": "Texto literal…",
     "pagina": 51,
     "url_fuente": "https://...",
-    "compartida_con": ["psoe", "sumar"]
+    "compartida_con": ["psoe", "frente-amplio"]
   }
 ```
 
@@ -350,7 +338,7 @@ git push
 
 - **«no es un JSON válido cerca de la línea X»**: casi siempre es una coma. Mira la línea anterior: ¿falta una coma entre
   dos propuestas? ¿Sobra una después de la última?
-- **No aparecen mis propuestas en la web**: ¿está el partido con `"activo": true`? ¿Has esperado a que se publique el cambio?
+- **No aparecen mis propuestas en la web**: ¿está el partido con `"en_juego": true`? ¿Has esperado a que se publique el cambio?
   Prueba a recargar la página con `Ctrl + F5` (o `Cmd + Shift + R` en Mac).
 - **Sigue saliendo el banner de demostración**: alguna propuesta tiene `"ejemplo": true`, o `propuestas.json` sigue vacío.
 - **Quiero cambiar el texto de las páginas** (Inicio, Metodología, Sobre el proyecto): están en `index.html`, dentro de

@@ -38,6 +38,7 @@
     ],
     "conoces_minimo_por_partido": 10,
     "conoces_minimo_por_tema": 2,
+    "en_juego_minimo_propuestas": 10,
     "resumen_diferencia_maxima": 1.5,
     "palabras_valorativas": [
       "polémico", "polémica", "controvertido", "controvertida", "radical", "radicales",

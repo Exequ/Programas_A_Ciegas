@@ -20,6 +20,8 @@ termina algo.
   - Confirmar el nombre exacto de **Iustitia Europa** (en la lista inicial figuraba como «Iusticia») y qué
     formación falangista concurre.
 - [ ] 🙋 **Revisar las webs oficiales** que propuso Claude (todas llevan `verificar: true` y una `nota`).
+  Después, lanza en GitHub **Actions → Comprobar enlaces → Run workflow** para ver si todas responden
+  (desde el entorno de Claude no se pudieron abrir).
 - [ ] 🙋 **Rellenar las webs que no se encontraron:** Frente Amplio, Democracia para el Siglo 21 (y Democracia 21,
   UCIN), Falange, Iustitia Europa, Unidad del Pueblo Canario, Ara Més-Front Ampli y Nuevo Extremeñismo.
 - [ ] 🙋 Decidir si se añaden más partidos de los 61 que se presentan (el criterio es `en_directorio: true`).
@@ -49,7 +51,7 @@ termina algo.
 - [x] 🤖 (a) Modelo de datos y lista inicial de partidos.
 - [x] 🤖 (b) Directorio y ficha de partido.
 - [x] 🤖 (c) Resúmenes y estados del programa.
-- [ ] 🤖 (d) Validador y `docs/COMO_ANADIR_PROGRAMAS.md`.
+- [x] 🤖 (d) Validador y `docs/COMO_ANADIR_PROGRAMAS.md`.
 - [ ] 🤖 (e) Accesibilidad y pruebas en móvil.
 
 ## ✅ Hecho
