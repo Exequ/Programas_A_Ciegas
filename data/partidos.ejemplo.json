@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ejemplo-a",
+    "nombre": "Partido Ejemplo A",
+    "siglas": "PEA",
+    "color": "#0F766E",
+    "url_programa": "",
+    "activo": true,
+    "ejemplo": true,
+    "lideres": []
+  },
+  {
+    "id": "ejemplo-b",
+    "nombre": "Partido Ejemplo B",
+    "siglas": "PEB",
+    "color": "#B45309",
+    "url_programa": "",
+    "activo": true,
+    "ejemplo": true,
+    "lideres": []
+  },
+  {
+    "id": "ejemplo-c",
+    "nombre": "Partido Ejemplo C",
+    "siglas": "PEC",
+    "color": "#6D28D9",
+    "url_programa": "",
+    "activo": true,
+    "ejemplo": true,
+    "lideres": []
+  },
+  {
+    "id": "ejemplo-d",
+    "nombre": "Partido Ejemplo D",
+    "siglas": "PED",
+    "color": "#475569",
+    "url_programa": "",
+    "activo": true,
+    "ejemplo": true,
+    "lideres": []
+  }
+]

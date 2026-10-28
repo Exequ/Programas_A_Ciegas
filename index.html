@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Garantiza que la web no se conecta a ningún servidor externo (sin analítica, sin fuentes de terceros). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f5f4f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141416" media="(prefers-color-scheme: dark)">
+  <title>Programas a ciegas</title>
+  <meta name="description" content="Lee lo que proponen los partidos en las elecciones generales de 2026 sin saber de quién es cada propuesta. Juego y test de afinidad neutrales, sin registro y sin cookies.">
+  <meta property="og:title" content="Programas a ciegas">
+  <meta property="og:description" content="¿Sabrías de qué partido es cada propuesta? Lee los programas electorales a ciegas.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1b1f'/%3E%3Cpath d='M12 32c5-8 12-12 20-12s15 4 20 12c-5 8-12 12-20 12s-15-4-20-12z' fill='none' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M14 48 50 16' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="saltar" href="#contenido" data-saltar>Saltar al contenido</a>
+
+  <aside class="banner-ejemplo" id="banner-ejemplo" aria-label="Aviso sobre los datos de ejemplo" hidden>
+    <strong>Modo demostración.</strong>
+    Las propuestas y los partidos que ves son <strong>ficticios</strong>: sirven solo para probar la web.
+    Todavía no se han añadido propuestas reales de los programas electorales.
+  </aside>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__interior">
+      <a class="marca" href="#/">
+        <svg class="marca__icono" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M8 32c6-9 14-14 24-14s18 5 24 14c-6 9-14 14-24 14S14 41 8 32z" fill="none" stroke="currentColor" stroke-width="5"/><path d="M12 52 52 12" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg>
+        <span>Programas a ciegas</span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <ul class="nav__lista">
+          <li><a href="#/juego" data-ruta="juego">Juego</a></li>
+          <li><a href="#/test" data-ruta="test">Test</a></li>
+          <li><a href="#/resultados" data-ruta="resultados">Resultados</a></li>
+          <li><a href="#/metodologia" data-ruta="metodologia">Metodología</a></li>
+          <li><a href="#/sobre" data-ruta="sobre">Sobre</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="contenedor principal" tabindex="-1">
+    <p class="cargando">Cargando…</p>
+    <noscript>
+      <p class="aviso">Esta web necesita JavaScript para funcionar. No usa cookies ni envía tus respuestas a ningún sitio: todo ocurre en tu navegador.</p>
+    </noscript>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <p>Proyecto independiente, sin ánimo de lucro y sin afiliación con ningún partido.</p>
+      <p>Sin publicidad, sin cookies y sin registro: tus respuestas no salen de tu navegador.</p>
+      <p><a href="#/metodologia">Metodología y fuentes</a> · <a href="#/sobre">Sobre el proyecto</a></p>
+    </div>
+  </footer>
+
+  <!--
+    ====================================================================
+    TEXTOS DE LAS PÁGINAS
+    Puedes editar los textos de dentro de cada <template> sin tocar el
+    código JavaScript. Los elementos con data-dato="..." o data-lista="..."
+    se rellenan solos con los datos de /data.
+    ====================================================================
+  -->
+
+  <template id="pagina-inicio">
+    <section class="portada">
+      <p class="antetitulo">Elecciones generales · 29 de noviembre de 2026</p>
+      <h1 tabindex="-1">Lee los programas <span class="subrayado">a ciegas</span></h1>
+      <p class="entradilla">
+        Te mostramos propuestas reales de los programas electorales <strong>sin decirte de qué partido son</strong>.
+        ¿Coinciden con la idea que tienes de cada partido?
+      </p>
+      <div class="portada__botones">
+        <a class="boton boton--primario boton--grande" href="#/juego">
+          <span class="boton__titulo">Adivina el partido</span>
+          <span class="boton__sub">Juego de 10 propuestas</span>
+        </a>
+        <a class="boton boton--secundario boton--grande" href="#/test">
+          <span class="boton__titulo">Test de afinidad</span>
+          <span class="boton__sub">¿Con qué propuestas coincides?</span>
+        </a>
+      </div>
+      <p class="portada__datos" data-dato="resumen"></p>
+    </section>
+
+    <section class="bloque">
+      <h2>¿Por qué a ciegas?</h2>
+      <p>
+        Solemos tener una imagen de cada partido construida a base de titulares: que unos solo hablan de un tema
+        y otros solo de otro. Pero los programas electorales son documentos largos que tratan casi todos los asuntos.
+        Quitando el nombre del partido, cada propuesta se lee por lo que dice, no por quién la firma.
+      </p>
+      <ul class="lista-ventajas">
+        <li><strong>Textos de los programas oficiales.</strong> Cada propuesta indica el partido, la página y el enlace al PDF, que se revelan al responder.</li>
+        <li><strong>Selección equilibrada.</strong> Se busca el mismo número de propuestas por partido y por tema.</li>
+        <li><strong>Privado.</strong> Sin registro ni cookies. Tus respuestas no salen de tu navegador.</li>
+      </ul>
+      <p><a href="#/metodologia">Cómo se eligen las propuestas y cómo se calcula la afinidad →</a></p>
+    </section>
+  </template>
+
+  <template id="pagina-metodologia">
+    <h1 tabindex="-1">Metodología y fuentes</h1>
+
+    <section class="bloque">
+      <h2>De dónde salen las propuestas</h2>
+      <p>
+        Todas las propuestas proceden de los <strong>programas electorales oficiales</strong> que cada partido publica para las
+        elecciones generales del 29 de noviembre de 2026. Para cada una se guarda el partido, el tema, el texto literal,
+        la página del programa y el enlace al PDF oficial.
+      </p>
+    </section>
+
+    <section class="bloque">
+      <h2>Cómo se eligen</h2>
+      <ul>
+        <li><strong>Texto literal o resumen fiel.</strong> Nunca se inventan propuestas ni se reformulan para hacerlas más o menos atractivas.</li>
+        <li><strong>Equilibrio.</strong> Se intenta incluir el mismo número de propuestas por partido y por tema. No se eligen solo las propuestas llamativas o sorprendentes.</li>
+        <li><strong>Anonimato.</strong> Cuando el texto original contiene pistas sobre su origen (nombres del partido, siglas, líderes, expresiones como «nuestro partido»), se muestra una versión editada que solo elimina esas pistas, sin cambiar el sentido. El texto literal se muestra siempre al revelar el partido.</li>
+        <li><strong>Revisión automática.</strong> Una herramienta revisa los datos en busca de nombres o siglas en los textos anónimos, desequilibrios y errores.</li>
+        <li><strong>Selección al azar.</strong> En cada partida y en cada test, las propuestas se eligen al azar repartiéndolas por igual entre los partidos y los temas.</li>
+      </ul>
+    </section>
+
+    <section class="bloque">
+      <h2>Cómo se calcula la afinidad</h2>
+      <p>Cada respuesta del test tiene un valor:</p>
+      <table class="tabla">
+        <caption class="sr-only">Valor de cada respuesta</caption>
+        <thead><tr><th scope="col">Respuesta</th><th scope="col">Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Muy a favor</td><td>+2</td></tr>
+          <tr><td>A favor</td><td>+1</td></tr>
+          <tr><td>Me da igual / neutral</td><td>0</td></tr>
+          <tr><td>En contra</td><td>−1</td></tr>
+          <tr><td>Muy en contra</td><td>−2</td></tr>
+          <tr><td>No tengo criterio suficiente</td><td>No cuenta</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Para cada partido se usan <strong>solo las propuestas de ese partido que has respondido</strong>. Cada valor se multiplica
+        por su peso: 1 por defecto, 2 si marcaste el tema como importante y 0,5 si lo marcaste como poco importante.
+      </p>
+      <p class="formula">
+        Afinidad&nbsp;% = ((suma ponderada ÷ (2 × suma de pesos)) + 1) ÷ 2 × 100
+      </p>
+      <p>
+        Así, estar «muy a favor» de todas las propuestas de un partido da un 100&nbsp;%; «muy en contra» de todas, un 0&nbsp;%;
+        y «me da igual» en todas, un 50&nbsp;%.
+      </p>
+      <p>
+        <strong>Ejemplo:</strong> respondes a 3 propuestas de un partido: «muy a favor» (+2), «a favor» (+1) y «en contra» (−1),
+        todas con peso 1. La suma es 2, la suma de pesos es 3: ((2 ÷ 6) + 1) ÷ 2 × 100 = 67&nbsp;%.
+      </p>
+    </section>
+
+    <section class="bloque">
+      <h2>Limitaciones</h2>
+      <ul>
+        <li><strong>No es una recomendación de voto ni un sondeo.</strong> Mide tu coincidencia con unas propuestas concretas, no con un partido en su conjunto.</li>
+        <li>Un programa tiene cientos de medidas; aquí solo aparece una selección. Otras propuestas podrían cambiar el resultado.</li>
+        <li>Votar también depende de otras cosas: la confianza, la trayectoria, los candidatos o la capacidad de cumplir lo prometido.</li>
+        <li>Con pocas respuestas por partido el resultado es poco fiable; la web lo avisa.</li>
+        <li>Responder «me da igual» acerca el resultado al 50&nbsp;%. Si no sabes qué opinar, es mejor elegir «No tengo criterio suficiente».</li>
+        <li>Resumir o anonimizar un texto siempre implica decisiones. Por eso el texto literal y la fuente se muestran siempre.</li>
+      </ul>
+    </section>
+
+    <section class="bloque">
+      <h2>Programas electorales oficiales</h2>
+      <ul class="lista-programas" data-lista="programas"></ul>
+    </section>
+  </template>
+
+  <template id="pagina-sobre">
+    <h1 tabindex="-1">Sobre el proyecto</h1>
+    <section class="bloque">
+      <h2>Qué es</h2>
+      <p>
+        Programas a ciegas es un proyecto divulgativo para que cualquiera pueda conocer qué proponen realmente los partidos
+        en las elecciones generales de España, leyendo sus propuestas sin saber de quién son.
+      </p>
+      <p>
+        No pretende convencer a nadie de nada. Queremos que la gente lea los programas, con tranquilidad y sin prejuicios,
+        y que contraste lo que cree que defiende cada partido con lo que el partido ha puesto por escrito.
+      </p>
+    </section>
+    <section class="bloque">
+      <h2>Neutralidad</h2>
+      <ul>
+        <li>Es un proyecto independiente, sin afiliación ni financiación de ningún partido.</li>
+        <li>Las propuestas se seleccionan con criterios de equilibrio y se citan siempre con su fuente.</li>
+        <li>Los colores de los partidos solo aparecen en los resultados, para no condicionar las respuestas.</li>
+      </ul>
+    </section>
+    <section class="bloque">
+      <h2>Privacidad</h2>
+      <p>
+        Esta web no tiene publicidad, no usa cookies, no usa herramientas de analítica, no pide registro y no envía tus
+        respuestas a ningún servidor. Todo ocurre en tu navegador. Tus últimos resultados se guardan temporalmente en la memoria
+        de la pestaña para que puedas volver a verlos, y se borran al cerrarla.
+      </p>
+    </section>
+    <section class="bloque">
+      <h2>¿Has visto un error?</h2>
+      <p>
+        Si crees que una propuesta está mal citada, mal resumida o que un texto anónimo deja ver de qué partido es,
+        compara siempre con el PDF oficial enlazado y avísanos para corregirlo.
+      </p>
+    </section>
+  </template>
+</body>
+</html>

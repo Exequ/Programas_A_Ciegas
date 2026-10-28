@@ -1,0 +1,47 @@
+[
+  {
+    "id": "psoe",
+    "nombre": "Partido Socialista Obrero Español",
+    "siglas": "PSOE",
+    "color": "#E1001A",
+    "url_programa": "",
+    "activo": false,
+    "lideres": []
+  },
+  {
+    "id": "pp",
+    "nombre": "Partido Popular",
+    "siglas": "PP",
+    "color": "#1E73BE",
+    "url_programa": "",
+    "activo": false,
+    "lideres": []
+  },
+  {
+    "id": "vox",
+    "nombre": "Vox",
+    "siglas": "Vox",
+    "color": "#5AC035",
+    "url_programa": "",
+    "activo": false,
+    "lideres": []
+  },
+  {
+    "id": "sumar",
+    "nombre": "Sumar",
+    "siglas": "Sumar",
+    "color": "#E5007E",
+    "url_programa": "",
+    "activo": false,
+    "lideres": []
+  },
+  {
+    "id": "podemos",
+    "nombre": "Podemos",
+    "siglas": "Podemos",
+    "color": "#6C2C7A",
+    "url_programa": "",
+    "activo": false,
+    "lideres": []
+  }
+]

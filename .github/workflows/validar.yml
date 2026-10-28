@@ -1,0 +1,19 @@
+# Revisa los datos y ejecuta las pruebas cada vez que se suben cambios a GitHub.
+name: Validar datos
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validar los datos de /data
+        run: npm run validar
+      - name: Pruebas del cálculo de afinidad
+        run: npm test

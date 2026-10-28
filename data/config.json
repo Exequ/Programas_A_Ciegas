@@ -1,0 +1,32 @@
+{
+  "juego": {
+    "propuestas_por_ronda": 10,
+    "opciones_por_pregunta": 4
+  },
+  "test": {
+    "duraciones": [
+      { "id": "corto", "nombre": "Corto", "propuestas": 20 },
+      { "id": "medio", "nombre": "Medio", "propuestas": 40 },
+      { "id": "completo", "nombre": "Completo", "propuestas": null }
+    ],
+    "minimo_respuestas_fiable": 5,
+    "peso_tema_importante": 2,
+    "peso_tema_poco_importante": 0.5
+  },
+  "validador": {
+    "minimo_por_tema_y_partido": 2,
+    "diferencia_maxima_entre_partidos": 0,
+    "expresiones_sospechosas": [
+      "nuestro partido",
+      "nuestra formación",
+      "nuestro grupo parlamentario",
+      "nuestro programa",
+      "nuestro gobierno",
+      "cuando gobernamos",
+      "hemos gobernado",
+      "como ya hicimos",
+      "nuestro candidato",
+      "nuestra candidata"
+    ]
+  }
+}
