@@ -481,6 +481,11 @@ details.desplegable[open] > summary { margin-bottom: 0.5rem; }
 /* Marco fino con el color del partido (solo si todos los partidos de la lista tienen color). */
 .tarjeta-partido--color { border: 2px solid var(--color-partido); }
 .tarjeta-partido--color:hover { border-color: var(--color-partido); box-shadow: 0 0 0 1px var(--color-partido); }
+/* En modo oscuro se aclaran todos los marcos por igual, para que los colores oscuros (negro, azul marino) se vean. */
+@media (prefers-color-scheme: dark) {
+  .tarjeta-partido--color { --color-marco: color-mix(in srgb, var(--color-partido) 65%, #ffffff); border-color: var(--color-marco); }
+  .tarjeta-partido--color:hover { border-color: var(--color-marco); box-shadow: 0 0 0 1px var(--color-marco); }
+}
 .tarjeta-partido:focus-within { outline: 3px solid var(--foco); outline-offset: 2px; }
 .tarjeta-partido__nombre { font-size: 1.12rem; margin: 0 0 0.3rem; }
 .tarjeta-partido__nombre a { text-decoration: none; }

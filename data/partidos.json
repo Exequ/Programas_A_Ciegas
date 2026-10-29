@@ -155,6 +155,7 @@
     "ambito": "estatal",
     "web_oficial": "https://frenteobrero.es",
     "candidato": "",
+    "color": "#C62828",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -164,7 +165,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (estimado), 29-10-2026."
   },
   {
     "id": "pacma",
@@ -192,6 +193,7 @@
     "ambito": "estatal",
     "web_oficial": "https://www.pcte.es",
     "candidato": "",
+    "color": "#E53935",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -201,7 +203,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (estimado), 29-10-2026."
   },
   {
     "id": "falange",
@@ -210,6 +212,7 @@
     "ambito": "estatal",
     "web_oficial": "",
     "candidato": "",
+    "color": "#1A1A1A",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -219,7 +222,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Comprobar qué formación falangista concurre exactamente y su web. No se ha encontrado la web oficial: rellenar."
+    "nota": "Comprobar qué formación falangista concurre exactamente y su web. No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado), 29-10-2026."
   },
   {
     "id": "partido-humanista",
@@ -228,6 +231,7 @@
     "ambito": "estatal",
     "web_oficial": "https://www.partidohumanista.com",
     "candidato": "",
+    "color": "#F57C00",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -237,7 +241,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (color confirmado, tono estimado), 29-10-2026."
   },
   {
     "id": "iustitia-europa",
@@ -246,6 +250,7 @@
     "ambito": "estatal",
     "web_oficial": "",
     "candidato": "",
+    "color": "#1F3A93",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -255,7 +260,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "En la lista inicial figuraba como «Iusticia Europa»; la prensa lo escribe «Iustitia Europa». No se ha encontrado la web oficial: rellenar."
+    "nota": "En la lista inicial figuraba como «Iusticia Europa»; la prensa lo escribe «Iustitia Europa». No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado), 29-10-2026."
   },
   {
     "id": "pumj",
@@ -264,6 +269,7 @@
     "ambito": "estatal",
     "web_oficial": "https://www.porunmundomasjusto.es",
     "candidato": "",
+    "color": "#A0522D",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -273,7 +279,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (color confirmado, tono estimado), 29-10-2026."
   },
   {
     "id": "erc",
@@ -419,6 +425,7 @@
     "coalicion_de": [],
     "web_oficial": "",
     "candidato": "",
+    "color": "#0057B8",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -428,7 +435,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Según la prensa (RTVC, 15-10-2026), coalición de Nueva Canarias-Bloque Canarista, Podemos Canarias, IU Canaria y Movimiento Sumar Canarias: comprobar y rellenar coalicion_de. No se ha encontrado la web oficial: rellenar."
+    "nota": "Según la prensa (RTVC, 15-10-2026), coalición de Nueva Canarias-Bloque Canarista, Podemos Canarias, IU Canaria y Movimiento Sumar Canarias: comprobar y rellenar coalicion_de. No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado), 29-10-2026."
   },
   {
     "id": "compromis",
@@ -441,6 +448,7 @@
     "coalicion_de": [],
     "web_oficial": "https://compromis.net",
     "candidato": "",
+    "color": "#FF6720",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -450,7 +458,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Comprobar si es coalición y sus integrantes. Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Comprobar si es coalición y sus integrantes. Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (oficial), 29-10-2026."
   },
   {
     "id": "ara-mes",
@@ -463,6 +471,7 @@
     "coalicion_de": [],
     "web_oficial": "",
     "candidato": "",
+    "color": "#7CB342",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -472,7 +481,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Según la prensa, formada por MÉS per Mallorca, Més per Menorca, Ara Eivissa, Esquerra Unida, Sumar, Recortes Cero y Progreso en Verde, con Podemos: comprobar y rellenar coalicion_de. No se ha encontrado la web oficial: rellenar."
+    "nota": "Según la prensa, formada por MÉS per Mallorca, Més per Menorca, Ara Eivissa, Esquerra Unida, Sumar, Recortes Cero y Progreso en Verde, con Podemos: comprobar y rellenar coalicion_de. No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado, confianza baja), 29-10-2026."
   },
   {
     "id": "adelante-andalucia",
@@ -484,6 +493,7 @@
     ],
     "web_oficial": "https://adelanteandalucia.org",
     "candidato": "",
+    "color": "#006633",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -493,7 +503,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (estimado), 29-10-2026."
   },
   {
     "id": "nex",
@@ -505,6 +515,7 @@
     ],
     "web_oficial": "",
     "candidato": "",
+    "color": "#2E7D32",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -514,7 +525,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "No se ha encontrado la web oficial: rellenar."
+    "nota": "No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado), 29-10-2026."
   },
   {
     "id": "iu",
