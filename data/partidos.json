@@ -6,7 +6,7 @@
     "ambito": "estatal",
     "web_oficial": "https://www.psoe.es",
     "candidato": "",
-    "color": "#E1001A",
+    "color": "#E30613",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -16,7 +16,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
   },
   {
     "id": "pp",
@@ -25,7 +25,7 @@
     "ambito": "estatal",
     "web_oficial": "https://www.pp.es",
     "candidato": "",
-    "color": "#1E73BE",
+    "color": "#009FE3",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -35,7 +35,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
   },
   {
     "id": "vox",
@@ -44,7 +44,7 @@
     "ambito": "estatal",
     "web_oficial": "https://www.voxespana.es",
     "candidato": "",
-    "color": "#5AC035",
+    "color": "#63BE21",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -54,7 +54,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
   },
   {
     "id": "frente-amplio",
@@ -70,7 +70,7 @@
     ],
     "web_oficial": "",
     "candidato": "",
-    "color": "#E5007E",
+    "color": "#9B2882",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -80,7 +80,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Coalición inscrita el 16-10-2026 según la prensa (IU, Movimiento Sumar, Comuns y Más Madrid). Comprobar si CHA y otros forman parte y en qué circunscripciones concurre. No se ha encontrado la web oficial: rellenar."
+    "nota": "Coalición inscrita el 16-10-2026 según la prensa (IU, Movimiento Sumar, Comuns y Más Madrid). Comprobar si CHA y otros forman parte y en qué circunscripciones concurre. No se ha encontrado la web oficial: rellenar. Color tomado de politicaelectoral.com, donde figura como «Sumar (Frente Amplio)» (29-10-2026)."
   },
   {
     "id": "podemos",
@@ -89,7 +89,7 @@
     "ambito": "estatal",
     "web_oficial": "https://podemos.info",
     "candidato": "",
-    "color": "#6C2C7A",
+    "color": "#7B2D8B",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -99,7 +99,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Según la prensa, en Baleares se integra en Ara Més-Front Ampli y en Canarias en Unidad del Pueblo Canario: comprobar en qué circunscripciones va con lista propia. Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Según la prensa, en Baleares se integra en Ara Més-Front Ampli y en Canarias en Unidad del Pueblo Canario: comprobar en qué circunscripciones va con lista propia. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
   },
   {
     "id": "salf",
@@ -108,6 +108,7 @@
     "ambito": "estatal",
     "web_oficial": "https://www.seacabolafiesta.com",
     "candidato": "",
+    "color": "#785A46",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -117,7 +118,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
   },
   {
     "id": "democracia21",
@@ -135,6 +136,7 @@
     ],
     "web_oficial": "",
     "candidato": "",
+    "color": "#1F5F8B",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -144,7 +146,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Según la prensa, coalición de Democracia 21, Ciudadanos y UCIN solo en Madrid y Barcelona. No se ha encontrado la web oficial: rellenar."
+    "nota": "Según la prensa, coalición de Democracia 21, Ciudadanos y UCIN solo en Madrid y Barcelona. No se ha encontrado la web oficial: rellenar. Color tomado de politicaelectoral.com, donde figura como «Democracia 21» (29-10-2026)."
   },
   {
     "id": "frente-obrero",
@@ -171,6 +173,7 @@
     "ambito": "estatal",
     "web_oficial": "https://pacma.es",
     "candidato": "",
+    "color": "#4CAF50",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -180,7 +183,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
   },
   {
     "id": "pcte",
@@ -282,6 +285,7 @@
     ],
     "web_oficial": "https://www.esquerra.cat",
     "candidato": "",
+    "color": "#FFB800",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -291,7 +295,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
   },
   {
     "id": "eh-bildu",
@@ -304,6 +308,7 @@
     ],
     "web_oficial": "https://ehbildu.eus",
     "candidato": "",
+    "color": "#95C11F",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -313,7 +318,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
   },
   {
     "id": "pnv",
@@ -325,6 +330,7 @@
     ],
     "web_oficial": "https://www.eaj-pnv.eus",
     "candidato": "",
+    "color": "#007A33",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -334,7 +340,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
   },
   {
     "id": "junts",
@@ -346,6 +352,7 @@
     ],
     "web_oficial": "https://junts.cat",
     "candidato": "",
+    "color": "#00205B",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -355,7 +362,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Candidatura sin confirmar. Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Candidatura sin confirmar. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
   },
   {
     "id": "bng",
@@ -367,6 +374,7 @@
     ],
     "web_oficial": "https://www.bng.gal",
     "candidato": "",
+    "color": "#5EB5E5",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -376,7 +384,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Candidatura sin confirmar. Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Candidatura sin confirmar. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
   },
   {
     "id": "cc",
@@ -388,6 +396,7 @@
     ],
     "web_oficial": "https://coalicioncanaria.org",
     "candidato": "",
+    "color": "#DD7100",
     "en_directorio": true,
     "en_juego": false,
     "verificar": true,
@@ -397,7 +406,7 @@
     },
     "resumen": "",
     "lideres": [],
-    "nota": "Candidatura sin confirmar. Web oficial comprobada por el responsable el 29-10-2026."
+    "nota": "Candidatura sin confirmar. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
   },
   {
     "id": "upc",
@@ -601,11 +610,12 @@
     "ambito": "estatal",
     "web_oficial": "https://www.ciudadanos-cs.org",
     "candidato": "",
+    "color": "#FF6200",
     "en_directorio": false,
     "en_juego": false,
     "verificar": true,
     "lideres": [],
-    "nota": "Integrante de Democracia para el Siglo 21."
+    "nota": "Integrante de Democracia para el Siglo 21. Color tomado de politicaelectoral.com (29-10-2026)."
   },
   {
     "id": "ucin",
