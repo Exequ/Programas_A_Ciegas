@@ -58,7 +58,7 @@ export function seleccionarPreguntas(propuestas, partidoId, { total = 10, propor
 
   const nPropias = Math.round(cantidad * proporcion);
   // Del partido elegido: por turnos entre temas, para no cargar el test hacia uno solo.
-  const elegidasPropias = intercalar(barajar([...agruparPor(propias, (p) => p.tema).values()]).map(barajar)).slice(0, nPropias);
+  const elegidasPropias = intercalar(barajar([...agruparPor(propias, (p) => p.tema).values()]).map((grupo) => barajar(grupo))).slice(0, nPropias);
   const elegidasAjenas = elegirAjenas(ajenas, elegidasPropias.map((p) => p.tema), cantidad - nPropias);
 
   return {

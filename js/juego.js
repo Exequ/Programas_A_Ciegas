@@ -7,6 +7,7 @@ import {
   escapar,
   etiquetaEjemplo,
   guardarSesion,
+  htmlNombrePartido,
   htmlPuntoPartido,
   htmlSinPropuestas,
   seleccionEquilibrada,
@@ -329,8 +330,8 @@ function htmlFinal(datos) {
                  <p class="item-propuesta__texto">${escapar(propuesta.mostrado)}</p>
                  <p class="item-propuesta__meta">
                    ${escapar(datos.temaPorId.get(propuesta.tema).nombre)} ·
-                   Elegiste: ${htmlPuntoPartido(elegido)}${escapar(elegido.nombre)} ·
-                   <strong>Era de: ${htmlPuntoPartido(real)}${escapar(real.nombre)}</strong>
+                   Elegiste: ${htmlPuntoPartido(elegido)}${htmlNombrePartido(elegido)} ·
+                   <strong>Era de: ${htmlPuntoPartido(real)}${htmlNombrePartido(real)}</strong>
                  </p>
                  <p class="item-propuesta__meta">${enlaceFuente(propuesta, real)}</p>
                </li>`;

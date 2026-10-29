@@ -20,11 +20,11 @@ export function colorSeguro(color, porDefecto = '#6b7280') {
   return typeof color === 'string' && /^#[0-9a-f]{3,8}$/i.test(color.trim()) ? color.trim() : porDefecto;
 }
 
-/** Copia barajada de una lista (Fisher–Yates). */
-export function barajar(lista) {
+/** Copia barajada de una lista (Fisher–Yates). `azar` permite fijar el resultado en las pruebas. */
+export function barajar(lista, azar = Math.random) {
   const copia = [...lista];
   for (let i = copia.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(azar() * (i + 1));
     [copia[i], copia[j]] = [copia[j], copia[i]];
   }
   return copia;
@@ -58,7 +58,7 @@ export function intercalar(listas) {
  */
 export function seleccionEquilibrada(propuestas, cantidad = null) {
   const porPartido = [...agruparPor(propuestas, (p) => p.partido).values()].map((delPartido) =>
-    intercalar(barajar([...agruparPor(delPartido, (p) => p.tema).values()]).map(barajar)),
+    intercalar(barajar([...agruparPor(delPartido, (p) => p.tema).values()]).map((grupo) => barajar(grupo))),
   );
   const ordenadas = intercalar(barajar(porPartido));
   const elegidas = cantidad == null ? ordenadas : ordenadas.slice(0, cantidad);
@@ -89,9 +89,14 @@ export function guardarSesion(clave, valor) {
   }
 }
 
+/** URL del programa oficial de un partido, si es válida. */
+export function urlPrograma(partido) {
+  return urlSegura(partido?.programa?.url_oficial);
+}
+
 /** Enlace a la fuente de una propuesta (o aviso si no hay URL, como en los ejemplos). */
 export function enlaceFuente(propuesta, partido) {
-  const url = urlSegura(propuesta.url_fuente) ?? urlSegura(partido?.url_programa);
+  const url = urlSegura(propuesta.url_fuente) ?? urlPrograma(partido);
   const pagina = propuesta.pagina ? `página ${escapar(propuesta.pagina)}` : 'página sin indicar';
   const nombre = escapar(partido?.nombre ?? propuesta.partido);
   if (propuesta.ejemplo) {
@@ -128,4 +133,10 @@ export function htmlSinPropuestas(titulo) {
 /** Punto con el color del partido. Solo se usa al revelar el partido o en los resultados. */
 export function htmlPuntoPartido(partido) {
   return `<span class="punto-partido" style="--color-partido: ${colorSeguro(partido?.color)}" aria-hidden="true"></span>`;
+}
+
+/** Nombre del partido enlazado a su ficha del directorio (solo en pantallas de resultados). */
+export function htmlNombrePartido(partido) {
+  const nombre = escapar(partido?.nombre ?? '');
+  return partido?.en_directorio === true ? `<a href="#/partidos/${encodeURIComponent(partido.id)}">${nombre}</a>` : nombre;
 }

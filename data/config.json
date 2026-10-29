@@ -18,6 +18,9 @@
     "proporcion_partido": 0.5,
     "minimo_preguntas": 6
   },
+  "directorio": {
+    "orden": "alfabetico"
+  },
   "validador": {
     "minimo_por_tema_y_partido": 2,
     "diferencia_maxima_entre_partidos": 0,
@@ -34,6 +37,17 @@
       "nuestra candidata"
     ],
     "conoces_minimo_por_partido": 10,
-    "conoces_minimo_por_tema": 2
+    "conoces_minimo_por_tema": 2,
+    "en_juego_minimo_propuestas": 10,
+    "resumen_diferencia_maxima": 1.5,
+    "palabras_valorativas": [
+      "polémico", "polémica", "controvertido", "controvertida", "radical", "radicales",
+      "ambicioso", "ambiciosa", "histórico", "histórica", "valiente", "audaz",
+      "extremista", "populista", "demagógico", "demagógica", "irresponsable",
+      "sensato", "sensata", "razonable", "realista", "utópico", "utópica",
+      "peligroso", "peligrosa", "absurdo", "absurda", "ridículo", "ridícula",
+      "brillante", "acertado", "acertada", "desastroso", "desastrosa",
+      "innovador", "innovadora", "revolucionario", "revolucionaria", "moderado", "moderada"
+    ]
   }
 }

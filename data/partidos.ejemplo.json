@@ -3,40 +3,79 @@
     "id": "ejemplo-a",
     "nombre": "Partido Ejemplo A",
     "siglas": "PEA",
+    "ambito": "estatal",
+    "web_oficial": "",
+    "candidato": "",
     "color": "#0F766E",
-    "url_programa": "",
-    "activo": true,
+    "en_directorio": true,
+    "en_juego": true,
     "ejemplo": true,
+    "programa": {
+      "estado": "publicado",
+      "url_oficial": "",
+      "fecha_publicacion": "2026-11-10",
+      "fecha_comprobacion": "2026-11-11",
+      "version": "1",
+      "paginas": 64
+    },
+    "resumen": "data/resumenes/ejemplo-a.json",
     "lideres": []
   },
   {
     "id": "ejemplo-b",
     "nombre": "Partido Ejemplo B",
     "siglas": "PEB",
+    "ambito": "estatal",
+    "web_oficial": "",
+    "candidato": "",
     "color": "#B45309",
-    "url_programa": "",
-    "activo": true,
+    "en_directorio": true,
+    "en_juego": true,
     "ejemplo": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
     "lideres": []
   },
   {
     "id": "ejemplo-c",
     "nombre": "Partido Ejemplo C",
     "siglas": "PEC",
+    "ambito": "territorial",
+    "web_oficial": "",
+    "candidato": "",
     "color": "#6D28D9",
-    "url_programa": "",
-    "activo": true,
+    "en_directorio": true,
+    "en_juego": true,
     "ejemplo": true,
-    "lideres": []
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [],
+    "territorio": [
+      "Comunidad ficticia"
+    ]
   },
   {
     "id": "ejemplo-d",
     "nombre": "Partido Ejemplo D",
     "siglas": "PED",
+    "ambito": "estatal",
+    "web_oficial": "",
+    "candidato": "",
     "color": "#475569",
-    "url_programa": "",
-    "activo": true,
+    "en_directorio": true,
+    "en_juego": true,
     "ejemplo": true,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
     "lideres": []
   }
 ]

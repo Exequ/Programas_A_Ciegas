@@ -9,6 +9,7 @@ const RUTAS = {
   '': { titulo: null, pintar: (c, d) => pintarPagina('pagina-inicio', c, d) },
   juego: { titulo: 'Adivina el partido', pintar: async (c, d) => (await import('./juego.js')).pintarJuego(c, d) },
   test: { titulo: 'Test de afinidad', pintar: async (c, d) => (await import('./test.js')).pintarTest(c, d) },
+  partidos: { titulo: 'Partidos y programas', pintar: async (c, d, p) => (await import('./partidos.js')).pintarPartidos(c, d, p) },
   conoces: { titulo: '¿Conoces a tu partido?', pintar: async (c, d) => (await import('./conoces.js')).pintarConoces(c, d) },
   resultados: { titulo: 'Resultados', pintar: async (c, d) => (await import('./resultados.js')).pintarResultados(c, d) },
   metodologia: { titulo: 'Metodología y fuentes', pintar: (c, d) => pintarPagina('pagina-metodologia', c, d) },
@@ -18,18 +19,19 @@ const RUTAS = {
 const principal = document.getElementById('contenido');
 let primeraCarga = true;
 
+/** Ruta y parámetros de la dirección: «#/partidos/psoe» → { ruta: 'partidos', parametros: ['psoe'] }. */
 function rutaActual() {
   const hash = location.hash;
-  if (!hash.startsWith('#/')) return '';
-  const ruta = hash.slice(2).split(/[/?]/)[0];
-  return ruta in RUTAS ? ruta : '';
+  if (!hash.startsWith('#/')) return { ruta: '', parametros: [] };
+  const [ruta, ...parametros] = hash.slice(2).split('?')[0].split('/').map(decodeURIComponent);
+  return ruta in RUTAS ? { ruta, parametros: parametros.filter(Boolean) } : { ruta: '', parametros: [] };
 }
 
 async function navegar() {
   // Los enlaces internos tipo #contenido no cambian de página.
   if (location.hash && !location.hash.startsWith('#/')) return;
 
-  const ruta = rutaActual();
+  const { ruta, parametros } = rutaActual();
   const { titulo, pintar } = RUTAS[ruta];
   document.title = titulo ? `${titulo} · ${NOMBRE_WEB}` : `${NOMBRE_WEB} · Lee los programas electorales sin saber de quién son`;
 
@@ -44,7 +46,9 @@ async function navegar() {
   try {
     const datos = await cargarDatos();
     document.getElementById('banner-ejemplo').hidden = !datos.modoEjemplo;
-    await pintar(contenedor, datos);
+    // Una página puede devolver su propio título (por ejemplo, la ficha de un partido).
+    const tituloPropio = await pintar(contenedor, datos, parametros);
+    if (typeof tituloPropio === 'string') document.title = `${tituloPropio} · ${NOMBRE_WEB}`;
   } catch (error) {
     console.error(error);
     contenedor.innerHTML = `

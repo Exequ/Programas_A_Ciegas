@@ -67,6 +67,26 @@ propuestas en `/data/propuestas.json`, sin tocar el código.
   envía qué partido se elige ni las respuestas. Sin rankings ni comparativas entre partidos sobre el
   "nivel de conocimiento" de sus votantes.
 
+### Sección "Partidos y programas"
+- Directorio (`#/partidos`) de los partidos que concurren a las generales del 29-N-2026 y ficha de cada
+  uno (`#/partidos/:id`): datos básicos, estado del programa, enlace al PDF oficial, copia guardada
+  opcional (con fecha y aviso de que la versión oficial es la del partido) y resumen por temas.
+- Qué partidos aparecen lo decide un dato (`en_directorio: true`), nunca el código. `en_directorio` y
+  `en_juego` son independientes. Lista provisional hasta la proclamación del 3 de noviembre:
+  los no confirmados llevan `verificar: true`. Las coaliciones solo para el Senado no tienen ficha.
+- Todas las tarjetas y fichas con el mismo formato: sin logos ni símbolos, solo nombre y siglas.
+  Orden alfabético o aleatorio, nunca por tamaño o escaños. Filtros por ámbito y buscador.
+- Programa "pendiente": mensaje neutro "Programa aún no publicado" y, si existe, enlace a la web oficial.
+- Coaliciones: mostrar sus integrantes; en la ficha de un integrante, indicar la coalición.
+- Las fichas solo se enlazan desde el juego, el test y "¿Conoces a tu partido?" en sus pantallas de
+  resultados (nunca durante las preguntas).
+- Resúmenes (`/data/resumenes/{id}.json`): cada punto es una paráfrasis fiel y verificable con su
+  página; sin adjetivos valorativos ni interpretaciones. Mismo formato, mismos temas y extensión
+  similar para todos; si un tema no aparece en el programa: "No aborda este tema en su programa".
+  Aviso visible: "Resumen elaborado por este proyecto; no sustituye al programa oficial", con enlace
+  al PDF. Un resumen ficticio de prueba lleva `ejemplo: true` y banner; nunca se presenta como real.
+- No se registra qué partidos se consultan.
+
 ## Tecnología
 
 - Web estática (HTML, CSS, JS). Sin backend ni base de datos. Desplegable en Vercel,
@@ -77,13 +97,18 @@ propuestas en `/data/propuestas.json`, sin tocar el código.
 
 ## Datos (`/data`)
 
-- `partidos.json`: `id`, `nombre`, `siglas`, `color`, `url_programa`, `activo` (bool).
+- `partidos.json`: `id`, `nombre`, `siglas`, `color`, `en_juego` (bool: participa en juego y tests) y
+  `programa.url_oficial` (enlace al PDF). Los antiguos `activo` y `url_programa` ya no se usan.
 - `temas.json`: `id`, `nombre`.
 - `propuestas.json`: `id` (único), `partido`, `tema`, `texto` (literal), `texto_anonimo`
   (opcional, lo que se muestra), `pagina`, `url_fuente`, `peso` (opcional, por defecto 1).
 - `propuestas.json` admite además `compartida_con` (lista de ids de partido) y `ambigua` (bool):
   esas propuestas no se usan en "¿Conoces a tu partido?".
-- `config.json`: ajustes de juego, test, "¿Conoces a tu partido?" y validador.
+- `partidos.json` incluye además los datos del directorio: `ambito`, `territorio`, `coalicion_de`,
+  `candidato`, `web_oficial`, `en_directorio`, `en_juego`, `verificar`, `programa` (estado, URLs,
+  copia local con `sha256`, fechas) y `resumen` (ruta al archivo de resumen).
+- `resumenes/{id}.json`: resumen por temas de cada programa.
+- `config.json`: ajustes de juego, test, "¿Conoces a tu partido?", directorio y validador.
 - `propuestas.ejemplo.json`: propuestas FICTICIAS con `ejemplo: true`.
 
 ## Herramientas
@@ -93,7 +118,11 @@ propuestas en `/data/propuestas.json`, sin tocar el código.
   propuestas por partido (umbral configurable) y propuestas de ejemplo todavía presentes.
   También, para "¿Conoces a tu partido?": partidos con pocas propuestas válidas, `compartida_con`
   o `ambigua` mal definidos y desequilibrios que harían el test más fácil o difícil según el partido.
-- `/docs/COMO_ANADIR_PROPUESTAS.md`: guía no técnica en español.
+  Y para el directorio: partidos sin web oficial o por verificar, programas publicados sin URL (o que no
+  responden, comprobación opcional), copias locales cuyo `sha256` no coincide, resúmenes sin página,
+  con extensión muy desigual o con palabras valorativas (lista configurable), coaliciones con
+  integrantes inexistentes y partidos con `en_juego: true` sin propuestas suficientes.
+- `/docs/COMO_ANADIR_PROPUESTAS.md` y `/docs/COMO_ANADIR_PROGRAMAS.md`: guías no técnicas en español.
 
 ## Forma de trabajar
 

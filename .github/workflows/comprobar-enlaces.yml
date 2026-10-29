@@ -1,0 +1,17 @@
+# Comprueba que las webs oficiales y los enlaces a los programas responden.
+# Se lanza a mano: pestaña Actions → «Comprobar enlaces» → Run workflow.
+name: Comprobar enlaces
+
+on:
+  workflow_dispatch:
+
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validar los datos y comprobar los enlaces
+        run: npm run validar -- --comprobar-urls

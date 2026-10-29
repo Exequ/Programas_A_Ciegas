@@ -1,6 +1,6 @@
 // Páginas de texto (Inicio, Metodología, Sobre): se copian de los <template> de index.html
 // y se rellenan los huecos marcados con data-dato / data-lista.
-import { escapar, urlSegura } from './utilidades.js';
+import { escapar, urlPrograma } from './utilidades.js';
 
 export function pintarPagina(idPlantilla, contenedor, datos) {
   const plantilla = document.getElementById(idPlantilla);
@@ -23,18 +23,26 @@ export function pintarPagina(idPlantilla, contenedor, datos) {
 }
 
 /** Lista de enlaces a los programas oficiales (se usa también al final del juego y del test). */
+// Los programas publicados se enlazan uno a uno; los pendientes se resumen en una línea que lleva al directorio.
 export function htmlProgramas(partidos) {
+  const directorio = '<a href="#/partidos">directorio de partidos</a>';
   if (!partidos.length) {
-    return '<li>Los enlaces a los programas oficiales se añadirán cuando los partidos los publiquen.</li>';
+    return `<li>Los enlaces a los programas oficiales se añadirán cuando los partidos los publiquen. Consulta el ${directorio}.</li>`;
   }
-  return [...partidos]
+  const publicados = [...partidos]
+    .filter((p) => urlPrograma(p))
     .sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'))
     .map((p) => {
-      const url = urlSegura(p.url_programa);
       const nombre = `${escapar(p.nombre)}${p.siglas && p.siglas !== p.nombre ? ` (${escapar(p.siglas)})` : ''}`;
-      return url
-        ? `<li><a href="${escapar(url)}" target="_blank" rel="noopener noreferrer">${nombre}<span class="sr-only"> (PDF, se abre en una pestaña nueva)</span></a></li>`
-        : `<li>${nombre}: programa pendiente de publicación</li>`;
-    })
-    .join('');
+      return `<li><a href="${escapar(urlPrograma(p))}" target="_blank" rel="noopener noreferrer">${nombre}<span class="sr-only"> (PDF, se abre en una pestaña nueva)</span></a></li>`;
+    });
+  const pendientes = partidos.length - publicados.length;
+  if (pendientes) {
+    publicados.push(
+      `<li>${publicados.length ? `Otras ${pendientes}` : pendientes === 1 ? 'Una' : `Las ${pendientes}`} ` +
+        `${pendientes === 1 ? 'candidatura aún no ha publicado su programa' : 'candidaturas aún no han publicado su programa'}: ` +
+        `puedes seguir su estado en el ${directorio}.</li>`,
+    );
+  }
+  return publicados.join('');
 }
