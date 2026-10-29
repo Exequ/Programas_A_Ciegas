@@ -1,7 +1,7 @@
 // Lógica y vistas de la sección «Partidos y programas». No depende del navegador: se prueba con `npm test`.
 // Neutralidad: todas las tarjetas y fichas se generan con las mismas funciones; ninguna rama depende de
 // qué partido sea, y el orden nunca depende del tamaño del partido.
-import { barajar, escapar, urlSegura } from './utilidades.js';
+import { barajar, colorSeguro, escapar, urlSegura } from './utilidades.js';
 
 export const AMBITOS = { estatal: 'Estatal', territorial: 'Territorial', coalicion: 'Coalición' };
 
@@ -59,11 +59,25 @@ function textoEstado(partido) {
   return partido.verificar === true ? `${estado} · Datos por confirmar` : estado;
 }
 
-/** Tarjeta del directorio. Siempre la misma estructura: nombre, siglas y ámbito, estado del programa. */
-export function htmlTarjetaPartido(partido) {
+const COLOR_VALIDO = /^#[0-9a-f]{6}$/i;
+
+/**
+ * El marco de color solo se usa si TODOS los partidos de la lista tienen un color válido:
+ * así ningún partido aparece sin color mientras otros lo tienen.
+ */
+export function todosConColor(partidos) {
+  return partidos.length > 0 && partidos.every((p) => typeof p.color === 'string' && COLOR_VALIDO.test(p.color.trim()));
+}
+
+/**
+ * Tarjeta del directorio. Siempre la misma estructura: nombre, siglas y ámbito, estado del programa.
+ * Con `conColor`, un marco fino con el color del partido (igual para todos).
+ */
+export function htmlTarjetaPartido(partido, { conColor = false } = {}) {
   const siglas = partido.siglas && partido.siglas !== partido.nombre ? `${escapar(partido.siglas)} · ` : '';
+  const color = conColor ? ` tarjeta-partido--color" style="--color-partido: ${colorSeguro(partido.color)}` : '';
   return `
-    <li class="tarjeta-partido">
+    <li class="tarjeta-partido${color}">
       <h2 class="tarjeta-partido__nombre"><a href="#/partidos/${encodeURIComponent(partido.id)}">${escapar(partido.nombre)}</a></h2>
       <p class="tarjeta-partido__meta">${siglas}${escapar(textoAmbito(partido))}</p>
       <p class="tarjeta-partido__estado estado-programa estado-programa--${programaPublicado(partido) ? 'publicado' : 'pendiente'}">${escapar(textoEstado(partido))}</p>

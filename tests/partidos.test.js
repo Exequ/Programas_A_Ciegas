@@ -11,6 +11,7 @@ import {
   ordenarPartidos,
   partidosDelDirectorio,
   rutaRelativa,
+  todosConColor,
 } from '../js/partidos-logica.js';
 
 const leer = (ruta) => JSON.parse(readFileSync(new URL(`../${ruta}`, import.meta.url), 'utf8'));
@@ -23,6 +24,7 @@ const esqueleto = (html) =>
     .replace(/>[^<]*</g, '><')
     .replace(/href="[^"]*"/g, 'href=""')
     .replace(/estado-programa--\w+/g, 'estado-programa--X')
+    .replace(/ style="[^"]*"/g, '')
     .replace(/\s+/g, ' ')
     .trim();
 
@@ -34,10 +36,23 @@ describe('directorio: mismo formato para todos', () => {
     for (const tarjeta of tarjetas) assert.equal(esqueleto(tarjeta), referencia);
   });
 
-  it('las tarjetas no usan colores, logos ni imágenes', () => {
+  it('las tarjetas no usan logos ni imágenes, y sin marco de color no llevan colores', () => {
     for (const partido of partidosDelDirectorio(reales)) {
       const html = htmlTarjetaPartido(partido);
       assert.doesNotMatch(html, /style=|<img|<svg|color/i);
+      assert.doesNotMatch(htmlTarjetaPartido(partido, { conColor: true }), /<img|<svg/i);
+    }
+  });
+
+  it('marco de color: todos o ninguno, con la misma estructura para todos', () => {
+    const conColores = partidosDelDirectorio(ejemplos);
+    assert.equal(todosConColor(conColores), true);
+    assert.equal(todosConColor([...conColores, { id: 'z', nombre: 'Z' }]), false);
+    assert.equal(todosConColor([]), false);
+    const tarjetas = conColores.map((p) => htmlTarjetaPartido(p, { conColor: true }));
+    for (const [i, tarjeta] of tarjetas.entries()) {
+      assert.match(tarjeta, new RegExp(`tarjeta-partido--color" style="--color-partido: ${conColores[i].color}"`));
+      assert.equal(esqueleto(tarjeta), esqueleto(tarjetas[0]));
     }
   });
 

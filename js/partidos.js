@@ -10,6 +10,7 @@ import {
   ordenarPartidos,
   partidosDelDirectorio,
   programaPublicado,
+  todosConColor,
   rutaRelativa,
 } from './partidos-logica.js';
 import { escapar } from './utilidades.js';
@@ -28,6 +29,9 @@ function pintarDirectorio(contenedor, datos) {
   // El orden se calcula una vez por visita (si es aleatorio, cambia en cada visita).
   const partidos = ordenarPartidos(partidosDelDirectorio(datos.todosPartidos), orden);
   const ejemplos = ordenarPartidos(partidosDelDirectorio(datos.partidosEjemplo), 'alfabetico');
+  // Marco de color: todos o ninguno, en cada lista.
+  const conColor = todosConColor(partidos);
+  const ejemplosConColor = todosConColor(ejemplos);
 
   const radiosAmbito = [['', 'Todos'], ...Object.entries(AMBITOS)]
     .map(
@@ -47,7 +51,9 @@ function pintarDirectorio(contenedor, datos) {
     </p>
     <p class="ayuda">
       ${orden === 'aleatorio' ? 'El orden de la lista es aleatorio y cambia en cada visita.' : 'Orden alfabético.'}
-      Todas las candidaturas se presentan con el mismo formato, sin logos ni colores.
+      Todas las candidaturas se presentan con el mismo formato, sin logos${
+        conColor ? '; el marco de cada tarjeta lleva el color de la candidatura' : ' ni colores'
+      }.
     </p>
 
     <form class="filtros-directorio" role="search" aria-label="Buscar partidos">
@@ -69,7 +75,7 @@ function pintarDirectorio(contenedor, datos) {
         ? `<section class="bloque" aria-labelledby="titulo-ejemplo">
              <h2 id="titulo-ejemplo">Fichas de ejemplo (ficticias)</h2>
              <p class="aviso aviso--importante">Estos partidos son <strong>inventados</strong> y solo sirven para probar el diseño de las fichas mientras no haya datos reales.</p>
-             <ul class="rejilla-partidos">${ejemplos.map(htmlTarjetaPartido).join('')}</ul>
+             <ul class="rejilla-partidos">${ejemplos.map((p) => htmlTarjetaPartido(p, { conColor: ejemplosConColor })).join('')}</ul>
            </section>`
         : ''
     }`;
@@ -78,7 +84,7 @@ function pintarDirectorio(contenedor, datos) {
   const contador = contenedor.querySelector('[data-contador]');
   const actualizar = () => {
     const visibles = filtrarPartidos(partidos, filtros);
-    lista.innerHTML = visibles.map(htmlTarjetaPartido).join('');
+    lista.innerHTML = visibles.map((p) => htmlTarjetaPartido(p, { conColor })).join('');
     contador.textContent =
       visibles.length === 0
         ? 'Ninguna candidatura coincide con la búsqueda.'
