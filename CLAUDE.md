@@ -97,7 +97,8 @@ propuestas en `/data/propuestas.json`, sin tocar el código.
 
 ## Datos (`/data`)
 
-- `partidos.json`: `id`, `nombre`, `siglas`, `color`, `url_programa`, `activo` (bool).
+- `partidos.json`: `id`, `nombre`, `siglas`, `color`, `en_juego` (bool: participa en juego y tests) y
+  `programa.url_oficial` (enlace al PDF). Los antiguos `activo` y `url_programa` ya no se usan.
 - `temas.json`: `id`, `nombre`.
 - `propuestas.json`: `id` (único), `partido`, `tema`, `texto` (literal), `texto_anonimo`
   (opcional, lo que se muestra), `pagina`, `url_fuente`, `peso` (opcional, por defecto 1).
