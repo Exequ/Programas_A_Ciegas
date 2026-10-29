@@ -22,10 +22,9 @@ termina algo.
 - [x] 🙋 **Revisar las webs oficiales** que propuso Claude. Comprobadas el 29-10-2026 (las 18 son las oficiales).
 - [ ] 🙋 **Rellenar las webs que no se encontraron:** Frente Amplio, Democracia para el Siglo 21 (y Democracia 21,
   UCIN), Falange, Iustitia Europa, Unidad del Pueblo Canario, Ara Més-Front Ampli y Nuevo Extremeñismo.
-- [ ] 🙋 **Rellenar el `color` oficial** (`#RRGGBB`) de las 11 candidaturas que aún no lo tienen: Frente Obrero, PCTE,
-  Falange, Partido Humanista, Iustitia Europa, Por un Mundo Más Justo, Unidad del Pueblo Canario, Compromís,
-  Ara Més-Front Ampli, Adelante Andalucía y NEX. El marco de color del directorio aparecerá cuando estén todas.
-  Las otras 14 se copiaron de politicaelectoral.com el 29-10-2026 (anotado en cada `nota`). Ver `docs/COMO_ANADIR_PROGRAMAS.md`.
+- [x] 🙋 **Colores de las 25 candidaturas** (29-10-2026): 14 copiados de politicaelectoral.com y 11 aportados
+  por el responsable. Varios son estimados (lo indica la `nota` de cada partido): conviene confirmarlos con
+  la web o el manual de identidad de cada partido cuando sea posible.
 - [ ] 🙋 Decidir si se añaden más partidos de los 61 que se presentan (el criterio es `en_directorio: true`).
 - [ ] 🙋 Rellenar `candidato` (cabeza de lista) con fuente oficial, y `lideres` para que el validador detecte
   nombres en los textos anónimos.
