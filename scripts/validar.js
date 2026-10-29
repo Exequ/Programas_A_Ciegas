@@ -540,16 +540,26 @@ if (Array.isArray(partidos)) {
   }
 }
 
+// Comprobación opcional de enlaces. Se identifica como un navegador porque algunas webs rechazan las
+// visitas automáticas; si aun así responden 401, 403 o 429, se anota como «no comprobable», no como error.
+const CABECERAS_NAVEGADOR = {
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36',
+  Accept: 'text/html,application/xhtml+xml,application/pdf;q=0.9,*/*;q=0.8',
+  'Accept-Language': 'es-ES,es;q=0.9',
+};
+const BLOQUEO_ROBOTS = [401, 403, 429];
+const noComprobables = [];
 if (comprobarUrls && urlsAComprobar.length) {
   console.log(gris(`Comprobando ${urlsAComprobar.length} enlaces…`));
+  const pedir = (url, method) => fetch(url, { method, headers: CABECERAS_NAVEGADOR, redirect: 'follow', signal: AbortSignal.timeout(15000) });
   await Promise.all(
     urlsAComprobar.map(async ({ donde, campo, url }) => {
       try {
-        let respuesta = await fetch(url, { method: 'HEAD', redirect: 'follow', signal: AbortSignal.timeout(15000) });
-        if (respuesta.status === 405 || respuesta.status === 403) {
-          respuesta = await fetch(url, { redirect: 'follow', signal: AbortSignal.timeout(15000) });
-        }
-        if (!respuesta.ok) aviso(`${donde}: "${campo}" (${url}) responde con error ${respuesta.status}.`);
+        let respuesta = await pedir(url, 'HEAD');
+        // Hay servidores que no aceptan HEAD: se repite con una petición normal.
+        if (!respuesta.ok) respuesta = await pedir(url, 'GET');
+        if (BLOQUEO_ROBOTS.includes(respuesta.status)) noComprobables.push(`${donde} (${url})`);
+        else if (!respuesta.ok) aviso(`${donde}: "${campo}" (${url}) responde con error ${respuesta.status}.`);
       } catch {
         aviso(`${donde}: "${campo}" (${url}) no responde. Puede ser un problema puntual; vuelve a comprobarlo.`);
       }
@@ -567,6 +577,12 @@ if (errores.length) {
 if (avisos.length) {
   console.log(amarillo(negrita(`⚠ AVISOS (${avisos.length}) — conviene revisarlos:`)));
   for (const a of avisos) console.log(amarillo('  • ') + a);
+  console.log();
+}
+if (noComprobables.length) {
+  console.log(negrita(`ℹ ENLACES NO COMPROBABLES (${noComprobables.length}) — no es un error:`));
+  console.log(gris('  Estas webs bloquean las comprobaciones automáticas. Si se abren bien en el navegador, están bien.'));
+  for (const n of noComprobables) console.log('  • ' + n);
   console.log();
 }
 if (tabla) {
