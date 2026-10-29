@@ -56,7 +56,7 @@ Así es una ficha completa (los valores son de ejemplo):
 | `territorio` | Comunidades o circunscripciones donde se presenta: `["Madrid", "Barcelona"]`. Déjalo fuera si se presenta en toda España. |
 | `web_oficial` | Dirección de la web del partido, empezando por `https://`. |
 | `candidato` | Cabeza de lista, solo si está confirmado en una fuente oficial. |
-| `color` | Solo se usa en los resultados del juego y los tests. |
+| `color` | Color oficial en formato `#RRGGBB`. Se usa en los resultados del juego y los tests y, **solo cuando todas las candidaturas del directorio tienen color**, como marco fino de su tarjeta. Ver más abajo cómo obtenerlo. |
 | `en_directorio` | `true` = aparece en el directorio. **Lo decides tú**, con el mismo criterio para todos. |
 | `en_juego` | `true` = sus propuestas salen en el juego y los tests. Es independiente del anterior. |
 | `verificar` | `true` mientras haya datos sin confirmar. En la ficha aparece un aviso discreto. Quítalo (o pon `false`) cuando esté todo comprobado. |
@@ -64,6 +64,16 @@ Así es una ficha completa (los valores son de ejemplo):
 | `resumen` | Ruta del archivo de resumen, por ejemplo `"data/resumenes/erc.json"` (ver apartado 6). |
 | `lideres` | Nombres para que el validador detecte pistas en las propuestas anónimas. No se muestran. |
 | `nota` | Apuntes para ti. No se muestran. |
+
+### El color de cada partido
+
+El marco de color de las tarjetas funciona con la regla «todos o ninguno»: mientras falte el color de alguna
+candidatura del directorio, no se muestra en ninguna (el validador te dice cuáles faltan). Para obtenerlo:
+
+1. Busca el color en la web oficial del partido (a veces lo publican en su «manual de identidad» o «kit de prensa»).
+2. Si no lo encuentras, abre su logo y usa un cuentagotas de color (por ejemplo, el de la herramienta de capturas
+   o cualquier web de «color picker») para copiar el código que empieza por `#`.
+3. Escríbelo así: `"color": "#E1001A"`.
 
 ### Añadir un partido nuevo
 

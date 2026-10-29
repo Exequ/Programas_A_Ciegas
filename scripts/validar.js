@@ -525,6 +525,14 @@ if (Array.isArray(partidos)) {
     }
   }
 
+  const delDirectorio = partidos.filter((p) => p?.en_directorio === true && !p.ejemplo);
+  const sinColor = delDirectorio.filter((p) => !(typeof p.color === 'string' && /^#[0-9a-f]{6}$/i.test(p.color.trim())));
+  if (sinColor.length && sinColor.length < delDirectorio.length) {
+    aviso(
+      `Directorio: ${sinColor.length} ${sinColor.length === 1 ? 'candidatura no tiene' : 'candidaturas no tienen'} "color" (#RRGGBB): ` +
+        `${sinColor.map((p) => p.id).join(', ')}. El marco de color de las tarjetas no se mostrará hasta que todas lo tengan.`,
+    );
+  }
   if (sinWeb.length) aviso(`Directorio: ${sinWeb.length} ${sinWeb.length === 1 ? 'partido' : 'partidos'} sin "web_oficial": ${sinWeb.join(', ')}.`);
   if (porVerificar.length) aviso(`Directorio: ${porVerificar.length} ${porVerificar.length === 1 ? 'partido' : 'partidos'} con "verificar": true (datos por confirmar): ${porVerificar.join(', ')}.`);
 

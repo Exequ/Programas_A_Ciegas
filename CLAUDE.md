@@ -19,7 +19,8 @@ propuestas en `/data/propuestas.json`, sin tocar el código.
    al final (test).
 4. **Equilibrio:** mismo número de propuestas por partido y por tema siempre que sea posible.
    No elegir solo las propuestas "sorprendentes".
-5. **Diseño neutro:** sin colores corporativos de partidos salvo en la pantalla de resultados.
+5. **Diseño neutro:** sin colores corporativos de partidos salvo en la pantalla de resultados (y, en el
+   directorio, un marco fino con el color de cada candidatura solo si todas tienen color).
    Tono divulgativo, nunca partidista. Sin adjetivos valorativos sobre las propuestas.
 6. **Privacidad:** sin publicidad, sin cookies de seguimiento, sin analítica, sin registro,
    sin enviar respuestas a ningún servidor. Todo ocurre en el navegador.
@@ -74,7 +75,9 @@ propuestas en `/data/propuestas.json`, sin tocar el código.
 - Qué partidos aparecen lo decide un dato (`en_directorio: true`), nunca el código. `en_directorio` y
   `en_juego` son independientes. Lista provisional hasta la proclamación del 3 de noviembre:
   los no confirmados llevan `verificar: true`. Las coaliciones solo para el Senado no tienen ficha.
-- Todas las tarjetas y fichas con el mismo formato: sin logos ni símbolos, solo nombre y siglas.
+- Todas las tarjetas y fichas con el mismo formato: sin logos ni símbolos, solo nombre y siglas. Las tarjetas
+  pueden llevar un marco fino con el color del partido, con la regla «todos o ninguno»: solo si todas las
+  candidaturas del directorio tienen `color` válido.
   Orden alfabético o aleatorio, nunca por tamaño o escaños. Filtros por ámbito y buscador.
 - Programa "pendiente": mensaje neutro "Programa aún no publicado" y, si existe, enlace a la web oficial.
 - Coaliciones: mostrar sus integrantes; en la ficha de un integrante, indicar la coalición.
