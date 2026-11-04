@@ -10,22 +10,22 @@ termina algo.
 
 ## 📅 Antes y después de la proclamación de candidaturas (3 de noviembre)
 
-- [ ] 🤝 **3-N: revisar `data/partidos.json` con la proclamación oficial.** Hay un recordatorio programado
-  para ese día a las 18:00 (hora peninsular).
-  - Confirmar qué partidos concurren y dónde. Sin confirmar todavía: Junts, BNG y Coalición Canaria.
-  - Ajustar `en_directorio` y quitar `verificar: true` a los partidos confirmados.
-  - Rellenar `coalicion_de` de **Unidad del Pueblo Canario**, **Ara Més-Front Ampli** y **Compromís-Front Valencià**
-    (cada integrante necesita su propia entrada en `partidos.json`).
-  - Confirmar si **CHA** forma parte de Frente Amplio y en qué circunscripciones va **Podemos** con lista propia.
-  - Confirmar el nombre exacto de **Iustitia Europa** (en la lista inicial figuraba como «Iusticia») y qué
-    formación falangista concurre.
+- [x] 🤝 **3-N: revisar `data/partidos.json` con la proclamación oficial** (BOE-A-2026-23103, 3-11-2026).
+  Las 25 candidaturas del directorio están proclamadas; se quitó `verificar`, se anotó en cuántas circunscripciones
+  concurre cada una y se completaron las coaliciones (Unidad del Pueblo Canario, AraMés-Front Ampli y Compromís).
+- [ ] 🤝 **12-N: comprobar si algún recurso ha cambiado las candidaturas** (recursos ante las juntas el 4 y 5 de
+  noviembre y ante el Tribunal Constitucional hasta el 12).
+- [ ] 🙋 Confirmar que **Más Madrid** sigue en Frente Amplio (el BOE no lo nombra en ninguna lista) y qué formaciones
+  agrupa **Ara Més** (integrante de AraMés-Front Ampli).
+- [ ] 🙋 Decidir si se añaden al directorio otras candidaturas proclamadas que no están: Escaños en Blanco
+  (13 circunscripciones), Partido Autónomos (4), Alhora (4), PREPAL (3), Juntos por Extremadura, Liberación Canaria,
+  Drago Canarias, Feministas al Congreso (2 cada una), Geroa Bai, Teruel Existe, Soria ¡Ya! y otras de una sola provincia.
 - [x] 🙋 **Revisar las webs oficiales** que propuso Claude. Comprobadas el 29-10-2026 (las 18 son las oficiales).
 - [ ] 🙋 **Rellenar las webs que no se encontraron:** Frente Amplio, Democracia para el Siglo 21 (y Democracia 21,
   UCIN), Falange, Iustitia Europa, Unidad del Pueblo Canario, Ara Més-Front Ampli y Nuevo Extremeñismo.
 - [x] 🙋 **Colores de las 25 candidaturas** (29-10-2026): 14 copiados de politicaelectoral.com y 11 aportados
   por el responsable. Varios son estimados (lo indica la `nota` de cada partido): conviene confirmarlos con
   la web o el manual de identidad de cada partido cuando sea posible.
-- [ ] 🙋 Decidir si se añaden más partidos de los 61 que se presentan (el criterio es `en_directorio: true`).
 - [ ] 🙋 Rellenar `candidato` (cabeza de lista) con fuente oficial, y `lideres` para que el validador detecte
   nombres en los textos anónimos.
 
