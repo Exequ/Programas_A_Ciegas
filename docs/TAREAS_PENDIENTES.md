@@ -18,9 +18,7 @@ termina algo.
 - [x] 🙋 **Acuerdos de Frente Amplio por comunidad** (4-11-2026): Más Madrid confirmado (Emilio Delgado encabeza Madrid),
   Ara Més = Més per Mallorca + Més per Menorca + Ara Eivissa, y socios regionales añadidos (Iniciativa del Pueblo
   Andaluz, Verdes Equo, Partido Verde, Recortes Cero, Izquierda Asturiana, Somos Asturies y Batzarre).
-- [ ] 🙋 **AraMés-Front Ampli: ¿Esquerra Unida o Esquerra Republicana de les Illes Balears?** Según el responsable, la
-  coalición incluye a ERC de las Islas Baleares, pero sus siglas en el BOE son «ARAMÉS-EU-MS» (EU = Esquerra Unida).
-  De momento los datos siguen el BOE (IU); confirmar cuál es correcto.
+- [x] 🙋 **AraMés-Front Ampli:** el tercer integrante es Esquerra Unida, como indica el BOE (confirmado el 4-11-2026).
 - [x] 🙋 **Otras candidaturas proclamadas** (4-11-2026): se añade solo Escaños en Blanco (13 circunscripciones). El resto
   no se añade (criterio del responsable: no hace falta incluir candidaturas con una estimación de 0 escaños).
 - [x] 🙋 **Escaños en Blanco:** web oficial `https://escanos.org` y color negro (4-11-2026).
@@ -51,6 +49,9 @@ termina algo.
 
 - [x] 🙋 Revisar los textos de Inicio, Metodología y Sobre el proyecto (`index.html`).
 - [x] 🙋 Forma de contacto para avisar de errores: de momento, ninguna (decisión del responsable, 4-11-2026).
+- [ ] 🤝 **Cambiar la dirección de la web a `https://exequ.github.io/test-electoral/`**: renombrar el repositorio en
+  GitHub (Settings → General → Repository name → `test-electoral`) y, después, Claude actualiza las referencias en la
+  documentación y comprueba que la web publicada responde en la nueva dirección.
 - [x] 🤝 **La web no funcionaba en el móvil** (4-11-2026): la dirección se había escrito sin mayúsculas. Hay que usar
   exactamente `https://exequ.github.io/Programas_A_Ciegas/` (al compartirla, mejor como enlace que escrita a mano).
 - [ ] 🙋 Comprobar que el banner de «Modo demostración» ha desaparecido.
