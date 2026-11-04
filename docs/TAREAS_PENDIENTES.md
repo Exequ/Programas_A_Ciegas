@@ -28,8 +28,9 @@ termina algo.
   la web o el manual de identidad de cada partido cuando sea posible.
 - [x] 🤖 `candidato`: cabezas de lista según el BOE (circunscripción con más escaños de cada candidatura), también
   añadidos a `lideres`.
-- [ ] 🙋 Añadir a `lideres` las formas cortas con que se conoce a los líderes (por ejemplo, nombre y primer apellido)
-  para que el validador las detecte en los textos anónimos; ahora solo están los nombres completos del BOE.
+- [x] 🤖 Formas cortas de los nombres de los cabezas de lista en `lideres` (y Ada Colau en Frente Amplio).
+- [ ] 🙋 (Opcional) Añadir a `lideres` otros líderes conocidos que no encabezan lista (presidentes o secretarios
+  generales de cada partido), para que el validador también los detecte.
 
 ## 📄 Cuando cada partido publique su programa
 
