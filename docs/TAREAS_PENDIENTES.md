@@ -23,7 +23,7 @@ termina algo.
   De momento los datos siguen el BOE (IU); confirmar cuál es correcto.
 - [x] 🙋 **Otras candidaturas proclamadas** (4-11-2026): se añade solo Escaños en Blanco (13 circunscripciones). El resto
   no se añade (criterio del responsable: no hace falta incluir candidaturas con una estimación de 0 escaños).
-- [ ] 🙋 **Escaños en Blanco:** confirmar su color (ahora un gris provisional, `#8C8C8C`) y su web oficial (no se encontró).
+- [x] 🙋 **Escaños en Blanco:** web oficial `https://escanos.org` y color negro (4-11-2026).
 - [x] 🙋 **Revisar las webs oficiales** que propuso Claude. Comprobadas el 29-10-2026 (las 18 son las oficiales).
 - [x] 🤖 **Webs que faltaban** (4-11-2026): Frente Amplio, Democracia21, Falange, Iustitia Europa, Unidad del Pueblo
   Canario, AraMés-Front Ampli y NEX, más los integrantes Democracia 21, UCIN y NC-BC. Claude comprobó que cada dirección
@@ -50,9 +50,9 @@ termina algo.
 ## 🚀 Antes del inicio de la campaña (13 de noviembre)
 
 - [x] 🙋 Revisar los textos de Inicio, Metodología y Sobre el proyecto (`index.html`).
-- [ ] 🙋 Añadir en «Sobre el proyecto» una forma de contacto para avisar de errores.
-- [ ] 🤝 **La web no funciona en el móvil del responsable** (4-11-2026): averiguar qué falla (qué se ve, qué móvil y
-  navegador, qué dirección se usa) y corregirlo. Después, volver a probar juego, test, «¿Conoces a tu partido?» y directorio.
+- [x] 🙋 Forma de contacto para avisar de errores: de momento, ninguna (decisión del responsable, 4-11-2026).
+- [x] 🤝 **La web no funcionaba en el móvil** (4-11-2026): la dirección se había escrito sin mayúsculas. Hay que usar
+  exactamente `https://exequ.github.io/Programas_A_Ciegas/` (al compartirla, mejor como enlace que escrita a mano).
 - [ ] 🙋 Comprobar que el banner de «Modo demostración» ha desaparecido.
 
 ## 🛠️ Desarrollo: sección «Partidos y programas»

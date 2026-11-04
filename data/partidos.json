@@ -693,9 +693,9 @@
       "Soria",
       "Valladolid"
     ],
-    "web_oficial": "",
+    "web_oficial": "https://escanos.org",
     "candidato": "Ángel María Rey Albesa (Murcia)",
-    "color": "#8C8C8C",
+    "color": "#000000",
     "en_directorio": true,
     "en_juego": false,
     "verificar": false,
@@ -708,7 +708,7 @@
       "Ángel María Rey Albesa",
       "Ángel María Rey"
     ],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 13 de 52 circunscripciones del Congreso (en Pontevedra, como «Escanos en Branco para deixar Escanos Baleiros»). Añadida al directorio por decisión del responsable (4-11-2026). Cabeza de lista según el BOE en la circunscripción con más escaños en la que se presenta: Murcia (10 escaños). No se ha encontrado la web oficial: rellenar. Color gris provisional elegido por Claude (no consta color oficial): confirmar."
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 13 de 52 circunscripciones del Congreso (en Pontevedra, como «Escanos en Branco para deixar Escanos Baleiros»). Añadida al directorio por decisión del responsable (4-11-2026). Cabeza de lista según el BOE en la circunscripción con más escaños en la que se presenta: Murcia (10 escaños). Web oficial y color (negro y blanco; se usa el negro) indicados por el responsable el 4-11-2026."
   },
   {
     "id": "iu",
