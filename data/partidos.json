@@ -79,7 +79,7 @@
       "mas-madrid",
       "cha"
     ],
-    "web_oficial": "",
+    "web_oficial": "https://frenteamplio.info",
     "candidato": "Emilio Delgado Orgaz (Madrid)",
     "color": "#9B2882",
     "en_directorio": true,
@@ -97,7 +97,7 @@
       "Ada Colau",
       "Colau"
     ],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 43 de 52 circunscripciones del Congreso. Con marcas regionales: Comuns-Front Ampli (Cataluña), Frente Amplio Andaluz, Frente Amplio-Fronte Ampla (Galicia), Frente Amplio-Fronte Zabala (Álava y Navarra), Frente Ampliu por Asturies y CHA-IU-MS-Frente Amplio (Aragón). En Baleares, Canarias y la Comunitat Valenciana sus integrantes van en AraMés-Front Ampli, Unidad del Pueblo Canario y Compromís. Más Madrid no figura en el nombre de ninguna lista: comprobar que sigue en la coalición. No se ha encontrado la web oficial: rellenar. Color tomado de politicaelectoral.com, donde figura como «Sumar (Frente Amplio)» (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños). Ada Colau encabeza la lista de Comuns-Front Ampli por Barcelona (BOE 3-11-2026)."
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 43 de 52 circunscripciones del Congreso. Con marcas regionales: Comuns-Front Ampli (Cataluña), Frente Amplio Andaluz, Frente Amplio-Fronte Ampla (Galicia), Frente Amplio-Fronte Zabala (Álava y Navarra), Frente Ampliu por Asturies y CHA-IU-MS-Frente Amplio (Aragón). En Baleares, Canarias y la Comunitat Valenciana sus integrantes van en AraMés-Front Ampli, Unidad del Pueblo Canario y Compromís. Más Madrid no figura en el nombre de ninguna lista: comprobar que sigue en la coalición. Color tomado de politicaelectoral.com, donde figura como «Sumar (Frente Amplio)» (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños). Ada Colau encabeza la lista de Comuns-Front Ampli por Barcelona (BOE 3-11-2026). Web oficial localizada y comprobada por Claude el 4-11-2026 (título «Frente Amplio – Elecciones generales 29N»; frenteamplio.es es un dominio aparcado ajeno)."
   },
   {
     "id": "podemos",
@@ -162,7 +162,7 @@
       "ciudadanos",
       "ucin"
     ],
-    "web_oficial": "",
+    "web_oficial": "https://democracia21.es",
     "candidato": "Miryan Mercedes González Durántez (Madrid)",
     "color": "#1F5F8B",
     "en_directorio": true,
@@ -178,7 +178,7 @@
       "Miryan González",
       "Miriam González"
     ],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 2 de 52 circunscripciones del Congreso. Integrantes según la prensa: Democracia 21, Ciudadanos y UCIN (el BOE solo indica «D21»). No se ha encontrado la web oficial: rellenar. Color tomado de politicaelectoral.com, donde figura como «Democracia 21» (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños)."
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 2 de 52 circunscripciones del Congreso. Integrantes según la prensa: Democracia 21, Ciudadanos y UCIN (el BOE solo indica «D21»). Color tomado de politicaelectoral.com, donde figura como «Democracia 21» (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños). Web oficial localizada y comprobada por Claude el 4-11-2026 (web del partido Democracia 21, que encabeza la coalición)."
   },
   {
     "id": "frente-obrero",
@@ -251,7 +251,7 @@
     "nombre": "Falange Española de las J.O.N.S.",
     "siglas": "FE de las JONS",
     "ambito": "estatal",
-    "web_oficial": "",
+    "web_oficial": "https://falange.es",
     "candidato": "Norberto Pedro Pico Sanabria (Madrid)",
     "color": "#1A1A1A",
     "en_directorio": true,
@@ -267,7 +267,7 @@
       "Norberto Pedro Pico",
       "Norberto Pico"
     ],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 11 de 52 circunscripciones del Congreso. No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños).",
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 11 de 52 circunscripciones del Congreso. Color aportado por el responsable (estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños). Web oficial localizada y comprobada por Claude el 4-11-2026 (título «Falange Española de las JONS | Web Oficial»).",
     "territorio": [
       "Alicante",
       "Castellón",
@@ -312,7 +312,7 @@
     "nombre": "Iustitia Europa",
     "siglas": "IE",
     "ambito": "estatal",
-    "web_oficial": "",
+    "web_oficial": "https://iustitiaeuropa.es",
     "candidato": "Luis María Pardo Rodríguez (Madrid)",
     "color": "#1F3A93",
     "en_directorio": true,
@@ -327,7 +327,7 @@
       "Luis María Pardo Rodríguez",
       "Luis María Pardo"
     ],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 1 de 52 circunscripciones del Congreso. No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños).",
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 1 de 52 circunscripciones del Congreso. Color aportado por el responsable (estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños). Web oficial localizada y comprobada por Claude el 4-11-2026 (título «El Antipartido…», site_name «Iustitia Europa»).",
     "territorio": [
       "Madrid"
     ]
@@ -536,7 +536,7 @@
       "iu",
       "movimiento-sumar"
     ],
-    "web_oficial": "",
+    "web_oficial": "https://unidadpueblocanario.org",
     "candidato": "Luis Alberto Campos Jiménez (Las Palmas)",
     "color": "#0057B8",
     "en_directorio": true,
@@ -551,7 +551,7 @@
       "Luis Alberto Campos Jiménez",
       "Luis Alberto Campos"
     ],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 2 de 52 circunscripciones del Congreso. Integrantes según el BOE: NC-BC, Podemos, IU y Sumar. No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Las Palmas (8 escaños)."
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 2 de 52 circunscripciones del Congreso. Integrantes según el BOE: NC-BC, Podemos, IU y Sumar. Color aportado por el responsable (estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Las Palmas (8 escaños). Web oficial localizada y comprobada por Claude el 4-11-2026 (título «Unidad del Pueblo Canario · Hay sitio para tu voz»; nombra a sus cuatro integrantes)."
   },
   {
     "id": "compromis",
@@ -597,7 +597,7 @@
       "iu",
       "movimiento-sumar"
     ],
-    "web_oficial": "",
+    "web_oficial": "https://aramesfrontampli.cat",
     "candidato": "Carme Gomila Domínguez (Illes Balears)",
     "color": "#7CB342",
     "en_directorio": true,
@@ -612,7 +612,7 @@
       "Carme Gomila Domínguez",
       "Carme Gomila"
     ],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 1 de 52 circunscripciones del Congreso. Integrantes según sus siglas en el BOE: Ara Més, Esquerra Unida (EU) y Movimiento Sumar (MS). No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado, confianza baja), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Illes Balears (8 escaños)."
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 1 de 52 circunscripciones del Congreso. Integrantes según sus siglas en el BOE: Ara Més, Esquerra Unida (EU) y Movimiento Sumar (MS). Color aportado por el responsable (estimado, confianza baja), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Illes Balears (8 escaños). Web oficial localizada y comprobada por Claude el 4-11-2026 (título «Mes per Mallorca | ARA MÉS - Front Ampli»)."
   },
   {
     "id": "adelante-andalucia",
@@ -648,7 +648,7 @@
     "territorio": [
       "Extremadura"
     ],
-    "web_oficial": "",
+    "web_oficial": "https://nuevoext.es",
     "candidato": "Víctor Ramos Sánchez (Badajoz)",
     "color": "#2E7D32",
     "en_directorio": true,
@@ -663,7 +663,7 @@
       "Víctor Ramos Sánchez",
       "Víctor Ramos"
     ],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 2 de 52 circunscripciones del Congreso. No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Badajoz (5 escaños)."
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 2 de 52 circunscripciones del Congreso. Color aportado por el responsable (estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Badajoz (5 escaños). Web oficial localizada y comprobada por Claude el 4-11-2026 (título «Nuevo Extremeñismo · Extremeñismo transformador»)."
   },
   {
     "id": "iu",
@@ -756,13 +756,13 @@
     "nombre": "Democracia 21",
     "siglas": "D21",
     "ambito": "estatal",
-    "web_oficial": "",
+    "web_oficial": "https://democracia21.es",
     "candidato": "",
     "en_directorio": false,
     "en_juego": false,
     "verificar": true,
     "lideres": [],
-    "nota": "Partido de la coalición Democracia para el Siglo 21. No se ha encontrado la web oficial: rellenar."
+    "nota": "Partido de la coalición Democracia para el Siglo 21. Web oficial localizada y comprobada por Claude el 4-11-2026 (título «democracia21 — La otra política»)."
   },
   {
     "id": "ciudadanos",
@@ -783,13 +783,13 @@
     "nombre": "UCIN",
     "siglas": "UCIN",
     "ambito": "estatal",
-    "web_oficial": "",
+    "web_oficial": "https://ucin.es",
     "candidato": "",
     "en_directorio": false,
     "en_juego": false,
     "verificar": true,
     "lideres": [],
-    "nota": "Integrante de Democracia para el Siglo 21. No se ha encontrado la web oficial: rellenar."
+    "nota": "Integrante de Democracia para el Siglo 21. Web oficial localizada y comprobada por Claude el 4-11-2026 (título «Unión de Ciudadanos Independientes»)."
   },
   {
     "id": "nc-bc",
@@ -799,7 +799,7 @@
     "territorio": [
       "Canarias"
     ],
-    "web_oficial": "",
+    "web_oficial": "https://nuevacanarias.org",
     "candidato": "",
     "en_directorio": false,
     "en_juego": false,
@@ -807,7 +807,7 @@
     "lideres": [
       "Román Rodríguez"
     ],
-    "nota": "Integrante de Unidad del Pueblo Canario según el BOE (3-11-2026)."
+    "nota": "Integrante de Unidad del Pueblo Canario según el BOE (3-11-2026). Web oficial localizada y comprobada por Claude el 4-11-2026 (título «Nueva Canarias – Con USTEDES Gobernamos»)."
   },
   {
     "id": "compromis-partido",

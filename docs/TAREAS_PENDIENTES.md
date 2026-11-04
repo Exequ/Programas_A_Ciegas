@@ -21,8 +21,9 @@ termina algo.
   (13 circunscripciones), Partido Autónomos (4), Alhora (4), PREPAL (3), Juntos por Extremadura, Liberación Canaria,
   Drago Canarias, Feministas al Congreso (2 cada una), Geroa Bai, Teruel Existe, Soria ¡Ya! y otras de una sola provincia.
 - [x] 🙋 **Revisar las webs oficiales** que propuso Claude. Comprobadas el 29-10-2026 (las 18 son las oficiales).
-- [ ] 🙋 **Rellenar las webs que no se encontraron:** Frente Amplio, Democracia para el Siglo 21 (y Democracia 21,
-  UCIN), Falange, Iustitia Europa, Unidad del Pueblo Canario, Ara Més-Front Ampli y Nuevo Extremeñismo.
+- [x] 🤖 **Webs que faltaban** (4-11-2026): Frente Amplio, Democracia21, Falange, Iustitia Europa, Unidad del Pueblo
+  Canario, AraMés-Front Ampli y NEX, más los integrantes Democracia 21, UCIN y NC-BC. Claude comprobó que cada dirección
+  responde y que su título corresponde al partido; conviene que les eches un vistazo como hiciste con las otras 18.
 - [x] 🙋 **Colores de las 25 candidaturas** (29-10-2026): 14 copiados de politicaelectoral.com y 11 aportados
   por el responsable. Varios son estimados (lo indica la `nota` de cada partido): conviene confirmarlos con
   la web o el manual de identidad de cada partido cuando sea posible.
