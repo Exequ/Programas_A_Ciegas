@@ -14,7 +14,7 @@ termina algo.
   Las 25 candidaturas del directorio están proclamadas; se quitó `verificar`, se anotó en cuántas circunscripciones
   concurre cada una y se completaron las coaliciones (Unidad del Pueblo Canario, AraMés-Front Ampli y Compromís).
 - [ ] 🤝 **12-N: comprobar si algún recurso ha cambiado las candidaturas** (recursos ante las juntas el 4 y 5 de
-  noviembre y ante el Tribunal Constitucional hasta el 12).
+  noviembre y ante el Tribunal Constitucional hasta el 12). Hay un recordatorio programado ese día a las 18:00.
 - [ ] 🙋 Confirmar que **Más Madrid** sigue en Frente Amplio (el BOE no lo nombra en ninguna lista) y qué formaciones
   agrupa **Ara Més** (integrante de AraMés-Front Ampli).
 - [ ] 🙋 Decidir si se añaden al directorio otras candidaturas proclamadas que no están: Escaños en Blanco
@@ -26,8 +26,10 @@ termina algo.
 - [x] 🙋 **Colores de las 25 candidaturas** (29-10-2026): 14 copiados de politicaelectoral.com y 11 aportados
   por el responsable. Varios son estimados (lo indica la `nota` de cada partido): conviene confirmarlos con
   la web o el manual de identidad de cada partido cuando sea posible.
-- [ ] 🙋 Rellenar `candidato` (cabeza de lista) con fuente oficial, y `lideres` para que el validador detecte
-  nombres en los textos anónimos.
+- [x] 🤖 `candidato`: cabezas de lista según el BOE (circunscripción con más escaños de cada candidatura), también
+  añadidos a `lideres`.
+- [ ] 🙋 Añadir a `lideres` las formas cortas con que se conoce a los líderes (por ejemplo, nombre y primer apellido)
+  para que el validador las detecte en los textos anónimos; ahora solo están los nombres completos del BOE.
 
 ## 📄 Cuando cada partido publique su programa
 
