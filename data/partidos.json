@@ -77,7 +77,14 @@
       "movimiento-sumar",
       "comuns",
       "mas-madrid",
-      "cha"
+      "cha",
+      "iniciativa-pueblo-andaluz",
+      "verdes-equo",
+      "partido-verde",
+      "recortes-cero",
+      "izquierda-asturiana",
+      "somos-asturies",
+      "batzarre"
     ],
     "web_oficial": "https://frenteamplio.info",
     "candidato": "Emilio Delgado Orgaz (Madrid)",
@@ -97,7 +104,7 @@
       "Ada Colau",
       "Colau"
     ],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 43 de 52 circunscripciones del Congreso. Con marcas regionales: Comuns-Front Ampli (Cataluña), Frente Amplio Andaluz, Frente Amplio-Fronte Ampla (Galicia), Frente Amplio-Fronte Zabala (Álava y Navarra), Frente Ampliu por Asturies y CHA-IU-MS-Frente Amplio (Aragón). En Baleares, Canarias y la Comunitat Valenciana sus integrantes van en AraMés-Front Ampli, Unidad del Pueblo Canario y Compromís. Más Madrid no figura en el nombre de ninguna lista: comprobar que sigue en la coalición. Color tomado de politicaelectoral.com, donde figura como «Sumar (Frente Amplio)» (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños). Ada Colau encabeza la lista de Comuns-Front Ampli por Barcelona (BOE 3-11-2026). Web oficial localizada y comprobada por Claude el 4-11-2026 (título «Frente Amplio – Elecciones generales 29N»; frenteamplio.es es un dominio aparcado ajeno)."
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 43 de 52 circunscripciones del Congreso. Con marcas regionales: Comuns-Front Ampli (Cataluña), Frente Amplio Andaluz, Frente Amplio-Fronte Ampla (Galicia), Frente Amplio-Fronte Zabala (Álava y Navarra), Frente Ampliu por Asturies y CHA-IU-MS-Frente Amplio (Aragón). En Baleares, Canarias y la Comunitat Valenciana sus integrantes van en AraMés-Front Ampli, Unidad del Pueblo Canario y Compromís. Color tomado de politicaelectoral.com, donde figura como «Sumar (Frente Amplio)» (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños). Ada Colau encabeza la lista de Comuns-Front Ampli por Barcelona (BOE 3-11-2026). Web oficial localizada y comprobada por Claude el 4-11-2026 (título «Frente Amplio – Elecciones generales 29N»; frenteamplio.es es un dominio aparcado ajeno). Acuerdos por comunidad (responsable del proyecto, 4-11-2026): Andalucía, Frente Amplio por Andalucía (IU, Sumar, Iniciativa del Pueblo Andaluz y Verdes Equo); Aragón, CHA-Frente Amplio Aragón (CHA, IU, Sumar, Partido Verde y Recortes Cero); Asturias, Frente Ampliu por Asturies (IU, Sumar, Izquierda Asturiana y Somos Asturies); Cataluña, Catalunya en Comú; Madrid, lista encabezada por Emilio Delgado (Más Madrid); Navarra, acuerdo con Batzarre. En Baleares, Canarias y la Comunitat Valenciana se integra en AraMés-Front Ampli, Unidad del Pueblo Canario y Compromís-Front Valencià."
   },
   {
     "id": "podemos",
@@ -563,9 +570,10 @@
     ],
     "coalicion_de": [
       "compromis-partido",
-      "iu",
       "podemos",
-      "erc"
+      "iu",
+      "erc",
+      "recortes-cero"
     ],
     "web_oficial": "https://compromis.net",
     "candidato": "Àgueda Micó Micó (Valencia)",
@@ -582,7 +590,7 @@
       "Àgueda Micó Micó",
       "Àgueda Micó"
     ],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 3 de 52 circunscripciones del Congreso. Integrantes según sus siglas en el BOE (COMPROMIS-EUPV-PODEM-ERPV): Compromís, Esquerra Unida del País Valencià, Podem y Esquerra Republicana del País Valencià. Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (oficial), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Valencia (16 escaños)."
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 3 de 52 circunscripciones del Congreso. Integrantes según sus siglas en el BOE (COMPROMIS-EUPV-PODEM-ERPV): Compromís, Esquerra Unida del País Valencià, Podem y Esquerra Republicana del País Valencià. Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (oficial), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Valencia (16 escaños). Según el responsable del proyecto (4-11-2026), reúne también a Recortes Zero."
   },
   {
     "id": "ara-mes",
@@ -666,6 +674,43 @@
     "nota": "Candidatura proclamada (BOE 3-11-2026): 2 de 52 circunscripciones del Congreso. Color aportado por el responsable (estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Badajoz (5 escaños). Web oficial localizada y comprobada por Claude el 4-11-2026 (título «Nuevo Extremeñismo · Extremeñismo transformador»)."
   },
   {
+    "id": "escanos-en-blanco",
+    "nombre": "Escaños en Blanco para Dejar Escaños Vacíos",
+    "siglas": "Escaños en Blanco",
+    "ambito": "estatal",
+    "territorio": [
+      "Álava",
+      "Almería",
+      "Córdoba",
+      "Gipuzkoa",
+      "La Rioja",
+      "Las Palmas",
+      "León",
+      "Melilla",
+      "Murcia",
+      "Palencia",
+      "Pontevedra",
+      "Soria",
+      "Valladolid"
+    ],
+    "web_oficial": "",
+    "candidato": "Ángel María Rey Albesa (Murcia)",
+    "color": "#8C8C8C",
+    "en_directorio": true,
+    "en_juego": false,
+    "verificar": false,
+    "programa": {
+      "estado": "pendiente",
+      "url_oficial": ""
+    },
+    "resumen": "",
+    "lideres": [
+      "Ángel María Rey Albesa",
+      "Ángel María Rey"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 13 de 52 circunscripciones del Congreso (en Pontevedra, como «Escanos en Branco para deixar Escanos Baleiros»). Añadida al directorio por decisión del responsable (4-11-2026). Cabeza de lista según el BOE en la circunscripción con más escaños en la que se presenta: Murcia (10 escaños). No se ha encontrado la web oficial: rellenar. Color gris provisional elegido por Claude (no consta color oficial): confirmar."
+  },
+  {
     "id": "iu",
     "nombre": "Izquierda Unida",
     "siglas": "IU",
@@ -729,11 +774,13 @@
     "candidato": "",
     "en_directorio": false,
     "en_juego": false,
-    "verificar": true,
+    "verificar": false,
     "lideres": [
-      "Mónica García"
+      "Mónica García",
+      "Emilio Delgado Orgaz",
+      "Emilio Delgado"
     ],
-    "nota": "Integrante de Frente Amplio."
+    "nota": "Integrante de Frente Amplio. Confirmado (4-11-2026): la lista de Frente Amplio por Madrid la encabeza Emilio Delgado, de Más Madrid."
   },
   {
     "id": "cha",
@@ -840,8 +887,121 @@
     "candidato": "",
     "en_directorio": false,
     "en_juego": false,
-    "verificar": true,
+    "verificar": false,
     "lideres": [],
-    "nota": "Integrante de AraMés-Front Ampli según sus siglas en el BOE (3-11-2026). Comprobar qué formaciones agrupa (la prensa citaba MÉS per Mallorca, Més per Menorca y Ara Eivissa)."
+    "nota": "Integrante de AraMés-Front Ampli. Agrupa a Més per Mallorca, Més per Menorca y Ara Eivissa (responsable del proyecto, 4-11-2026)."
+  },
+  {
+    "id": "iniciativa-pueblo-andaluz",
+    "nombre": "Iniciativa del Pueblo Andaluz",
+    "siglas": "IdPA",
+    "ambito": "territorial",
+    "territorio": [
+      "Andalucía"
+    ],
+    "web_oficial": "",
+    "candidato": "",
+    "en_directorio": false,
+    "en_juego": false,
+    "verificar": false,
+    "lideres": [],
+    "nota": "Socio de Frente Amplio según el responsable del proyecto (4-11-2026): Frente Amplio por Andalucía."
+  },
+  {
+    "id": "verdes-equo",
+    "nombre": "Verdes Equo",
+    "siglas": "Verdes Equo",
+    "ambito": "territorial",
+    "territorio": [
+      "Andalucía"
+    ],
+    "web_oficial": "",
+    "candidato": "",
+    "en_directorio": false,
+    "en_juego": false,
+    "verificar": false,
+    "lideres": [],
+    "nota": "Socio de Frente Amplio según el responsable del proyecto (4-11-2026): Frente Amplio por Andalucía."
+  },
+  {
+    "id": "partido-verde",
+    "nombre": "Partido Verde",
+    "siglas": "Partido Verde",
+    "ambito": "territorial",
+    "territorio": [
+      "Aragón"
+    ],
+    "web_oficial": "",
+    "candidato": "",
+    "en_directorio": false,
+    "en_juego": false,
+    "verificar": false,
+    "lideres": [],
+    "nota": "Socio de Frente Amplio según el responsable del proyecto (4-11-2026): Chunta Aragonesista-Frente Amplio Aragón."
+  },
+  {
+    "id": "recortes-cero",
+    "nombre": "Recortes Cero",
+    "siglas": "Recortes Cero",
+    "ambito": "territorial",
+    "territorio": [
+      "Aragón",
+      "Comunitat Valenciana"
+    ],
+    "web_oficial": "",
+    "candidato": "",
+    "en_directorio": false,
+    "en_juego": false,
+    "verificar": false,
+    "lideres": [],
+    "nota": "Socio de Frente Amplio según el responsable del proyecto (4-11-2026): Chunta Aragonesista-Frente Amplio Aragón; también integrante de Compromís-Front Valencià (como Recortes Zero)."
+  },
+  {
+    "id": "izquierda-asturiana",
+    "nombre": "Izquierda Asturiana",
+    "siglas": "IAS",
+    "ambito": "territorial",
+    "territorio": [
+      "Asturias"
+    ],
+    "web_oficial": "",
+    "candidato": "",
+    "en_directorio": false,
+    "en_juego": false,
+    "verificar": false,
+    "lideres": [],
+    "nota": "Socio de Frente Amplio según el responsable del proyecto (4-11-2026): Frente Ampliu por Asturies."
+  },
+  {
+    "id": "somos-asturies",
+    "nombre": "Somos Asturies",
+    "siglas": "Somos Asturies",
+    "ambito": "territorial",
+    "territorio": [
+      "Asturias"
+    ],
+    "web_oficial": "",
+    "candidato": "",
+    "en_directorio": false,
+    "en_juego": false,
+    "verificar": false,
+    "lideres": [],
+    "nota": "Socio de Frente Amplio según el responsable del proyecto (4-11-2026): Frente Ampliu por Asturies."
+  },
+  {
+    "id": "batzarre",
+    "nombre": "Batzarre",
+    "siglas": "Batzarre",
+    "ambito": "territorial",
+    "territorio": [
+      "Navarra"
+    ],
+    "web_oficial": "",
+    "candidato": "",
+    "en_directorio": false,
+    "en_juego": false,
+    "verificar": false,
+    "lideres": [],
+    "nota": "Socio de Frente Amplio según el responsable del proyecto (4-11-2026): acuerdo en Navarra (lista Frente Amplio-Fronte Zabala)."
   }
 ]
