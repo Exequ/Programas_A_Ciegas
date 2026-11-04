@@ -29,8 +29,9 @@ termina algo.
 - [x] 🤖 `candidato`: cabezas de lista según el BOE (circunscripción con más escaños de cada candidatura), también
   añadidos a `lideres`.
 - [x] 🤖 Formas cortas de los nombres de los cabezas de lista en `lideres` (y Ada Colau en Frente Amplio).
-- [ ] 🙋 (Opcional) Añadir a `lideres` otros líderes conocidos que no encabezan lista (presidentes o secretarios
-  generales de cada partido), para que el validador también los detecte.
+- [x] 🤖 Otros líderes conocidos en `lideres` (Puigdemont, Junqueras, Otegi, Belarra, Yolanda Díaz, Clavijo, Baldoví…),
+  asignados a su partido o al integrante de la coalición al que pertenecen. Si surge algún nombre nuevo durante la
+  campaña, se puede añadir en el mismo campo.
 
 ## 📄 Cuando cada partido publique su programa
 
