@@ -15,18 +15,21 @@ termina algo.
   concurre cada una y se completaron las coaliciones (Unidad del Pueblo Canario, AraMés-Front Ampli y Compromís).
 - [ ] 🤝 **12-N: comprobar si algún recurso ha cambiado las candidaturas** (recursos ante las juntas el 4 y 5 de
   noviembre y ante el Tribunal Constitucional hasta el 12). Hay un recordatorio programado ese día a las 18:00.
-- [ ] 🙋 Confirmar que **Más Madrid** sigue en Frente Amplio (el BOE no lo nombra en ninguna lista) y qué formaciones
-  agrupa **Ara Més** (integrante de AraMés-Front Ampli).
-- [ ] 🙋 Decidir si se añaden al directorio otras candidaturas proclamadas que no están: Escaños en Blanco
-  (13 circunscripciones), Partido Autónomos (4), Alhora (4), PREPAL (3), Juntos por Extremadura, Liberación Canaria,
-  Drago Canarias, Feministas al Congreso (2 cada una), Geroa Bai, Teruel Existe, Soria ¡Ya! y otras de una sola provincia.
+- [x] 🙋 **Acuerdos de Frente Amplio por comunidad** (4-11-2026): Más Madrid confirmado (Emilio Delgado encabeza Madrid),
+  Ara Més = Més per Mallorca + Més per Menorca + Ara Eivissa, y socios regionales añadidos (Iniciativa del Pueblo
+  Andaluz, Verdes Equo, Partido Verde, Recortes Cero, Izquierda Asturiana, Somos Asturies y Batzarre).
+- [ ] 🙋 **AraMés-Front Ampli: ¿Esquerra Unida o Esquerra Republicana de les Illes Balears?** Según el responsable, la
+  coalición incluye a ERC de las Islas Baleares, pero sus siglas en el BOE son «ARAMÉS-EU-MS» (EU = Esquerra Unida).
+  De momento los datos siguen el BOE (IU); confirmar cuál es correcto.
+- [x] 🙋 **Otras candidaturas proclamadas** (4-11-2026): se añade solo Escaños en Blanco (13 circunscripciones). El resto
+  no se añade (criterio del responsable: no hace falta incluir candidaturas con una estimación de 0 escaños).
+- [ ] 🙋 **Escaños en Blanco:** confirmar su color (ahora un gris provisional, `#8C8C8C`) y su web oficial (no se encontró).
 - [x] 🙋 **Revisar las webs oficiales** que propuso Claude. Comprobadas el 29-10-2026 (las 18 son las oficiales).
 - [x] 🤖 **Webs que faltaban** (4-11-2026): Frente Amplio, Democracia21, Falange, Iustitia Europa, Unidad del Pueblo
   Canario, AraMés-Front Ampli y NEX, más los integrantes Democracia 21, UCIN y NC-BC. Claude comprobó que cada dirección
-  responde y que su título corresponde al partido; conviene que les eches un vistazo como hiciste con las otras 18.
+  responde y que su título corresponde al partido; revisadas también por el responsable.
 - [x] 🙋 **Colores de las 25 candidaturas** (29-10-2026): 14 copiados de politicaelectoral.com y 11 aportados
-  por el responsable. Varios son estimados (lo indica la `nota` de cada partido): conviene confirmarlos con
-  la web o el manual de identidad de cada partido cuando sea posible.
+  por el responsable. Revisados y dados por buenos por el responsable (4-11-2026).
 - [x] 🤖 `candidato`: cabezas de lista según el BOE (circunscripción con más escaños de cada candidatura), también
   añadidos a `lideres`.
 - [x] 🤖 Formas cortas de los nombres de los cabezas de lista en `lideres` (y Ada Colau en Frente Amplio).
@@ -46,9 +49,10 @@ termina algo.
 
 ## 🚀 Antes del inicio de la campaña (13 de noviembre)
 
-- [ ] 🙋 Revisar los textos de Inicio, Metodología y Sobre el proyecto (`index.html`).
+- [x] 🙋 Revisar los textos de Inicio, Metodología y Sobre el proyecto (`index.html`).
 - [ ] 🙋 Añadir en «Sobre el proyecto» una forma de contacto para avisar de errores.
-- [ ] 🙋 Probar la web en un móvil real (juego, test, «¿Conoces a tu partido?» y directorio).
+- [ ] 🤝 **La web no funciona en el móvil del responsable** (4-11-2026): averiguar qué falla (qué se ve, qué móvil y
+  navegador, qué dirección se usa) y corregirlo. Después, volver a probar juego, test, «¿Conoces a tu partido?» y directorio.
 - [ ] 🙋 Comprobar que el banner de «Modo demostración» ha desaparecido.
 
 ## 🛠️ Desarrollo: sección «Partidos y programas»
