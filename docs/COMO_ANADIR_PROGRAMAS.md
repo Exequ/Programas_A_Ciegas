@@ -55,7 +55,7 @@ Así es una ficha completa (los valores son de ejemplo):
 | `ambito` | `"estatal"`, `"territorial"` o `"coalicion"`. |
 | `territorio` | Comunidades o circunscripciones donde se presenta: `["Madrid", "Barcelona"]`. Déjalo fuera si se presenta en toda España. |
 | `web_oficial` | Dirección de la web del partido, empezando por `https://`. |
-| `candidato` | Cabeza de lista, solo si está confirmado en una fuente oficial. |
+| `candidato` | Cabeza de lista según el BOE, con su circunscripción entre paréntesis: `"Nombre Apellidos (Madrid)"`. Para todas se usa el mismo criterio: la circunscripción con más escaños en la que se presenta. |
 | `color` | Color oficial en formato `#RRGGBB`. Se usa en los resultados del juego y los tests y, **solo cuando todas las candidaturas del directorio tienen color**, como marco fino de su tarjeta. Ver más abajo cómo obtenerlo. |
 | `en_directorio` | `true` = aparece en el directorio. **Lo decides tú**, con el mismo criterio para todos. |
 | `en_juego` | `true` = sus propuestas salen en el juego y los tests. Es independiente del anterior. |

@@ -5,7 +5,7 @@
     "siglas": "PSOE",
     "ambito": "estatal",
     "web_oficial": "https://www.psoe.es",
-    "candidato": "",
+    "candidato": "Pedro Sánchez Pérez-Castejón (Madrid)",
     "color": "#E30613",
     "en_directorio": true,
     "en_juego": false,
@@ -15,8 +15,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 52 de 52 circunscripciones del Congreso. Con sus federaciones: PSC (Cataluña), PSE-EE (Euskadi), PSdeG (Galicia), PSIB (Baleares) y PSN (Navarra). Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
+    "lideres": [
+      "Pedro Sánchez Pérez-Castejón"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 52 de 52 circunscripciones del Congreso. Con sus federaciones: PSC (Cataluña), PSE-EE (Euskadi), PSdeG (Galicia), PSIB (Baleares) y PSN (Navarra). Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños)."
   },
   {
     "id": "pp",
@@ -24,7 +26,7 @@
     "siglas": "PP",
     "ambito": "estatal",
     "web_oficial": "https://www.pp.es",
-    "candidato": "",
+    "candidato": "Alberto Núñez Feijóo (Madrid)",
     "color": "#009FE3",
     "en_directorio": true,
     "en_juego": false,
@@ -34,8 +36,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 52 de 52 circunscripciones del Congreso. En Navarra, en coalición con UPN (UPN-PP). Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
+    "lideres": [
+      "Alberto Núñez Feijóo"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 52 de 52 circunscripciones del Congreso. En Navarra, en coalición con UPN (UPN-PP). Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños)."
   },
   {
     "id": "vox",
@@ -43,7 +47,7 @@
     "siglas": "Vox",
     "ambito": "estatal",
     "web_oficial": "https://www.voxespana.es",
-    "candidato": "",
+    "candidato": "Santiago Abascal Conde (Madrid)",
     "color": "#63BE21",
     "en_directorio": true,
     "en_juego": false,
@@ -53,8 +57,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 52 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
+    "lideres": [
+      "Santiago Abascal Conde"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 52 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños)."
   },
   {
     "id": "frente-amplio",
@@ -69,7 +75,7 @@
       "cha"
     ],
     "web_oficial": "",
-    "candidato": "",
+    "candidato": "Emilio Delgado Orgaz (Madrid)",
     "color": "#9B2882",
     "en_directorio": true,
     "en_juego": false,
@@ -79,8 +85,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 43 de 52 circunscripciones del Congreso. Con marcas regionales: Comuns-Front Ampli (Cataluña), Frente Amplio Andaluz, Frente Amplio-Fronte Ampla (Galicia), Frente Amplio-Fronte Zabala (Álava y Navarra), Frente Ampliu por Asturies y CHA-IU-MS-Frente Amplio (Aragón). En Baleares, Canarias y la Comunitat Valenciana sus integrantes van en AraMés-Front Ampli, Unidad del Pueblo Canario y Compromís. Más Madrid no figura en el nombre de ninguna lista: comprobar que sigue en la coalición. No se ha encontrado la web oficial: rellenar. Color tomado de politicaelectoral.com, donde figura como «Sumar (Frente Amplio)» (29-10-2026)."
+    "lideres": [
+      "Emilio Delgado Orgaz"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 43 de 52 circunscripciones del Congreso. Con marcas regionales: Comuns-Front Ampli (Cataluña), Frente Amplio Andaluz, Frente Amplio-Fronte Ampla (Galicia), Frente Amplio-Fronte Zabala (Álava y Navarra), Frente Ampliu por Asturies y CHA-IU-MS-Frente Amplio (Aragón). En Baleares, Canarias y la Comunitat Valenciana sus integrantes van en AraMés-Front Ampli, Unidad del Pueblo Canario y Compromís. Más Madrid no figura en el nombre de ninguna lista: comprobar que sigue en la coalición. No se ha encontrado la web oficial: rellenar. Color tomado de politicaelectoral.com, donde figura como «Sumar (Frente Amplio)» (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños)."
   },
   {
     "id": "podemos",
@@ -88,7 +96,7 @@
     "siglas": "Podemos",
     "ambito": "estatal",
     "web_oficial": "https://podemos.info",
-    "candidato": "",
+    "candidato": "Irene Montero Gil (Madrid)",
     "color": "#7B2D8B",
     "en_directorio": true,
     "en_juego": false,
@@ -98,8 +106,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 41 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
+    "lideres": [
+      "Irene Montero Gil"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 41 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños)."
   },
   {
     "id": "salf",
@@ -107,7 +117,7 @@
     "siglas": "SALF",
     "ambito": "estatal",
     "web_oficial": "https://www.seacabolafiesta.com",
-    "candidato": "",
+    "candidato": "Luis Alvise Pérez Fernández (Madrid)",
     "color": "#785A46",
     "en_directorio": true,
     "en_juego": false,
@@ -117,8 +127,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 46 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
+    "lideres": [
+      "Luis Alvise Pérez Fernández"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 46 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños)."
   },
   {
     "id": "democracia21",
@@ -135,7 +147,7 @@
       "ucin"
     ],
     "web_oficial": "",
-    "candidato": "",
+    "candidato": "Miryan Mercedes González Durántez (Madrid)",
     "color": "#1F5F8B",
     "en_directorio": true,
     "en_juego": false,
@@ -145,8 +157,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 2 de 52 circunscripciones del Congreso. Integrantes según la prensa: Democracia 21, Ciudadanos y UCIN (el BOE solo indica «D21»). No se ha encontrado la web oficial: rellenar. Color tomado de politicaelectoral.com, donde figura como «Democracia 21» (29-10-2026)."
+    "lideres": [
+      "Miryan Mercedes González Durántez"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 2 de 52 circunscripciones del Congreso. Integrantes según la prensa: Democracia 21, Ciudadanos y UCIN (el BOE solo indica «D21»). No se ha encontrado la web oficial: rellenar. Color tomado de politicaelectoral.com, donde figura como «Democracia 21» (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños)."
   },
   {
     "id": "frente-obrero",
@@ -154,7 +168,7 @@
     "siglas": "FO",
     "ambito": "estatal",
     "web_oficial": "https://frenteobrero.es",
-    "candidato": "",
+    "candidato": "Roberto Vaquero Arribas (Madrid)",
     "color": "#C62828",
     "en_directorio": true,
     "en_juego": false,
@@ -164,8 +178,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 52 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (estimado), 29-10-2026."
+    "lideres": [
+      "Roberto Vaquero Arribas"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 52 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños)."
   },
   {
     "id": "pacma",
@@ -173,7 +189,7 @@
     "siglas": "PACMA",
     "ambito": "estatal",
     "web_oficial": "https://pacma.es",
-    "candidato": "",
+    "candidato": "Asier Esparza Billalabeitia (Madrid)",
     "color": "#4CAF50",
     "en_directorio": true,
     "en_juego": false,
@@ -183,8 +199,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 37 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
+    "lideres": [
+      "Asier Esparza Billalabeitia"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 37 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños)."
   },
   {
     "id": "pcte",
@@ -192,7 +210,7 @@
     "siglas": "PCTE",
     "ambito": "estatal",
     "web_oficial": "https://www.pcte.es",
-    "candidato": "",
+    "candidato": "Eva García de Madariaga Delgado (Madrid)",
     "color": "#E53935",
     "en_directorio": true,
     "en_juego": false,
@@ -202,8 +220,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 46 de 52 circunscripciones del Congreso. Con sus marcas PCTC (Cataluña), PCTE/ELAK (Euskadi) y PCTG (Galicia). Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (estimado), 29-10-2026."
+    "lideres": [
+      "Eva García de Madariaga Delgado"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 46 de 52 circunscripciones del Congreso. Con sus marcas PCTC (Cataluña), PCTE/ELAK (Euskadi) y PCTG (Galicia). Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños)."
   },
   {
     "id": "falange",
@@ -211,7 +231,7 @@
     "siglas": "FE de las JONS",
     "ambito": "estatal",
     "web_oficial": "",
-    "candidato": "",
+    "candidato": "Norberto Pedro Pico Sanabria (Madrid)",
     "color": "#1A1A1A",
     "en_directorio": true,
     "en_juego": false,
@@ -221,8 +241,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 11 de 52 circunscripciones del Congreso. No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado), 29-10-2026.",
+    "lideres": [
+      "Norberto Pedro Pico Sanabria"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 11 de 52 circunscripciones del Congreso. No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños).",
     "territorio": [
       "Alicante",
       "Castellón",
@@ -243,7 +265,7 @@
     "siglas": "PH",
     "ambito": "estatal",
     "web_oficial": "https://www.partidohumanista.com",
-    "candidato": "",
+    "candidato": "José Luis Álvarez Cedena (Madrid)",
     "color": "#F57C00",
     "en_directorio": true,
     "en_juego": false,
@@ -253,8 +275,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 1 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (color confirmado, tono estimado), 29-10-2026.",
+    "lideres": [
+      "José Luis Álvarez Cedena"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 1 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (color confirmado, tono estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños).",
     "territorio": [
       "Madrid"
     ]
@@ -265,7 +289,7 @@
     "siglas": "IE",
     "ambito": "estatal",
     "web_oficial": "",
-    "candidato": "",
+    "candidato": "Luis María Pardo Rodríguez (Madrid)",
     "color": "#1F3A93",
     "en_directorio": true,
     "en_juego": false,
@@ -275,8 +299,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 1 de 52 circunscripciones del Congreso. No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado), 29-10-2026.",
+    "lideres": [
+      "Luis María Pardo Rodríguez"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 1 de 52 circunscripciones del Congreso. No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños).",
     "territorio": [
       "Madrid"
     ]
@@ -287,7 +313,7 @@
     "siglas": "MUNDO+JUSTO",
     "ambito": "estatal",
     "web_oficial": "https://www.porunmundomasjusto.es",
-    "candidato": "",
+    "candidato": "José Manuel Romero Melero (Madrid)",
     "color": "#A0522D",
     "en_directorio": true,
     "en_juego": false,
@@ -297,8 +323,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 28 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (color confirmado, tono estimado), 29-10-2026."
+    "lideres": [
+      "José Manuel Romero Melero"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 28 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (color confirmado, tono estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Madrid (38 escaños)."
   },
   {
     "id": "erc",
@@ -309,7 +337,7 @@
       "Cataluña"
     ],
     "web_oficial": "https://www.esquerra.cat",
-    "candidato": "",
+    "candidato": "Gabriel Rufián Romero (Barcelona)",
     "color": "#FFB800",
     "en_directorio": true,
     "en_juego": false,
@@ -319,8 +347,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 4 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
+    "lideres": [
+      "Gabriel Rufián Romero"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 4 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Barcelona (32 escaños)."
   },
   {
     "id": "eh-bildu",
@@ -332,7 +362,7 @@
       "Navarra"
     ],
     "web_oficial": "https://ehbildu.eus",
-    "candidato": "",
+    "candidato": "Oskar Matute Garcia de Jalón (Bizkaia)",
     "color": "#95C11F",
     "en_directorio": true,
     "en_juego": false,
@@ -342,8 +372,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 4 de 52 circunscripciones del Congreso. En Navarra, como EH Bildu-ERC. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
+    "lideres": [
+      "Oskar Matute Garcia de Jalón"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 4 de 52 circunscripciones del Congreso. En Navarra, como EH Bildu-ERC. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Bizkaia (8 escaños)."
   },
   {
     "id": "pnv",
@@ -354,7 +386,7 @@
       "País Vasco"
     ],
     "web_oficial": "https://www.eaj-pnv.eus",
-    "candidato": "",
+    "candidato": "Idoia Sagastizabal Unzetabarrenetxea (Bizkaia)",
     "color": "#007A33",
     "en_directorio": true,
     "en_juego": false,
@@ -364,8 +396,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 3 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
+    "lideres": [
+      "Idoia Sagastizabal Unzetabarrenetxea"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 3 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Bizkaia (8 escaños)."
   },
   {
     "id": "junts",
@@ -376,7 +410,7 @@
       "Cataluña"
     ],
     "web_oficial": "https://junts.cat",
-    "candidato": "",
+    "candidato": "Míriam Nogueras i Camero (Barcelona)",
     "color": "#00205B",
     "en_directorio": true,
     "en_juego": false,
@@ -386,8 +420,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 4 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
+    "lideres": [
+      "Míriam Nogueras i Camero"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 4 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Barcelona (32 escaños)."
   },
   {
     "id": "bng",
@@ -398,7 +434,7 @@
       "Galicia"
     ],
     "web_oficial": "https://www.bng.gal",
-    "candidato": "",
+    "candidato": "Néstor Rego Candamil (A Coruña)",
     "color": "#5EB5E5",
     "en_directorio": true,
     "en_juego": false,
@@ -408,8 +444,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 4 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
+    "lideres": [
+      "Néstor Rego Candamil"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 4 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: A Coruña (8 escaños)."
   },
   {
     "id": "cc",
@@ -420,7 +458,7 @@
       "Canarias"
     ],
     "web_oficial": "https://coalicioncanaria.org",
-    "candidato": "",
+    "candidato": "Teodoro Claret Sosa Monzón (Las Palmas)",
     "color": "#DD7100",
     "en_directorio": true,
     "en_juego": false,
@@ -430,8 +468,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 2 de 52 circunscripciones del Congreso. En Las Palmas figura como Municipalistas Primero Canarias-Coalición Canaria (1.ºCAN-CCa). Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026)."
+    "lideres": [
+      "Teodoro Claret Sosa Monzón"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 2 de 52 circunscripciones del Congreso. En Las Palmas figura como Municipalistas Primero Canarias-Coalición Canaria (1.ºCAN-CCa). Web oficial comprobada por el responsable el 29-10-2026. Color tomado de politicaelectoral.com (29-10-2026). Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Las Palmas (8 escaños)."
   },
   {
     "id": "upc",
@@ -448,7 +488,7 @@
       "movimiento-sumar"
     ],
     "web_oficial": "",
-    "candidato": "",
+    "candidato": "Luis Alberto Campos Jiménez (Las Palmas)",
     "color": "#0057B8",
     "en_directorio": true,
     "en_juego": false,
@@ -458,8 +498,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 2 de 52 circunscripciones del Congreso. Integrantes según el BOE: NC-BC, Podemos, IU y Sumar. No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado), 29-10-2026."
+    "lideres": [
+      "Luis Alberto Campos Jiménez"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 2 de 52 circunscripciones del Congreso. Integrantes según el BOE: NC-BC, Podemos, IU y Sumar. No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Las Palmas (8 escaños)."
   },
   {
     "id": "compromis",
@@ -476,7 +518,7 @@
       "erc"
     ],
     "web_oficial": "https://compromis.net",
-    "candidato": "",
+    "candidato": "Àgueda Micó Micó (Valencia)",
     "color": "#FF6720",
     "en_directorio": true,
     "en_juego": false,
@@ -486,8 +528,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 3 de 52 circunscripciones del Congreso. Integrantes según sus siglas en el BOE (COMPROMIS-EUPV-PODEM-ERPV): Compromís, Esquerra Unida del País Valencià, Podem y Esquerra Republicana del País Valencià. Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (oficial), 29-10-2026."
+    "lideres": [
+      "Àgueda Micó Micó"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 3 de 52 circunscripciones del Congreso. Integrantes según sus siglas en el BOE (COMPROMIS-EUPV-PODEM-ERPV): Compromís, Esquerra Unida del País Valencià, Podem y Esquerra Republicana del País Valencià. Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (oficial), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Valencia (16 escaños)."
   },
   {
     "id": "ara-mes",
@@ -503,7 +547,7 @@
       "movimiento-sumar"
     ],
     "web_oficial": "",
-    "candidato": "",
+    "candidato": "Carme Gomila Domínguez (Illes Balears)",
     "color": "#7CB342",
     "en_directorio": true,
     "en_juego": false,
@@ -513,8 +557,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 1 de 52 circunscripciones del Congreso. Integrantes según sus siglas en el BOE: Ara Més, Esquerra Unida (EU) y Movimiento Sumar (MS). No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado, confianza baja), 29-10-2026."
+    "lideres": [
+      "Carme Gomila Domínguez"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 1 de 52 circunscripciones del Congreso. Integrantes según sus siglas en el BOE: Ara Més, Esquerra Unida (EU) y Movimiento Sumar (MS). No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado, confianza baja), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Illes Balears (8 escaños)."
   },
   {
     "id": "adelante-andalucia",
@@ -525,7 +571,7 @@
       "Andalucía"
     ],
     "web_oficial": "https://adelanteandalucia.org",
-    "candidato": "",
+    "candidato": "Luis María de los Santos Castillo (Sevilla)",
     "color": "#006633",
     "en_directorio": true,
     "en_juego": false,
@@ -535,8 +581,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 8 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (estimado), 29-10-2026."
+    "lideres": [
+      "Luis María de los Santos Castillo"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 8 de 52 circunscripciones del Congreso. Web oficial comprobada por el responsable el 29-10-2026. Color aportado por el responsable (estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Sevilla (12 escaños)."
   },
   {
     "id": "nex",
@@ -547,7 +595,7 @@
       "Extremadura"
     ],
     "web_oficial": "",
-    "candidato": "",
+    "candidato": "Víctor Ramos Sánchez (Badajoz)",
     "color": "#2E7D32",
     "en_directorio": true,
     "en_juego": false,
@@ -557,8 +605,10 @@
       "url_oficial": ""
     },
     "resumen": "",
-    "lideres": [],
-    "nota": "Candidatura proclamada (BOE 3-11-2026): 2 de 52 circunscripciones del Congreso. No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado), 29-10-2026."
+    "lideres": [
+      "Víctor Ramos Sánchez"
+    ],
+    "nota": "Candidatura proclamada (BOE 3-11-2026): 2 de 52 circunscripciones del Congreso. No se ha encontrado la web oficial: rellenar. Color aportado por el responsable (estimado), 29-10-2026. Cabeza de lista según el BOE (3-11-2026) en la circunscripción con más escaños en la que se presenta: Badajoz (5 escaños)."
   },
   {
     "id": "iu",
