@@ -13,8 +13,9 @@ termina algo.
 - [x] 🤝 **3-N: revisar `data/partidos.json` con la proclamación oficial** (BOE-A-2026-23103, 3-11-2026).
   Las 25 candidaturas del directorio están proclamadas; se quitó `verificar`, se anotó en cuántas circunscripciones
   concurre cada una y se completaron las coaliciones (Unidad del Pueblo Canario, AraMés-Front Ampli y Compromís).
-- [ ] 🤝 **12-N: comprobar si algún recurso ha cambiado las candidaturas** (recursos ante las juntas el 4 y 5 de
-  noviembre y ante el Tribunal Constitucional hasta el 12). Hay un recordatorio programado ese día a las 18:00.
+- [x] 🤝 **12-N: recursos sobre las candidaturas.** Revisado: ninguna candidatura del directorio cambia. Corrección de
+  errores del BOE (7-11-2026): en Navarra la lista al Congreso es «EH Bildu» (no «EH Bildu-ERC»). PACMA no concurre en
+  Barcelona (el TC inadmitió su amparo) y el TC rechazó los recursos de Drago contra las siglas UPC. Anotado en las notas.
 - [x] 🙋 **Acuerdos de Frente Amplio por comunidad** (4-11-2026): Más Madrid confirmado (Emilio Delgado encabeza Madrid),
   Ara Més = Més per Mallorca + Més per Menorca + Ara Eivissa, y socios regionales añadidos (Iniciativa del Pueblo
   Andaluz, Verdes Equo, Partido Verde, Recortes Cero, Izquierda Asturiana, Somos Asturies y Batzarre).
